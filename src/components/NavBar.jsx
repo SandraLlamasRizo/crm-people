@@ -1,6 +1,6 @@
-function DepartmentCard() {
+function NavBar() {
 
-    return <div>DepartmentCard works!</div>
+    return <div>NavBar works!</div>
 }
 
-export default DepartmentCard;
+export default NavBar;
