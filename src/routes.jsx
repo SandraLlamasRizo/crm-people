@@ -14,14 +14,14 @@ function MainRoutes() {
 
     return (
         <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/register" element={<RegisterUser />} />
-            <Route path="/login" element={<LoginUser />} />
-            <Route path="/employees" element={<Employees />} />
-            <Route path="/departments" element={<Departments />} />
-            <Route path="/oldEmployees" element={<OldEmployees />} />
-            <Route path="/employees/:employeeId" element={<DetailEmployee />} />
-            <Route path="/newEmployee" element={<NewEmployee />} />
+            <Route path="" element={<LandingPage />} />
+            <Route path="register" element={<RegisterUser />} />
+            <Route path="login" element={<LoginUser />} />
+            <Route path="employees" element={<Employees />} />
+            <Route path="departments" element={<Departments />} />
+            <Route path="oldEmployees" element={<OldEmployees />} />
+            <Route path="employees/:employeeId" element={<DetailEmployee />} />
+            <Route path="newEmployee" element={<NewEmployee />} />
             <Route path="*" element={<NotFound/> } />
         </Routes>
     )
