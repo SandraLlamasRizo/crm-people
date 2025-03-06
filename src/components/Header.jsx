@@ -1,6 +1,10 @@
 function Header() {
     
-    return <h1>holii</h1>
+    return <div className="container">
+        <p>Esto es el navbar
+            
+        </p>
+    </div>
 }
 
 export default Header;

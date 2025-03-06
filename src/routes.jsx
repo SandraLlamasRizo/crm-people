@@ -14,7 +14,7 @@ function MainRoutes() {
 
     return (
         <Routes>
-            <Route path="app" element={<App/>} />
+            <Route path="App" element={<App/>} />
             <Route path="" element={<LandingPage />} />
             <Route path="register" element={<RegisterUser />} />
             <Route path="login" element={<LoginUser />} />
