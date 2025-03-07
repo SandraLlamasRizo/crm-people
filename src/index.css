@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "bootstrap/scss/bootstrap";
-@import "bootstrap-icons/font/bootstrap-icons.css";
 
 .welcomeBackH6 {   /*Estilos para el 'Bienvenido de nuevo, usuario' de Dadshboard*/
     font-size:  15px;
