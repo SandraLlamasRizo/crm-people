@@ -1,32 +1,38 @@
 import './App.css'
-import EmployeeCard from './components/EmployeeCard'
+import EmployeeCardLarge from './components/EmployeeCardLarge'
+import EmployeeCardSmall from './components/EmployeeCardSmall'
 
 function App() {
 
-  return (<div className='row flex gap-4'>
+  return <><div className='row flex gap-4'>
     <div className='col'>
       
-        <EmployeeCard />
+        <EmployeeCardSmall />
     
     </div>
     <div className='col'>
      
-        <EmployeeCard />
+        <EmployeeCardSmall />
    
     </div>
     <div className='col'>
       
-        <EmployeeCard />
+        <EmployeeCardSmall />
       
     </div>
     <div className='col'>
       
-        <EmployeeCard />
+        <EmployeeCardSmall />
       
     </div>
   </div>
-    
-  )
+    <div className='flex row'>
+      <div className='col'>
+        <EmployeeCardLarge/>
+      </div>
+      
+  </div>
+  </>
 }
 
 export default App
