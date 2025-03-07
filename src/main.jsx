@@ -9,8 +9,8 @@ import NavBar from './components/NavBar.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <NavBar />
     <Header/>
+    <NavBar />
     <MainRoutes />
     <Footer/>
   </BrowserRouter>
