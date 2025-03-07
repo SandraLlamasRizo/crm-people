@@ -5,7 +5,7 @@ function Header() {
     <div className="mt-8 mr-2 grid grid-cols-2 gap-4">
   
   <form className="mt-8 md:mt-0 w-full md:w-auto mb-2 md:mb-0 md:ml-4" role="search">
-    <div className="flex items-center rounded-full px-3 border border-gray-300 hover:border-gray-500">
+    <div className="flex items-center md:max-w-[412px] rounded-full px-3 border border-gray-300 hover:border-gray-500">
       <span className="text-gray-500"><i className="bi bi-search"></i></span>
       <input 
         type="search" 

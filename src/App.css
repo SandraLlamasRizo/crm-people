@@ -1,14 +1,14 @@
-.nameCard {
+.principalCard {
     font-size: 16px;
     font-weight: 600;
 }
 
-.lastnameCard {
+.secundarioCard {
     font-size: 14px;
     font-weight: 400;
 }
 
-.departmentCard {
+.terciarioBorderCard {
     font-size: 12px;
     font-weight: 400;
     color: #7D8592;
