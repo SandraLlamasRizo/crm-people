@@ -1,5 +1,6 @@
-function LandingPage() {
+import EmployeeCard from "../components/EmployeeCard";
 
+function LandingPage() {
     return <div>LandingPage works!</div>
 }
 

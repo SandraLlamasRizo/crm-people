@@ -1,2 +1,16 @@
 @import "tailwindcss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+.welcomeBackH6 {   /*Estilos para el 'Bienvenido de nuevo, usuario' de Dadshboard*/
+    font-size:  15px;
+    font-weight: extralight;
+    color: grey;
+    opacity: 0.8;
+}
+
+.homeH3{         /*Estilos para el 'Inicio' de Dadshboard*/
+    font-size: 50px;
+    font-weight: bolder;
+    color: #000000;
+    
+}

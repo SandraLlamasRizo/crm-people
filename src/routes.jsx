@@ -9,12 +9,13 @@ import DetailEmployee from "./pages/DetailEmployee";
 import NewEmployee from "./pages/NewEmployee";
 import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/LandingPage";
+import Dasboard from "./pages/Dashboard";
 
 function MainRoutes() {
 
     return (
         <Routes>
-            <Route path="App" element={<App/>} />
+            <Route path="App" element={<App />} />
             <Route path="" element={<LandingPage />} />
             <Route path="register" element={<RegisterUser />} />
             <Route path="login" element={<LoginUser />} />
@@ -23,7 +24,8 @@ function MainRoutes() {
             <Route path="oldEmployees" element={<OldEmployees />} />
             <Route path="employees/:employeeId" element={<DetailEmployee />} />
             <Route path="newEmployee" element={<NewEmployee />} />
-            <Route path="*" element={<NotFound/> } />
+            <Route path="*" element={<NotFound />} />
+            <Route path="dashboard" element={<Dasboard />} />
         </Routes>
     )
 }
