@@ -1,0 +1,17 @@
+.nameCard {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lastnameCard {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.departmentCard {
+    font-size: 12px;
+    font-weight: 400;
+    color: #7D8592;
+    border: solid #7D8592 1px;
+    border-radius: 5px;
+}
