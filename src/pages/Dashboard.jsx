@@ -1,4 +1,5 @@
 
+import DeparmentCardSmall from "../components/DeparmentsCardSmall";
 import EmployeeCardSmall from "../components/EmployeeCardSmall";
 
 function Dashboard() {
@@ -19,6 +20,45 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 lg:grid-cols-6 gap-6 gap-y-10 pt-4 pb-6 pl-6 pr-6 ">
+                    <div className="sm:pr-4">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div>
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+                    <div className="sm:block hidden">
+                        <EmployeeCardSmall />
+                    </div>
+
+                </div>
 
 
             </div>
@@ -35,25 +75,24 @@ function Dashboard() {
                         <a href="/departments" className="text-blue-500 text-decoration-none no-underline hover:underline text-sm">
                             Ver todos los departamentos
                         </a>
-                        <div>
-                            <EmployeeCardSmall />
+
+                    </div>
+
+                    <div className="pt-4 pb-6 pl-6">
+                        <div className=" sm:grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="w-full">
+                                <DeparmentCardSmall />
+                            </div>
+                            <div className="w-full">
+                                <DeparmentCardSmall />
+                            </div>
+                            <div className="w-full">
+                                <DeparmentCardSmall />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="space-y-4">
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Desarrollo</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Marketing</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Recursos Humanos</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                    </div>
+
                 </div>
 
 
