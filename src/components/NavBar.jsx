@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 //import './NavBar.css';  Crearemos este archivo para estilos adicionales
 
 const NavBar = () => {
@@ -18,8 +17,8 @@ const NavBar = () => {
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <a 
-            href="#" 
+          <a
+            href="#"
             className={`nav-link text-dark ${activeItem === 'home' ? 'active' : ''}`}
             onClick={() => handleItemClick('home')}
           >
@@ -28,8 +27,8 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className={`nav-link text-dark ${activeItem === 'dashboard' ? 'active' : ''}`}
             onClick={() => handleItemClick('dashboard')}
           >
@@ -38,8 +37,8 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className={`nav-link text-dark ${activeItem === 'empleados' ? 'active' : ''}`}
             onClick={() => handleItemClick('empleados')}
           >
@@ -48,8 +47,8 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className={`nav-link text-dark ${activeItem === 'departamentos' ? 'active' : ''}`}
             onClick={() => handleItemClick('departamentos')}
           >
@@ -58,8 +57,8 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className={`nav-link text-dark ${activeItem === 'antiguos-empleados' ? 'active' : ''}`}
             onClick={() => handleItemClick('antiguos-empleados')}
           >

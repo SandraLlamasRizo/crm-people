@@ -1,4 +1,5 @@
-import EmployeeCard from "../components/EmployeeCard";
+
+import EmployeeCardSmall from "../components/EmployeeCardSmall";
 
 function Dashboard() {
     return (
@@ -34,6 +35,9 @@ function Dashboard() {
                         <a href="/departments" className="text-blue-500 text-decoration-none no-underline hover:underline text-sm">
                             Ver todos los departamentos
                         </a>
+                        <div>
+                            <EmployeeCardSmall />
+                        </div>
                     </div>
 
                     <div className="space-y-4">
