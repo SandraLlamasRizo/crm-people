@@ -2,8 +2,8 @@ function NewEmployee() {
     return (
             <div className="contaier flex justify-center">
                 <div className="w-full max-w-4xl">
-                    <div className="bg-white shadow-lg rounded-lg p-6">
-                        <h2 className="text-center text-3xl font-bold text-[#47A7BD]">Registro nuevo empleado</h2>
+                    <div className="bg-white shadow-lg rounded-2xl p-6">
+                        <h2 className="text-center text-3xl font-medium text-[#47A7BD]">Registro nuevo empleado</h2>
                         <form>
                             {/* Información Personal */}
                             <div className="mb-3">

@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden lg:flex flex-col p-4 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-lg">
+      <div className="hidden lg:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
@@ -23,7 +23,7 @@ function NavBar() {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"            >
+              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-300">
               <i className="bi bi-house-door mr-2"></i>
               Dashboard
             </a>
@@ -31,7 +31,7 @@ function NavBar() {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"            >
+              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-table mr-2"></i>
               Empleados
             </a>
@@ -39,7 +39,7 @@ function NavBar() {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"            >
+              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-grid mr-2"></i>
               Departamentos
             </a>
@@ -47,7 +47,7 @@ function NavBar() {
           <li>
             <a
               href="#"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"            >
+              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-person-circle mr-2"></i>
               Antiguos Empleados
             </a>
@@ -69,11 +69,6 @@ function NavBar() {
             </li>
             <li>
               <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 dark:hover:bg-[#47A7BD]" href="#">
-                Recuperar empleador
-              </a>
-            </li>
-            <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 dark:hover:bg-[#47A7BD]" href="#">
                 Editar empleado
               </a>
             </li>
@@ -84,7 +79,7 @@ function NavBar() {
             </li>
             <li><hr className="border-gray-300 dark:border-gray-600" /></li>
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-400 hover:bg-gray-800 dark:hover:bg-gray-500" href="#">Login user</a>
+              <a className="block px-4 py-2 text-gray-800 dark:text-gray-400 hover:bg-gray-800 dark:hover:bg-gray-500" href="#">Log out</a>
             </li>
           </ul>
         </div>
