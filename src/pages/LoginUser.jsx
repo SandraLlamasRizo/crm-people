@@ -3,7 +3,7 @@ import React from 'react';
 function LoginUser() {
     return (
         <div className="flex h-screen items-center justify-center">
-            <main className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+            <main className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md">
                 <div className="flex flex-col items-center">
                     <img
                         className="mb-4 w-16 h-16"

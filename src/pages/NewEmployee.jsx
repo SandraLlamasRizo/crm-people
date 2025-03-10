@@ -1,7 +1,6 @@
 function NewEmployee() {
     return (
-        <div className="container mx-auto mt-5 px-4 md:ml-70">
-            <div className="flex justify-center">
+            <div className="contaier flex justify-center">
                 <div className="w-full max-w-4xl">
                     <div className="bg-white shadow-lg rounded-lg p-6">
                         <h2 className="text-center text-3xl font-bold text-[#47A7BD]">Registro nuevo empleado</h2>
@@ -50,7 +49,6 @@ function NewEmployee() {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 

@@ -8,14 +8,15 @@ import NavBar from './components/NavBar.jsx'
 
 function AppLayout() {
   const location = useLocation(); // Obtiene la URL actual
-  const isLandingPage = location.pathname === "/"; // Verifica si es la landing
+  const noLayoutPages = ['/', '/login', '/register'];
+  const isNoLayoutPage = noLayoutPages.includes(location.pathname);
 
   return (
     <>
-      {!isLandingPage && <NavBar />}
-      {!isLandingPage && <Header />}
+      {!isNoLayoutPage && <NavBar />}
+      {!isNoLayoutPage && <Header />}
       <MainRoutes />
-      {!isLandingPage && <Footer />}
+      {!isNoLayoutPage && <Footer />}
     </>
   );
 }

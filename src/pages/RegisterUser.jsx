@@ -3,7 +3,7 @@ import React from "react";
 function RegisterUser() {
     return (
         <div className="flex justify-center items-center min-h-screen">
-            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-lg">
+            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
                 <h2 className="text-center text-3xl font-bold text-[#47A7BD]">Regístrate</h2>
                 <p className="text-center text-gray-600 mt-2">
                     ¡Encantados de conocerte! Ingresa tus datos para registrarte.
