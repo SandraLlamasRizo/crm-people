@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Header/>
     <NavBar />
-    <MainRoutes />
     <Footer/>
+    <MainRoutes />
   </BrowserRouter>
 )

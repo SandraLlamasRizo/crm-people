@@ -1,70 +1,112 @@
+import React from 'react';
 
-import EmployeeCardSmall from "../components/EmployeeCardSmall";
-
-function Dashboard() {
+function NavBar() {
     return (
-        <div className="container mx-auto p-6">
-
-            {/* Sección de Bienvenida */}
-            <div className="mb-6">
-                <h6 className="welcomeBackH6">Bienvenido de nuevo, usuario</h6>
-                <h3 className="homeH3">Inicio</h3>
+        <div className="fixed top-0 left-0 h-screen w-64 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 p-4 shadow-lg">
+            {/* Logo */}
+            <div className="flex flex-col items-center">
+                <img
+                    src="./public/Logo_CRM.svg"
+                    alt="User"
+                    className="rounded-full w-24 h-24 mb-4"
+                />
+                <hr className="border-gray-400 mb-4" />
             </div>
 
-            {/* Sección de Empleados (Ocupará todo el ancho en pantallas grandes), en mobile se mostrara en una sola columna */}
-            <div className="bg-white p-6 border rounded-lg shadow-md mb-6">
-                <div className="flex justify-between items-center mb-4">
-                    <h4 className="text-2xl font-bold text-gray-800">Empleados</h4>
-                    <a href="/employees" className="text-decoration-none text-blue-500 no-underline hover:underline text-sm">
-                        Ver todos los empleados
+            {/* Navigation items */}
+            <ul className="space-y-2">
+                <li>
+                    <a
+                        href="#"
+                        className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <i className="bi bi-house-door mr-2"></i>
+                        Home
                     </a>
-                </div>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <i className="bi bi-speedometer2 mr-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <i className="bi bi-table mr-2"></i>
+                        Empleados
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <i className="bi bi-grid mr-2"></i>
+                        Departamentos
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    >
+                        <i className="bi bi-person-circle mr-2"></i>
+                        Antiguos Empleados
+                    </a>
+                </li>
+            </ul>
 
+            <hr className="border-gray-400 my-4" />
 
-            </div>
+            {/* Dropdown */}
+            <div className="relative">
+                <button className="flex items-center space-x-2 text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md p-2 w-full">
+                    <img
+                        src="https://github.com/mdo.png"
+                        alt="User"
+                        className="rounded-full w-8 h-8"
+                    />
+                    <span className="font-medium dark:text-gray-800">usuario</span>
+                </button>
 
-            {/* Sección de Departamentos y Rendimiento en dos columnas en pantallas grandes, en mobile se mostrara en una sola columna */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-
-
-                {/* Departamentos */}
-                <div className="bg-white p-6 border rounded-lg shadow-md relative">
-                    <div className="flex justify-between items-center mb-4 gap-4">
-                        <h4 className="text-2xl font-bold text-gray-800">Departamentos</h4>
-                        <a href="/departments" className="text-blue-500 text-decoration-none no-underline hover:underline text-sm">
-                            Ver todos los departamentos
+                {/* Dropdown Menu */}
+                <ul className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-400 rounded-md shadow-lg overflow-hidden text-sm">
+                    <li>
+                        <a className="block px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-800 dark:hover:bg-gray-600" href="#">
+                            Crear nuevo empleado
                         </a>
-                        <div>
-                            <EmployeeCardSmall />
-                        </div>
-                    </div>
-
-                    <div className="space-y-4">
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Desarrollo</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Marketing</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                        <section className="p-4 border rounded-lg shadow-sm">
-                            <h5 className="text-lg font-semibold text-gray-700">Recursos Humanos</h5>
-                            <p className="text-gray-500">Nº Empleados: {/* Aquí puedes mostrar el contador */}</p>
-                        </section>
-                    </div>
-                </div>
-
-
-                {/* Rendimiento */}
-                <div className="bg-white p-6 border rounded-lg shadow-md">
-                    <h4 className="text-2xl font-bold mb-4 text-gray-800">Rendimiento</h4>
-                    <p className="text-gray-600">Aquí va la gráfica</p>
-                </div>
+                    </li>
+                    <li>
+                        <a className="block px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-800 dark:hover:bg-gray-600" href="#">
+                            Recuperar empleador
+                        </a>
+                    </li>
+                    <li>
+                        <a className="block px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-800 dark:hover:bg-gray-600" href="#">
+                            Editar empleado
+                        </a>
+                    </li>
+                    <li>
+                        <a className="block px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-800 dark:hover:bg-gray-600" href="#">
+                            Eliminar empleado
+                        </a>
+                    </li>
+                    <li><hr className="border-gray-300 dark:border-gray-600" /></li>
+                    <li>
+                        <a className="block px-4 py-2 text-gray-800 dark:text-gray-100 hover:bg-gray-800 dark:hover:bg-gray-600" href="#">
+                            Login user
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     );
 }
 
-export default Dashboard;
+export default NavBar;
