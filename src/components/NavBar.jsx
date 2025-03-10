@@ -7,11 +7,11 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden lg:flex flex-col p-4 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-lg">
+      <div className="hidden md:flex flex-col p-4 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-lg">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
-            src="./public/Logo_CRM.svg"
+            src="./Logo_CRM.svg"
             alt="User"
             className="rounded-full w-24 h-24 mb-4"
           />
