@@ -35,8 +35,15 @@ html {
 
 }
 
-
-
+.container {
+    width: auto;
+    background: white;
+    padding: 16px;
+    margin: 1rem;
+    min-height: auto;
+    box-shadow: rgba(125, 133, 146, 0.5);
+    border-radius: 0.5rem;
+}
 
 .container-footer{
     width: auto;

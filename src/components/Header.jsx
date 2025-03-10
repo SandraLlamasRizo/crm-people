@@ -9,7 +9,7 @@ function Header() {
                 <span className="text-gray-500"><i className="bi bi-search"></i></span>
             <input 
                 type="search" 
-                className="form-input w-full p-2 rounded-full outline-none text-lg md:text-base"
+                className="form-input w-full p-2 rounded-full outline-none text-sm md:text-lg"
                 placeholder="Buscar empleado..." 
                 aria-label="Search"
             />

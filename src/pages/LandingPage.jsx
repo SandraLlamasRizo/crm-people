@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 function LandingPage() {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-[#F4F9FD] text-gray-700">
+        <div className="h-full flex flex-col items-center justify-center bg-[#F4F9FD] text-gray-700">
             <header className="text-center px-6 flex-grow mt-20">
                 <img src="./Logo_CRM.svg" alt="" className="w-32 md:w-40 mb-20 mx-auto" />
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -20,7 +20,7 @@ function LandingPage() {
                     </NavLink>
                 </div>
             </header>
-            <div className="relative bottom-0 w-full max-w-l md:max-w-2xl lg:max-w-4xl flex justify-center pb-10 md:pb-0">
+            <div className="relative mt-4 bottom-0 w-full max-w-l md:max-w-2xl lg:max-w-4xl flex justify-center pb-10 md:pb-0">
                 <img src="./LandingHero.svg" alt="CRM-HERO" className="w-full max-w-lg md:max-w-2xl lg:max-w-4xl object-cover" />
             </div>
         </div>
