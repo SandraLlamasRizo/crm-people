@@ -10,6 +10,7 @@ import NewEmployee from "./pages/NewEmployee";
 import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/LandingPage";
 import Dasboard from "./pages/Dashboard";
+import DetailDepartments from "./pages/DetailDepartments";
 
 function MainRoutes() {
 
@@ -26,6 +27,7 @@ function MainRoutes() {
             <Route path="newEmployee" element={<NewEmployee />} />
             <Route path="*" element={<NotFound />} />
             <Route path="dashboard" element={<Dasboard />} />
+            <Route path="departments/:departmentId" element={<DetailDepartments />} />
         </Routes>
     )
 }
