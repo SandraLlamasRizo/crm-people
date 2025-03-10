@@ -1,15 +1,15 @@
 function PasswordReset() {
     return (
-        <div className="container mx-auto py-5 px-4">
+        <div className="h-full m-auto">
             <div className="flex justify-center">
                 <div className="w-full max-w-lg">
 
-                        {/* Step Indicator */}
+                    {/* Step Indicator */}
                     <div className="bg-white shadow-lg rounded-lg p-6">
-                    <div className="text-center mb-4">
+                        <div className="text-center mb-4">
                             <h2 className="text-center text-3xl font-bold text-[#47A7BD]">Recupera tu contraseña</h2>
-                        <p className="text-gray-500">Sigue los pasos para restablecer tu contraseña de forma segura</p>
-                    </div>
+                            <p className="text-gray-500">Sigue los pasos para restablecer tu contraseña de forma segura</p>
+                        </div>
                         <div className="flex justify-center items-center mb-4">
                             <div className="w-8 h-8 flex items-center justify-center bg-[#47A7BD] text-white rounded-full">1</div>
                             <div className="w-10 h-1 bg-gray-300 mx-2"></div>
