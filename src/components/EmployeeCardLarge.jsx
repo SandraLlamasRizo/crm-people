@@ -2,7 +2,7 @@ function EmployeeCardLarge() {
 
     return <>
         <div className="h-[180px] m-8 mr-8">
-  <div className="w-full grid grid-cols-3 md:grid-cols-6 bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center">
+  <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center">
     
     <figure className="w-[50px] h-[50px] mx-auto">
       <img className="rounded-full w-full h-full object-cover" 
@@ -21,7 +21,7 @@ function EmployeeCardLarge() {
 
     <h5 className="hidden md:block secundarionCard">Salario</h5>
                 
-    <div><i class="hidden md:block bi bi-three-dots-vertical"></i></div>
+    <div><i class="bi bi-three-dots-vertical"></i></div>
 
   </div>
 </div>
