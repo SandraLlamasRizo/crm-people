@@ -22,7 +22,7 @@ function LoginUser() {
                             type="email"
                             id="email"
                             placeholder="name@example.com"
-                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>
 
@@ -34,7 +34,7 @@ function LoginUser() {
                             type="password"
                             id="password"
                             placeholder="Password"
-                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>
 
@@ -45,7 +45,7 @@ function LoginUser() {
 
                     <button
                         type="submit"
-                        className="w-full bg-[#47A7BD] text-white py-2 rounded-md hover:bg-blue-600 transition"
+                        className="w-full bg-[#47A7BD] text-white rounded-full px-6 py-3 hover:bg-gray-400 transition"
                     >
                         Iniciar sesión
                     </button>

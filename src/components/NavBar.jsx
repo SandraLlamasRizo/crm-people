@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden md:flex flex-col p-4 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-lg">
+      <div className="hidden lg:flex flex-col p-4 bg-white dark:bg-gray-200 text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-lg">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
@@ -25,15 +25,6 @@ function NavBar() {
               href="#"
               className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"            >
               <i className="bi bi-house-door mr-2"></i>
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300"
-            >
-              <i className="bi bi-speedometer2 mr-2"></i>
               Dashboard
             </a>
           </li>
@@ -67,7 +58,7 @@ function NavBar() {
 
         {/* Dropdown */}
         <div className="relative">
-        
+
 
           {/* Dropdown Menu */}
           <ul className="absolute mt-2 w-48 bg-white dark:bg-gray-300 rounded-md shadow-lg overflow-hidden text-sm">

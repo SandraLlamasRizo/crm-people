@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/LandingPage";
 import Dasboard from "./pages/Dashboard";
 import DetailDepartments from "./pages/DetailDepartments";
+import PasswordReset from "./pages/PasswordReset";
 
 function MainRoutes() {
 
@@ -28,6 +29,7 @@ function MainRoutes() {
             <Route path="*" element={<NotFound />} />
             <Route path="dashboard" element={<Dasboard />} />
             <Route path="departments/:departmentId" element={<DetailDepartments />} />
+            <Route path="resetpassword" element={<PasswordReset />} />
         </Routes>
     )
 }

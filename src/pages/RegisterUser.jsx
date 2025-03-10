@@ -59,7 +59,7 @@ function RegisterUser() {
 
                     <button
                         type="submit"
-                        className="w-full bg-[#47A7BD] text-white py-2 rounded-md hover:bg-blue-600 transition"
+                        className="w-full bg-[#47A7BD] text-white rounded-full px-6 py-3 hover:bg-gray-400 transition"
                     >
                         Registrarme
                     </button>
