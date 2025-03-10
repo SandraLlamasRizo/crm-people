@@ -2,19 +2,21 @@ import React from 'react';
 
 function Footer() {
     return (
-        <footer className="fixed bottom-0 w-full bg-gray-100 text-gray-500 py-4">
-            <div className="container mx-auto flex flex-wrap items-center justify-center md:justify-between gap-4 px-4">
-                <p className="text-sm text-center md:text-left">
-                    <span className="font-light">  Copyright © 2025 · CRM People®</span>
-                </p>
-                <nav className="font-light text-sm text-center md:text-left space-x-4">
-                    <a href="#" className="hover:underline">| AVISO LEGAL</a>
-                    <a href="#" className="hover:underline">| POLÍTICA DE PRIVACIDAD</a>
-                    <a href="#" className="hover:underline">| COOKIES</a>
-                    <a href="#" className="hover:underline">| FAQs</a>
-                </nav>
-            </div>
-        </footer>
+        <div className='container-footer '>
+            <footer className="bottom-0 w-full text-gray-500 bg-[#F4F9FD]">
+                <div className="mx-auto flex flex-wrap items-center justify-center md:justify-between gap-4">
+                    <p className="text-sm text-center md:text-left">
+                        <span className="font-light">  Copyright © 2025 · CRM People®</span>
+                    </p>
+                    <nav className="font-light text-sm text-center md:text-left space-x-4">
+                        <a href="#" className="hover:underline">| AVISO LEGAL</a>
+                        <a href="#" className="hover:underline">| POLÍTICA DE PRIVACIDAD</a>
+                        <a href="#" className="hover:underline">| COOKIES</a>
+                        <a href="#" className="hover:underline">| FAQs</a>
+                    </nav>
+                </div>
+            </footer>
+        </div>
     );
 }
 
