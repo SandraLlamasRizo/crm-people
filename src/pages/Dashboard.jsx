@@ -99,4 +99,4 @@ function Dashboard() {
     );
 }
 
-export default NavBar;
+export default Dashboard;
