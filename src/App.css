@@ -1,3 +1,11 @@
+/* COLORES:
+ azul principal: #457FBF
+ azul principal hover: #2664A9
+ azul secundario: #47A7BD
+ acento amarillo: #FDC748
+ azulito background: #F4F9FD
+*/
+
 html {
     background-color: #F4F9FD;
 }
@@ -50,6 +58,47 @@ html {
     padding: 16px;
     margin: 1rem;
     min-height: auto;
+}
+
+.buttonPrincipal {
+    padding: 12px 24px;
+    background-color: #457FBF;
+    color: white;
+    font-weight: 600;
+    border-radius: calc(infinity * 1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buttonPrincipal:hover {
+    background-color: #2664A9;
+}
+
+.buttonSecundario {
+    padding: 12px 24px;
+    background-color: white;
+    color: #457FBF;
+    font-weight: 600;
+    border-radius: calc(infinity * 1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buttonSecundario:hover {
+    background-color: #e5e7eb;
+}
+
+.buttonInactive {
+    padding: 12px 24px;
+    background-color: #457FBF;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 

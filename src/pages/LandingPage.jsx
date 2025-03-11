@@ -13,10 +13,10 @@ function LandingPage() {
                 </p>
                 <div className="flex gap-4 w-full justify-center">
                     <NavLink to={'/login'}>
-                        <button className="px-6 py-3 bg-white text-[#457FBF] font-semibold rounded-lg shadow-md hover:bg-gray-200 cursor-pointer transition">Iniciar Sesión</button>
+                        <button className="buttonSecundario">Iniciar Sesión</button>
                     </NavLink>
                     <NavLink to={'/register'}>
-                        <button className="px-6 py-3 bg-[#457FBF] text-white font-semibold rounded-lg shadow-md hover:bg-[#2664A9] cursor-pointer transition">Registrarse</button>
+                        <button className="buttonPrincipal">Registrarse</button>
                     </NavLink>
                 </div>
             </header>
