@@ -6,13 +6,7 @@
  azulito background: #F4F9FD
 */
 
-/* COLORES:
- azul principal: #457FBF
- azul principal hover: #2664A9
- azul secundario: #47A7BD
- acento amarillo: #FDC748
- azulito background: #F4F9FD
-*/
+
 
 html {
     background-color: #F4F9FD;
@@ -53,7 +47,7 @@ html {
 }
 
 .container {
-    width: auto;
+    width: 100%;
     background: white;
     padding: 16px;
     margin: 1rem;
@@ -102,12 +96,17 @@ html {
 .buttonInactive {
     padding: 12px 24px;
     background-color: #457FBF;
+    opacity: 0.5;
     color: white;
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: calc(infinity * 1px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    cursor: not-allowed;
+}
+
+.icon-large {
+    font-size: 40px;
+    color: #457FBF;
 }
 
 
@@ -126,4 +125,8 @@ html {
     .container-footer {
         margin-left: 18rem;
     }
+
+        .icon-large {
+            font-size: 50px;
+        }
 }
