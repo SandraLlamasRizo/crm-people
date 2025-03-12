@@ -12,6 +12,8 @@ import LandingPage from "./pages/LandingPage";
 import Dasboard from "./pages/Dashboard";
 import DetailDepartments from "./pages/DetailDepartments";
 import PasswordReset from "./pages/PasswordReset";
+import EditEmployee from "./pages/EmployeeEdit";
+import Contacto from "./pages/Contacto";
 
 function MainRoutes() {
 
@@ -30,6 +32,8 @@ function MainRoutes() {
             <Route path="dashboard" element={<Dasboard />} />
             <Route path="departments/:departmentId" element={<DetailDepartments />} />
             <Route path="resetpassword" element={<PasswordReset />} />
+            <Route path="edit" element={<EditEmployee />} />
+            <Route path="contacto" element={<Contacto />} />
         </Routes>
     )
 }

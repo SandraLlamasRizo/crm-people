@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 function RegisterUser() {
     return (
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex h-screen items-center justify-center">
             <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
-                <h2 className="text-center text-3xl font-bold text-[#47A7BD]">Regístrate</h2>
+                <h2 className="text-center text-3xl font-bold text-[#457FBF]">Regístrate</h2>
                 <p className="text-center text-gray-600 mt-2">
                     ¡Encantados de conocerte! Ingresa tus datos para registrarte.
                 </p>
@@ -48,28 +49,28 @@ function RegisterUser() {
 
                     <div className="mb-6">
                         <label className="inline-flex items-center">
-                            <input type="checkbox" className="form-checkbox text-blue-500" />
-                            <span className="ml-2 text-gray-700">Acepto los 
-                                <a href="#" className="font-medium text-blue-500 hover:underline">
-                                     Términos y Condiciones
+                            <input type="checkbox" className="form-checkbox text-[#47A7BD]" />
+                            <span className="ml-2 text-gray-700">Acepto los {" "}
+                                <a href="#" className="font-extralight text-[#47A7BD] hover:underline">
+                                    Términos y Condiciones
                                 </a>
                             </span>
                         </label>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full bg-[#47A7BD] text-white rounded-full px-6 py-3 hover:bg-gray-400 transition"
-                    >
-                        Registrarme
-                    </button>
+                    <div className="flex gap-4 w-full justify-center">
+                        <NavLink to={'/register'}>
+                            <button className="buttonPrincipal buttonPrincipal:hover">Registrarse</button>
+                        </NavLink>
+                    </div>
 
-                    <p className="text-center text-gray-600 mt-4">
-                        ¿Ya tienes una cuenta?{" "}
-                        <a href="#" className="font-medium text-blue-500 hover:underline">
-                            Inicia sesión aquí
-                        </a>
-                    </p>
+                    <div className="flex gap-4 w-full justify-center">
+                        <p className="text-center text-gray-600 mt-4">
+                            ¿Ya tienes una cuenta?{" "}
+                            <a href="/login" className="font-extralight text-[#47A7BD] hover:underline">
+                                Inicia sesión aquí</a>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
