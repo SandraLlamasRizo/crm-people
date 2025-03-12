@@ -2,25 +2,25 @@ import { createContext, useContext, useState } from "react";
 
 //CUSTOM CONTEXTS
 const employeesContext = createContext();
-const sectionsContext = createContext();
+const departmentsContext = createContext();
 
 //CUSTOM HOOKS
 export function useEmployeesContext() {
     return useContext(employeesContext);
 }
-export function useSectionsContext() {
-    return useContext(sectionsContext);
+export function useDepartmentsContext() {
+    return useContext(departmentsContext);
 }
 
 
 function EmployerProvider({ children }) {
     const [employees, setEmployees] = useState([]);
-    const [sections, setSections] = useState([]);
+    const [departments, setDepartments] = useState([]);
     
     return <employeesContext.Provider value={[employees, setEmployees ]}>
-        <sectionsContext.Provider value={[sections, setSections]}>
+        <departmentsContext.Provider value={[departments, setDepartments]}>
             {children}
-        </sectionsContext.Provider>
+        </departmentsContext.Provider>
     </employeesContext.Provider>
 
 }
