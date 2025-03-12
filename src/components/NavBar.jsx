@@ -91,7 +91,7 @@ function NavBar() {
       </div>
 
       {/* Navbar hamburguesa para pantallas pequeñas */}
-      <div className="lg:hidden w-full bg-white shadow-md p-4 flex justify-between items-center z-40">
+      <div className="md:hidden w-full bg-white shadow-md p-4 flex justify-between items-center z-40">
         {/* Botón de menú hamburguesa */}
         <button onClick={toggleMenu} className="text-gray-800 dark:text-gray-800">
           <i className={`bi ${isMenuOpen ? 'bi-x' : 'bi-list'} text-xl`}></i>
