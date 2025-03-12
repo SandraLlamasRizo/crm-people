@@ -4,7 +4,7 @@ function LandingPage() {
     return (
         <div className="h-screen flex flex-col items-center align-middle justify-end bg-[#F4F9FD] text-gray-700">
             <header className="text-center px-5 md:px-10 my-auto">
-                <img src="./Logo_CRM.svg" alt="" className="w-40 md:w-50 my-auto mx-auto" />
+                <img src="./Logo_CRM.svg" alt="" className="w-40 md:w-50 my-auto mx-auto mb-8" />
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Gestiona tu negocio con facilidad
                 </h1>
