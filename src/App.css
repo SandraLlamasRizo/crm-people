@@ -47,7 +47,7 @@ html {
 }
 
 .container {
-    width: 100%;
+    width: auto;
     background: white;
     padding: 16px;
     margin: 1rem;

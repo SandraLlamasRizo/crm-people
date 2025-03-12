@@ -2,14 +2,14 @@ function Header() {
     
     return (<>
     
-    <div className="my-2 mr-2 grid grid-cols-3 md:ml-70">
+    <div className="my-2 mr-2 grid grid-cols-3 md:grid-cols-2 md:ml-70">
   
-        <form className="w-full md:w-auto p-4 col-span-2" role="search">
+        <form className="w-full md:w-auto p-4 col-span-2 md:col-span-1" role="search">
             <div className="flex items-center md:max-w-[412px] rounded-2xl px-3 border border-gray-300 hover:border-gray-500 bg-white">
                 <span className="text-gray-500"><i className="bi bi-search"></i></span>
             <input 
                 type="search" 
-                className="form-input w-full p-2 rounded-full outline-none text-xs md:text-lg"
+                className="form-input w-full p-2 rounded-full outline-none text-lg md:text-lg"
                 placeholder="Buscar empleado..." 
                 aria-label="Search"
             />
