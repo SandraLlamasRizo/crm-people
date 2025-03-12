@@ -2,7 +2,7 @@ function EmployeeCardLarge() {
 
     return <>
         <div className="my-2 mx-2">
-  <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center">
+  <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] gap-2 md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center">
     
     <figure className="flex justify-center items-center">
       <i className="bi bi-person-circle icon-large "></i>

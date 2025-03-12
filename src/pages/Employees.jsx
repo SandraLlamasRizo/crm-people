@@ -10,7 +10,7 @@ function Employees() {
                    <h6 className="text-md md:text-md">Empleados(0)</h6>
                 </div>
             
-                <div className="flex-2 flex flex-col-reverse lg:flex-row gap-2 items-end lg:items-center mr-4">
+                <div className="flex-2 flex flex-col-reverse lg:flex-row gap-2 items-end lg:items-center justify-end mr-4">
                     <label htmlFor="numItems" className="hidden md:inline min-w-[152px] text-sm md:text-md text-gray-800 font-medium">Empleados por pagina: </label>
                     <select name="numItems" id="" className="px-3 py-1 ml-auto md:ml-0 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
                         <option value="5">5</option>
