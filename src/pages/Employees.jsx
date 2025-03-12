@@ -12,13 +12,13 @@ function Employees() {
             
                 <div className="flex-2 flex flex-col-reverse lg:flex-row gap-2 items-end lg:items-center justify-end mr-4">
                     <label htmlFor="numItems" className="hidden md:inline min-w-[152px] text-sm md:text-md text-gray-800 font-medium">Empleados por pagina: </label>
-                    <select name="numItems" id="" className="px-3 py-1 ml-auto md:ml-0 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                    <select name="numItems" id="" className="px-3 py-1 ml-auto md:ml-0 bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-full transition">
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
                         <option value="20">20</option>
                     </select>
-                    <button className="flex-1 btn btn-light md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg  bg-[#457FBF]"><i class="bi bi-plus"></i> Añadir empleado</button>
+                    <button className="flex-1 btn btn-light min-w-[70px] md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg  bg-[#457FBF]"><i class="bi bi-plus "></i> <span className="hidden md:inline">Añadir empleado</span></button>
                 </div>
                     
             </div>

@@ -7,7 +7,7 @@ function DetailEmployee() {
     return (
         <>
 
-            <div className="container mx-auto">
+            <div className=" md:ml-70 mx-auto ">
                 <EmployeeDetailEach />
 
             </div>
