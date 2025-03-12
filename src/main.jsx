@@ -8,7 +8,7 @@ import NavBar from './components/NavBar.jsx'
 
 function AppLayout() {
   const location = useLocation(); // Obtiene la URL actual
-  const noLayoutPages = ['/', '/login', '/register'];
+  const noLayoutPages = ['/', '/login', '/register', '/resetpassword', '/contacto' ];
   const isNoLayoutPage = noLayoutPages.includes(location.pathname);
 
   return (

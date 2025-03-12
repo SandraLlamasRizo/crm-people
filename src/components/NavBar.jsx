@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden lg:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
+      <div className="hidden md:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
@@ -22,7 +22,7 @@ function NavBar() {
         <ul className="space-y-2">
           <li>
             <a
-              href="#"
+              href="/dashboard"
               className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-300">
               <i className="bi bi-house-door mr-2"></i>
               Dashboard
@@ -30,7 +30,7 @@ function NavBar() {
           </li>
           <li>
             <a
-              href="#"
+              href="/employees"
               className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-table mr-2"></i>
               Empleados
@@ -38,7 +38,7 @@ function NavBar() {
           </li>
           <li>
             <a
-              href="#"
+              href="/departments"
               className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-grid mr-2"></i>
               Departamentos
@@ -46,7 +46,7 @@ function NavBar() {
           </li>
           <li>
             <a
-              href="#"
+              href="/oldEmployees"
               className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
               <i className="bi bi-person-circle mr-2"></i>
               Antiguos Empleados
@@ -61,26 +61,31 @@ function NavBar() {
 
 
           {/* Dropdown Menu */}
-          <ul className="absolute mt-2 w-48 bg-white dark:bg-gray-300 rounded-md shadow-lg overflow-hidden text-sm">
+          <ul className="absolute my-4 w-48 bg-[rgba(71,167,189,0.5)] p-4 rounded-2xl shadow-lg overflow-hidden text-sm">
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 dark:hover:bg-[#47A7BD]" href="#">
-                Crear nuevo empleado
+              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="/newEmployee">
+                Añadir empleado
               </a>
             </li>
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 dark:hover:bg-[#47A7BD]" href="#">
+              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="/edit">
                 Editar empleado
               </a>
             </li>
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 dark:hover:bg-[#47A7BD]" href="#">
+              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="#">
                 Eliminar empleado
               </a>
             </li>
-            <li><hr className="border-gray-300 dark:border-gray-600" /></li>
-            <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-400 hover:bg-gray-800 dark:hover:bg-gray-500" href="#">Log out</a>
+            <li><hr className="border-gray-400 my-4" />
             </li>
+            <li>
+              <a className="flex items-center p-2 rounded-2xl text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300" href="/ ">
+                <i className="bi bi-box-arrow-right mr-2 ml-2"></i>
+                Log out
+              </a>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -95,7 +100,7 @@ function NavBar() {
         {/* Logo */}
         <div className="flex items-center">
           <img
-            src="./public/Logo_CRM.svg"
+            src="./Logo_CRM.svg"
             alt="User"
             className="rounded-full w-12 h-12"
           />
@@ -107,15 +112,6 @@ function NavBar() {
         <div className="lg:hidden fixed inset-0 z-50">
           <div className="w-64 bg-white p-4 shadow-md">
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  <i className="bi bi-house-door mr-2"></i>
-                  Home
-                </a>
-              </li>
               <li>
                 <a
                   href="#"

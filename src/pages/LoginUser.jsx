@@ -1,58 +1,58 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router";
 
 function LoginUser() {
     return (
         <div className="flex h-screen items-center justify-center">
-            <main className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md">
-                <div className="flex flex-col items-center">
-                    <img
-                        className="mb-4 w-16 h-16"
-                        src="./public/Logo_CRM.svg"
-                        alt="Logo"
-                    />
-                    <h1 className="text-2xl font-light mb-3">Por favor, inicia sesión</h1>
-                </div>
+            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
+                <h2 className="text-center text-3xl font-bold text-[#457FBF]">Inicia sesión</h2>
+                <p className="text-center text-gray-600 mt-2">
+                    ¡Encantados de volver a verte! Ingresa tus datos para iniciar sesión.
+                </p>
 
-                <form>
+                <form className="mt-8 mb-2">
                     <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-700 font-medium">
-                            Correo electrónico
+                        <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                            Tu correo electrónico
                         </label>
                         <input
-                            type="email"
                             id="email"
-                            placeholder="name@example.com"
-                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+                            type="email"
+                            placeholder="name@mail.com"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="password" className="block text-gray-700 font-medium">
+                        <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
                             Contraseña
                         </label>
                         <input
-                            type="password"
                             id="password"
-                            placeholder="Password"
-                            className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+                            type="password"
+                            placeholder="********"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>
 
                     <div className="flex items-center mb-4">
                         <input type="checkbox" id="remember-me" className="mr-2" />
-                        <label htmlFor="remember-me" className="text-gray-700 text-sm">Remember me</label>
+                        <label htmlFor="remember-me" className="text-gray-700 text-sm">Recuérdame</label>
                     </div>
+                    <div className="flex gap-4 w-full justify-center">
+                        <NavLink to={'/dashboard'}>
+                            <button className="buttonPrincipal buttonPrincipal:hover">Iniciar sesión</button>
+                        </NavLink>
+                    </div>
+                    <p className="text-center text-gray-600 mt-4">
+                        ¿Has olvidado tu contraseña?{" "}
+                        <a href="/resetpassword" className="font-extralight text-[#47A7BD] hover:underline">
+                            Recúperala aquí
+                        </a>
+                    </p>
 
-                    <button
-                        type="submit"
-                        className="w-full bg-[#47A7BD] text-white rounded-full px-6 py-3 hover:bg-gray-400 transition"
-                    >
-                        Iniciar sesión
-                    </button>
-
-                    <p className="mt-5 text-center text-gray-500 text-sm">© 2024–2025</p>
                 </form>
-            </main>
+            </div>
         </div>
     );
 }
