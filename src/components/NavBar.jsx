@@ -19,7 +19,7 @@ function NavBar() {
         </div>
 
         {/* Navigation items */}
-        <ul className="space-y-2">
+        <ul className="space-y-5">
           <li>
             <a
               href="/dashboard"
@@ -82,7 +82,7 @@ function NavBar() {
             <li>
               <a className="flex items-center p-2 rounded-2xl text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300" href="/ ">
                 <i className="bi bi-box-arrow-right mr-2 ml-2"></i>
-                Log out
+                Logout
               </a>
             </li>
 
@@ -109,7 +109,7 @@ function NavBar() {
 
       {/* Menu desplegable en pantallas pequeñas */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
+        <div className="lg:hidden absolute top-19 left-4 mt-2 z-50">
           <div className="w-64 bg-white p-4 shadow-md">
             <ul className="space-y-2">
               <li>
@@ -149,8 +149,24 @@ function NavBar() {
                 </a>
               </li>
             </ul>
+
+            <hr className="border-gray-400 my-4" />
+
+            <div className="mb-3">
+              {/* <label className="block text-gray-700">Gestión</label> */}
+              <select className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required>
+                <option value="">Gestión</option>
+                <option value="Uno">Uno</option>
+                <option value="Dos">Dos</option>
+                <option value="Tres">Tres</option>
+                <option value="Cuatro">Cuatro</option>
+                <option value="Cinco">Cinco</option>
+              </select>
+            </div>
           </div>
+          
         </div>
+        
       )}
     </div>
   );
