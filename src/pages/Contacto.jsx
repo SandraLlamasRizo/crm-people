@@ -12,22 +12,26 @@ function Contacto() {
                 <form className="mt-8 mb-2">
                     <div className="mb-4">
                         <label htmlFor="name" className="block font-medium text-gray-700">Nombre*</label>
-                        <input type="text" id="name" required className="w-full p-2 border border-gray-300 rounded-lg" />
+                        <input type="text" id="name" placeholder="Introduce tu nombre" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+ />
                     </div>
 
                     <div className="mb-4">
                         <label htmlFor="email" className="block font-medium text-gray-700">Correo electrónico*</label>
-                        <input type="email" id="email" required className="w-full p-2 border border-gray-300 rounded-lg" />
+                        <input type="email" id="email" placeholder="nombre@mail.com" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+ />
                     </div>
 
                     <div className="mb-4">
                         <label htmlFor="subject" className="block font-medium text-gray-700">Asunto*</label>
-                        <input type="text" id="subject" required className="w-full p-2 border border-gray-300 rounded-lg" />
+                        <input type="text" id="subject" placeholder="Introduce asunto" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+ />
                     </div>
 
                     <div className="mb-4">
                         <label htmlFor="message" className="block font-medium text-gray-700">Mensaje*</label>
-                        <textarea id="message" rows="5" required className="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+                        <textarea id="message" rows="5" placeholder="Introduce tu mensaje" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+></textarea>
                     </div>
 
                     <div className="flex items-center space-x-4 justify-center">

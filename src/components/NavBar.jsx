@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden md:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
+      <div className="hidden lg:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
@@ -19,11 +19,11 @@ function NavBar() {
         </div>
 
         {/* Navigation items */}
-        <ul className="space-y-5">
+        <ul>
           <li>
             <a
               href="/dashboard"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-300">
+              className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-house-door mr-2"></i>
               Dashboard
             </a>
@@ -31,7 +31,7 @@ function NavBar() {
           <li>
             <a
               href="/employees"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
+              className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-table mr-2"></i>
               Empleados
             </a>
@@ -39,7 +39,7 @@ function NavBar() {
           <li>
             <a
               href="/departments"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
+              className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-grid mr-2"></i>
               Departamentos
             </a>
@@ -47,41 +47,62 @@ function NavBar() {
           <li>
             <a
               href="/oldEmployees"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300">
+              className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-person-circle mr-2"></i>
               Antiguos Empleados
             </a>
           </li>
         </ul>
 
-        <hr className="border-gray-400 my-4" />
+        <hr className="border-gray-300 my-4" />
 
         {/* Dropdown */}
         <div className="relative">
 
-
           {/* Dropdown Menu */}
-          <ul className="absolute my-4 w-48 bg-[rgba(71,167,189,0.5)] p-4 rounded-2xl shadow-lg overflow-hidden text-sm">
+          <ul>
+
+
+            <p className="block px-5 py-2 text-xs text-gray-400" > Gestión de empleados</p>
+
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="/newEmployee">
+              <a
+                href="/newEmployee"
+                className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                <i className="bi bi-plus-circle mr-2"></i>
                 Añadir empleado
               </a>
             </li>
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="/edit">
+              <a
+                href="/newEmployee"
+                className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                <i className="bi bi-pencil mr-2"></i>
                 Editar empleado
               </a>
             </li>
             <li>
-              <a className="block px-4 py-2 text-gray-800 dark:text-gray-700 hover:bg-gray-800 rounded-2xl  dark:hover:bg-[#47A7BD]" href="#">
+              <a
+                href="/newEmployee"
+                className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                <i className="bi bi-trash mr-2"></i>
+                Añadir empleado
+              </a>
+            </li>
+            <li>
+              <a
+                href="/newEmployee"
+                className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                <i className="bi bi-person-circle mr-2"></i>
                 Eliminar empleado
               </a>
             </li>
-            <li><hr className="border-gray-400 my-4" />
-            </li>
+
+            <hr className="border-gray-300 my-4" />
+
             <li>
-              <a className="flex items-center p-2 rounded-2xl text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-300" href="/ ">
-                <i className="bi bi-box-arrow-right mr-2 ml-2"></i>
+              <a className="flex items-center p-2 rounded-md text-gray-600 dark:hover:bg-gray-300" href="/ ">
+                <i className="bi bi-box-arrow-left mr-2 ml-2"></i>
                 Logout
               </a>
             </li>
@@ -108,66 +129,113 @@ function NavBar() {
       </div>
 
       {/* Menu desplegable en pantallas pequeñas */}
-      {isMenuOpen && (
-        <div className="lg:hidden absolute top-19 left-4 mt-2 z-50">
-          <div className="w-64 bg-white p-4 shadow-md">
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  <i className="bi bi-speedometer2 mr-2"></i>
-                  Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  <i className="bi bi-table mr-2"></i>
-                  Empleados
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  <i className="bi bi-grid mr-2"></i>
-                  Departamentos
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 rounded-md text-gray-800 dark:text-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  <i className="bi bi-person-circle mr-2"></i>
-                  Antiguos Empleados
-                </a>
-              </li>
-            </ul>
+      {
+        isMenuOpen && (
 
-            <hr className="border-gray-400 my-4" />
+          <div>
 
-            <div className="mb-3">
-              {/* <label className="block text-gray-700">Gestión</label> */}
-              <select className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required>
-                <option value="">Gestión</option>
-                <option value="Uno">Uno</option>
-                <option value="Dos">Dos</option>
-                <option value="Tres">Tres</option>
-                <option value="Cuatro">Cuatro</option>
-                <option value="Cinco">Cinco</option>
-              </select>
+
+
+         
+          <div className="lg:hidden absolute top-19 left-4 mt-2 z-50 ">
+            <div className="w-64 bg-white p-4 shadow-md rounded-2xl">
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                    <i className="bi bi-speedometer2 mr-2"></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                    <i className="bi bi-table mr-2"></i>
+                    Empleados
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+
+                    <i className="bi bi-grid mr-2"></i>
+                    Departamentos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                    <i className="bi bi-person-circle mr-2"></i>
+                    Antiguos Empleados
+                  </a>
+                </li>
+              </ul>
+
+              <hr className="border-gray-400 my-4" />
+
+              <div className="relative">
+
+                {/* Dropdown Menu */}
+                <ul>
+
+
+                  <p className="block px-5 py-2 text-xs text-gray-400" > Gestión de empleados</p>
+
+                  <li>
+                    <a
+                      href="/newEmployee"
+                      className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                      <i className="bi bi-plus-circle mr-2"></i>
+                      Añadir empleado
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/newEmployee"
+                      className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                      <i className="bi bi-pencil mr-2"></i>
+                      Editar empleado
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/newEmployee"
+                      className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                      <i className="bi bi-trash mr-2"></i>
+                      Añadir empleado
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/newEmployee"
+                      className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+                      <i className="bi bi-person-circle mr-2"></i>
+                      Eliminar empleado
+                    </a>
+                  </li>
+
+                  <hr className="border-gray-300 my-4" />
+
+                  <li>
+                    <a className="flex items-center p-2 rounded-md text-gray-500 dark:hover:bg-gray-300" href="/ ">
+                      <i className="bi bi-box-arrow-left mr-2 ml-2"></i>
+                      Logout
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
             </div>
+
+              
           </div>
-          
-        </div>
-        
-      )}
+ </div>
+        )
+      }
     </div>
   );
 }

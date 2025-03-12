@@ -2,7 +2,7 @@ function NewEmployee() {
     return (
         <div className="container flex justify-center">
             <div className="w-full">
-                    <h2 className="text-center text-3xl font-medium text-[#457FBF]">Registro nuevo empleado</h2>
+                    <h2 className="text-center text-3xl font-medium text-[#457FBF]">Crear nuevo empleado</h2>
                     <form>
                         {/* Información Personal */}
                         <div className="mb-3">
@@ -19,7 +19,7 @@ function NewEmployee() {
                         </div>
                         <div className="mb-3">
                             <label className="block text-gray-700">Teléfono</label>
-                            <input type="number" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required />
+                            <input type="number" placeholder="+34"className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required />
                         </div>
                         {/* Departamento */}
 
@@ -37,7 +37,7 @@ function NewEmployee() {
 
                         <div className="mb-3">
                             <label className="block text-gray-700">Salario</label>
-                            <input type="number" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" accept="image/*" required />
+                            <input type="number" placeholder="€" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" accept="image/*" required />
                         </div>
 
                         {/* Submit Button */}

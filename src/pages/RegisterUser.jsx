@@ -18,7 +18,7 @@ function RegisterUser() {
                         <input
                             id="name"
                             type="text"
-                            placeholder="Name Lastname"
+                            placeholder="Introduce tu nombre"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>
@@ -30,7 +30,7 @@ function RegisterUser() {
                         <input
                             id="email"
                             type="email"
-                            placeholder="name@mail.com"
+                            placeholder="nombre@mail.com"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
                     </div>

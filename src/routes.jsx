@@ -14,6 +14,7 @@ import DetailDepartments from "./pages/DetailDepartments";
 import PasswordReset from "./pages/PasswordReset";
 import Contacto from "./pages/Contacto";
 import EditEmployee from "./pages/EditEmployee";
+import NotAccess from "./pages/NotAccess";
 
 function MainRoutes() {
 
@@ -34,6 +35,7 @@ function MainRoutes() {
             <Route path="resetpassword" element={<PasswordReset />} />
             <Route path="edit" element={<EditEmployee />} />
             <Route path="contacto" element={<Contacto />} />
+            <Route path="notaccess" element={<NotAccess />} />
         </Routes>
     )
 }
