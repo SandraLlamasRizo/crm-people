@@ -1,4 +1,4 @@
-import DeparmentCardSmall from "./DepartmentsCardSmall"
+
 
 function EmployeeDetailEach() {
     return (
