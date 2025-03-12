@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="flex">
       {/* Sidebar fijo para pantallas grandes */}
-      <div className="hidden lg:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
+      <div className="hidden md:flex flex-col p-5 m-5 bg-white text-gray-800 dark:text-gray-800 min-h-screen w-64 shadow-lg fixed z-50 rounded-2xl">
         {/* Logo */}
         <div className="flex flex-col items-center">
           <img
