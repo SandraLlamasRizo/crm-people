@@ -5,9 +5,9 @@ function Employees() {
     return <>
         <div className="container">
             <h2 className="px-4 py-2 text-xl md:text-2xl font-bold">Gestiona tus empleados</h2>
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center my-2">
                 <div className="flex-1 pl-4">
-                   <h6 className="text-md md:text-md">Empleados(0)</h6>
+                   <h6 className="text-lg md:text-md">Empleados(0)</h6>
                 </div>
             
                 <div className="flex-2 flex flex-col-reverse lg:flex-row gap-2 items-end lg:items-center justify-end mr-4">
