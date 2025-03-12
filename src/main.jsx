@@ -5,6 +5,7 @@ import MainRoutes from './routes.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NavBar from './components/NavBar.jsx'
+import EmployerProvider from './providers/EmployerProvider.jsx'
 
 function AppLayout() {
   const location = useLocation(); // Obtiene la URL actual
@@ -15,7 +16,9 @@ function AppLayout() {
     <>
       {!isNoLayoutPage && <NavBar />}
       {!isNoLayoutPage && <Header />}
-      <MainRoutes />
+      <EmployerProvider>
+        <MainRoutes />
+      </EmployerProvider>
       {!isNoLayoutPage && <Footer />}
     </>
   );
