@@ -36,7 +36,7 @@ function PasswordReset() {
                     </div>
                     <div className="mb-4">
                         <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
-                            Repite tu nueva contraseña
+                            Confirma tu nueva contraseña
                         </label>
                         <input
                             id="password"

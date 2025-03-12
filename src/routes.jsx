@@ -12,8 +12,8 @@ import LandingPage from "./pages/LandingPage";
 import Dasboard from "./pages/Dashboard";
 import DetailDepartments from "./pages/DetailDepartments";
 import PasswordReset from "./pages/PasswordReset";
-import EditEmployee from "./pages/EmployeeEdit";
 import Contacto from "./pages/Contacto";
+import EditEmployee from "./pages/EditEmployee";
 
 function MainRoutes() {
 
