@@ -15,27 +15,33 @@ import PasswordReset from "./pages/PasswordReset";
 import Contacto from "./pages/Contacto";
 import EditEmployee from "./pages/EditEmployee";
 import NotAccess from "./pages/NotAccess";
+import MainLayout from "./components/MainLayout";
 
 function MainRoutes() {
 
     return (
         <Routes>
-            <Route path="App" element={<App />} />
-            <Route path="" element={<LandingPage />} />
-            <Route path="register" element={<RegisterUser />} />
-            <Route path="login" element={<LoginUser />} />
-            <Route path="employees" element={<Employees />} />
-            <Route path="departments" element={<Departments />} />
-            <Route path="oldEmployees" element={<OldEmployees />} />
-            <Route path="employees/:employeeId" element={<DetailEmployee />} />
-            <Route path="newEmployee" element={<NewEmployee />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="dashboard" element={<Dasboard />} />
-            <Route path="departments/:departmentId" element={<DetailDepartments />} />
-            <Route path="resetpassword" element={<PasswordReset />} />
-            <Route path="edit" element={<EditEmployee />} />
-            <Route path="contacto" element={<Contacto />} />
-            <Route path="notaccess" element={<NotAccess />} />
+
+            <Route path="" element={<App/>}>
+                <Route index element={<LandingPage />} />
+                <Route path="register" element={<RegisterUser />} />
+                <Route path="login" element={<LoginUser />} />
+                <Route path="resetpassword" element={<PasswordReset />} />
+                <Route path="notaccess" element={<NotAccess />} />
+                <Route path="*" element={<NotFound />} />
+            </Route>
+
+            
+            <Route path="dashboard" element={<MainLayout />}>
+                <Route index element={<Dasboard />} />
+                <Route path="employees" element={<Employees />} />
+                <Route path="employees/:employeeId" element={<DetailEmployee />} />
+                <Route path="edit" element={<EditEmployee />} />
+                <Route path="newEmployee" element={<NewEmployee />} />
+                <Route path="departments" element={<Departments />} />
+                <Route path="departments/:departmentId" element={<DetailDepartments />} />
+                <Route path="contacto" element={<Contacto />} />
+            </Route>
         </Routes>
     )
 }
