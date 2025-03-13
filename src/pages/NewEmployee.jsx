@@ -2,7 +2,7 @@ function NewEmployee() {
     return (
         <div className="container flex justify-center">
             <div className="w-full">
-                    <h2 className="text-center text-3xl font-medium text-[#457FBF]">Crear nuevo empleado</h2>
+                    <h2 className="text-center text-3xl font-medium text-[#457FBF]">Añadir nuevo empleado</h2>
                     <form>
                         {/* Información Personal */}
                         <div className="mb-3">
