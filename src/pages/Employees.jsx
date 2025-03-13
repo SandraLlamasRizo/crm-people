@@ -4,7 +4,7 @@ import { useEmployeesContext } from "../providers/EmployerProvider";
 
 function Employees() {
 
-    const [employees, setEmployees] = useEmployeesContext();
+    const [employees] = useEmployeesContext();
     useEffect(() => {
         console.log("empleados actualizados", employees)
     }, [employees])

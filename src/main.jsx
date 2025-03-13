@@ -15,7 +15,9 @@ function AppLayout() {
   return (
     <>
       {!isNoLayoutPage && <NavBar />}
-      {!isNoLayoutPage && <Header />}
+      {!isNoLayoutPage && <EmployerProvider>
+        <Header />
+      </EmployerProvider>}
       <PageContent />
       {!isNoLayoutPage && <Footer />}
     </>

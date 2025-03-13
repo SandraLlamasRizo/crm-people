@@ -5,7 +5,7 @@ import { useEmployeesContext } from "../providers/EmployerProvider";
 
 function Dashboard() {
     
-    const [employees, setEmployees] = useEmployeesContext();
+    const [employees] = useEmployeesContext();
 
 
     return (
