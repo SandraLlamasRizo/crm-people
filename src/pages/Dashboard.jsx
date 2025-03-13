@@ -1,17 +1,12 @@
 import DeparmentCardSmall from "../components/DepartmentsCardSmall";
 import EmployeeCardSmall from "../components/EmployeeCardSmall";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
+import { useEmployeesContext } from "../providers/EmployerProvider";
 
 function Dashboard() {
+    
+    const [employees, setEmployees] = useEmployeesContext();
 
-    const empleado = {
-        nombre: 'Sandra',
-        apellidos: 'Llamas Rizo',
-        email: 'sandra@gmail.com',
-        telefono: '666666666',
-        departamento: 'desarrollo',
-        salario: 30000
-    }
 
     return (
         <div className="mx-auto p-4 sm:p-6">
@@ -34,42 +29,12 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">                    <div className="mb-2">
-                        <EmployeeCardSmall  empleado={empleado} />
-                    </div>
-                    <div className="mb-2">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden md:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden md:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
-                    <div className="hidden lg:block">
-                        <EmployeeCardSmall  empleado={empleado}/>
-                    </div>
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
+                    
+                    {employees.map((empleado, index) => (
+                        <EmployeeCardSmall key={empleado._id} empleado={empleado} />
+                    ))}
+                    
                 </div>
             </div>
 
@@ -90,13 +55,13 @@ function Dashboard() {
 
                     <div className="flex flex-col gap-2 sm:gap-4">
                         <div>
-                            <DeparmentCardSmall  empleado={empleado}/>
+                            <DeparmentCardSmall />
                         </div>
                         <div className="hidden sm:block">
-                            <DeparmentCardSmall  empleado={empleado}/>
+                            <DeparmentCardSmall  />
                         </div>
                         <div className="hidden sm:block">
-                            <DeparmentCardSmall  empleado={empleado}/>
+                            <DeparmentCardSmall  />
                         </div>
                     </div>
                 </div>
@@ -107,18 +72,10 @@ function Dashboard() {
                         Últimos Empleados
                     </h4>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
-                        <div className="mb-2">
-                            <EmployeeCardLarge />
-                        </div>
-                        <div className="mb-2 ">
-                            <EmployeeCardLarge />
-                        </div>
-                        <div className="mb-2 sm:block hidden">
-                            <EmployeeCardLarge />
-                        </div>
-                        <div className="mb-2 sm:block hidden">
-                            <EmployeeCardLarge />
-                        </div>
+                        {employees.map((empleado, index) => (
+                        <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+                        ))}
+                        
                     </div>
                 </div>
             </div>
