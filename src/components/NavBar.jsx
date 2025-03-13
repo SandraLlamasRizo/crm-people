@@ -86,14 +86,6 @@ function NavBar() {
                 href="/newEmployee"
                 className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
                 <i className="bi bi-trash mr-2"></i>
-                Añadir empleado
-              </a>
-            </li>
-            <li>
-              <a
-                href="/newEmployee"
-                className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                <i className="bi bi-person-circle mr-2"></i>
                 Eliminar empleado
               </a>
             </li>
@@ -206,17 +198,10 @@ function NavBar() {
                         href="/newEmployee"
                         className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
                         <i className="bi bi-trash mr-2"></i>
-                        Añadir empleado
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="/newEmployee"
-                        className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                        <i className="bi bi-person-circle mr-2"></i>
                         Eliminar empleado
                       </a>
                     </li>
+                  
 
                     <hr className="border-gray-300 my-4" />
 
