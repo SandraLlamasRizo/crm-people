@@ -20,7 +20,6 @@ function EmployerProvider({ children }) {
     const [departments, setDepartments] = useState([]);
 
     const token = localStorage.getItem('token');
-    console.log(token)
     
     useEffect(() => {
         fetchData()

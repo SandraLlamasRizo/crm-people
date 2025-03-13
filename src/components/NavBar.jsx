@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    
+    const logout = () => {
+        localStorage.removeItem('token');
+    }
 
   return (
     <div className="flex">

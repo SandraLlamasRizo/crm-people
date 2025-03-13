@@ -1,10 +1,9 @@
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import App from "./App";
 import RegisterUser from "./pages/RegisterUser";
 import LoginUser from "./pages/LoginUser";
 import Employees from "./pages/Employees";
 import Departments from "./pages/Departments";
-import OldEmployees from "./pages/OldEmployees";
 import DetailEmployee from "./pages/DetailEmployee";
 import NewEmployee from "./pages/NewEmployee";
 import NotFound from "./pages/NotFound";
@@ -17,7 +16,21 @@ import EditEmployee from "./pages/EditEmployee";
 import NotAccess from "./pages/NotAccess";
 import MainLayout from "./components/MainLayout";
 
+function PrivateRoute({ element }) {
+    //añadimos las comprobaciones para auth (por ejemplo con localstorage)
+    const token = localStorage.getItem('token');
+
+    console.log("routes",token)
+    
+    if (token) {
+        return element;
+    } else {
+        return <Navigate to="/notaccess" />;
+    }
+}
+
 function MainRoutes() {
+    
 
     return (
         <Routes>
@@ -32,7 +45,7 @@ function MainRoutes() {
             </Route>
 
             
-            <Route path="dashboard" element={<MainLayout />}>
+            <Route path="dashboard" element={<PrivateRoute element={<MainLayout/>}/> }>
                 <Route index element={<Dasboard />} />
                 <Route path="employees" element={<Employees />} />
                 <Route path="employees/:employeeId" element={<DetailEmployee />} />
