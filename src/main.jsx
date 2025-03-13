@@ -25,7 +25,6 @@ function AppLayout() {
 function PageContent() {
   return (
     <EmployerProvider>
-
       <MainRoutes />
     </EmployerProvider>
   );
