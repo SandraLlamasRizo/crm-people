@@ -53,7 +53,7 @@ function NavBar() {
 
           {/* Dropdown Menu */}
           <ul>
-            <p className="block px-5 py-2 text-xs text-gray-400" > Gestión de empleados</p>
+            <p className="block px-5 py-2 text-xs text-gray-400" > Gestiona tus empleados</p>
 
             <li>
               <a
@@ -150,7 +150,7 @@ function NavBar() {
 
                   {/* Dropdown Menu */}
                   <ul>
-                    <p className="block px-5 py-2 text-xs text-gray-400" > Gestión de empleados</p>
+                    <p className="block px-5 py-2 text-xs text-gray-400" > Gestiona tus empleados</p>
                     <li>
                       <a
                         href="/newEmployee"

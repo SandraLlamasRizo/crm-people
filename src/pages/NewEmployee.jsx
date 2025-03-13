@@ -1,7 +1,7 @@
 function NewEmployee() {
     return (
         <div className="container flex justify-center">
-            <div className="w-full">
+            <div className="w-full max-w-4xl">
                     <h2 className="text-center text-3xl font-medium text-[#457FBF]">Añadir nuevo empleado</h2>
                     <form>
                         {/* Información Personal */}
@@ -25,13 +25,13 @@ function NewEmployee() {
 
                         <div className="mb-3">
                             <label className="block text-gray-700">Departamento</label>
-                            <select className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required>
-                                <option value="">Selecciona el departamento</option>
-                                <option value="Uno">Uno</option>
-                                <option value="Dos">Dos</option>
-                                <option value="Tres">Tres</option>
-                                <option value="Cuatro">Cuatro</option>
-                                <option value="Cinco">Cinco</option>
+                        <select className="w-full px-4 py-2 border  border-gray-300 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required>
+                            <option value="">Selecciona el departamento</option>
+                            <option value="Uno">Dirección</option>
+                            <option value="Dos">Desarrollo</option>
+                            <option value="Tres">Diseño</option>
+                            <option value="Cuatro">Recursos Humanos</option>
+                            <option value="Cinco">Otro</option>
                             </select>
                         </div>
 

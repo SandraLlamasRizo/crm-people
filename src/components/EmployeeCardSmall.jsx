@@ -37,7 +37,7 @@ function EmployeeCardSmall({empleado}) {
 
     return (
         <div className="flex gap-4 w-[174px] h-[180px]">
-            <div className="p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md transition duration-200 ease-in-out">
+            <div className="w-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md transition duration-200 ease-in-out">
                 <figure className="flex justify-center items-center">
                     {loading ? (
                         <div className="animate-spin w-8 h-8 border-4 border-t-[#47A7BD] border-gray-300 rounded-full"></div>

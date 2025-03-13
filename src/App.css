@@ -75,6 +75,17 @@ html {
 
 }
 
+
+.container-cards {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 88%;
+    margin: auto;
+    padding: 16px;
+    flex-grow: 1;
+}
+
+
 .buttonPrincipal {
     padding: 12px 24px;
     background-color: #457FBF;
