@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 function NavBar() {
+    const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     
     const logout = () => {
         localStorage.removeItem('token');
+        console.log("token borrado")
+        navigate('/');
     }
 
   return (
@@ -87,7 +91,7 @@ function NavBar() {
             <hr className="border-gray-300 my-4" />
 
             <li>
-              <a className="flex items-center p-2 rounded-md text-gray-600 dark:hover:bg-gray-300" href="/ ">
+              <a className="flex items-center p-2 rounded-md text-gray-600 dark:hover:bg-gray-300" onClick={logout}>
                 <i className="bi bi-box-arrow-left mr-2 ml-2"></i>
                 Logout
               </a>

@@ -15,7 +15,10 @@ function Employees() {
   //Filtrar empleados:
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = employees.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = employees.slice(indexOfFirstItem, indexOfLastItem);
+    let showingItems = Math.min(indexOfLastItem, employees.length)
+
+
 
   //Total de paginas:
   const totalPages = Math.ceil(employees.length / itemsPerPage);
@@ -86,7 +89,7 @@ function Employees() {
         </div>
         <div className="flex flex-col-reverse gap-4 md:flex-row items-center justify-between p-4 ">
           <span className="text-gray-700 text-sm">
-            Mostrando <strong>{indexOfLastItem}</strong> de{" "}
+            Mostrando <strong>{showingItems }</strong> de{" "}
             <strong>{employees.length}</strong> elementos
           </span>
           <div className="flex gap-2">

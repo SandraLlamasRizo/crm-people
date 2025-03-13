@@ -11,6 +11,7 @@ function Header() {
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [showResults, setShowResults] = useState(false);
     const searchRef = useRef(null);
+    const username = localStorage.getItem('username');
 
     //Cerrar drop down si clickas fuera
     useEffect(() => {
@@ -87,7 +88,7 @@ function Header() {
         <div className=" text-right md:ml-auto md:pr-10">
             <button type="button" className="btn btn-light rounded-xl px-4 py-2 border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 text-lg md:text-base">
                 <span><i className="bi bi-person-circle"></i></span>
-                <span className="hidden md:inline"> Nombre Usuario</span>
+                <span className="hidden md:inline"> {username}</span>
             </button>
         </div>
     </div>

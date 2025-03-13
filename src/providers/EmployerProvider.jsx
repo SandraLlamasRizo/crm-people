@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 //CUSTOM CONTEXTS ==> creo los contextos:
 const EmployeesContext = createContext();
 const DepartmentsContext = createContext();
+const UserContext = createContext();
 
 //CUSTOM HOOKS ==> Los creo para acceder a los contextos fácilmente:
 export function useEmployeesContext() {
@@ -13,12 +14,16 @@ export function useDepartmentsContext() {
     return useContext(DepartmentsContext);
 }
 
+export function useUserContext() {
+    return useContext(UserContext);
+}
+
 // CREO EL PROVIDER ==> para envolver la app y poder manejar con useState los datos:
 function EmployerProvider({ children }) {
     //Estos son los estados globales para empleados y departamentos:
     const [employees, setEmployees] = useState([]);
     const [departments, setDepartments] = useState([]);
-
+    const [user, setUser] = useState("Usuario");
     const token = localStorage.getItem('token');
     
     useEffect(() => {
@@ -43,7 +48,9 @@ function EmployerProvider({ children }) {
     
     return <EmployeesContext.Provider value={[employees, setEmployees ]}>
         <DepartmentsContext.Provider value={[departments, setDepartments]}>
-            {children}
+            <UserContext.Provider value={[user, setUser]}>
+                {children}
+            </UserContext.Provider>
         </DepartmentsContext.Provider>
     </EmployeesContext.Provider>
 

@@ -2,18 +2,22 @@ import DeparmentCardSmall from "../components/DepartmentsCardSmall";
 import EmployeeCardSmall from "../components/EmployeeCardSmall";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
 import { useEmployeesContext } from "../providers/EmployerProvider";
+import { useEffect } from "react";
 
 function Dashboard() {
-    
     const [employees] = useEmployeesContext();
-    
+    const username = localStorage.getItem('username');
 
+  useEffect(() => {
+    console.log("empleados actualizados", employees);
+  }, [employees]);
+    
     return (
         <div className="mx-auto p-4 sm:p-6">
             {/* Sección de Bienvenida */}
             <div className="  mx-auto p-4  mb-4 md:ml-70 ">
                 <h6 className="text-lg sm:text-xl font-semibold text-gray-600">
-                    Bienvenido de nuevo, usuario
+                    Bienvenido de nuevo, {username}
                 </h6>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Inicio</h3>
             </div>

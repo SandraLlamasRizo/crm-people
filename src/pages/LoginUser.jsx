@@ -2,9 +2,11 @@ import React from "react";
 import { NavLink, Route, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useUserContext } from "../providers/EmployerProvider";
 
 function LoginUser() {
     const navigate = useNavigate();
+    const [user, setUser] = useUserContext();
 
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     
@@ -18,6 +20,8 @@ function LoginUser() {
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/usuarios/login', usuario);
             console.log(data);
             localStorage.setItem('token', data.token);
+            const user = data.user
+            localStorage.setItem('username', user.username);
             navigate('/dashboard')
         } catch (error) {
             console.error("Error en el login:", error.response?.data || error.message);
