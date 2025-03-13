@@ -51,10 +51,10 @@ function EmployeeCardSmall({empleado}) {
                         />
                     )}
                 </figure>
-                <h3 className="principalCard pb-2 font-semibold text-gray-800">Nombre Empleado</h3>
-                <h4 className="secundarioCard pb-3 text-gray-600">Apellidos</h4>
+                <h3 className="principalCard pb-2 font-semibold text-gray-800">{empleado.nombre}</h3>
+                <h4 className="secundarioCard pb-3 text-gray-600">{empleado.apellidos}</h4>
                 <h5 className="terciarioBorderCard inline-block p-1 bg-[#E3F2FD] text-[#47A7BD] rounded-md">
-                    Departamento
+                    {empleado.departamento}
                 </h5>
             </div>
         </div>

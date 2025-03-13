@@ -36,7 +36,7 @@ function EmployeeCardLarge({ empleado }) {
       <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] gap-2 md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center align-middle text-center">
 
         {/* Mostrar la imagen obtenida de Pexels */}
-        <figure className="flex justify-center items-center w-[50px] h-[50px]">
+        <figure className="flex justify-center items-center w-[50px] h-[50px] mx-auto">
           <img
             src={image} // Usamos la imagen aleatoria obtenida de Pexels
             alt="Empleado"
