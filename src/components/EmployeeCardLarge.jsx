@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
 function EmployeeCardLarge() {
-  const [employee, setEmployee] = useState(null);
+  const [image, setImage] = useState(null); // Para la imagen de Pexels
+  const apiKey = 'Yyn3gO8VM4ySq0Eedoy1qNxDovlzenPyj08lqh4UYoNPJHvz3BwKkFj8';
 
-  // Usamos el hook useEffect para obtener los datos cuando el componente se monta
+  // Usamos el hook useEffect para obtener la imagen cuando el componente se monta
   useEffect(() => {
-    // Realizamos la llamada a la API de randomuser.me
-    fetch('https://randomuser.me/api/')
+    // Obtenemos una imagen aleatoria usando la API de Pexels
+    fetch('https://api.pexels.com/v1/curated?per_page=5', {
+      headers: {
+        Authorization: apiKey,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
-        // Guardamos la imagen de la persona en el estado
-        setEmployee(data.results[0]);
+        if (data.photos && data.photos.length > 0) {
+          // Seleccionamos una imagen aleatoria de las fotos obtenidas
+          const randomIndex = Math.floor(Math.random() * data.photos.length);
+          setImage(data.photos[randomIndex].src.large);
+        } else {
+          console.error('No se encontraron fotos en Pexels.');
+        }
       })
-      .catch((error) => console.error('Error fetching data: ', error));
+      .catch((error) => console.error('Error fetching image from Pexels: ', error));
   }, []);
 
-  // Si no se han cargado los datos del empleado, mostramos un loader o algo similar
-  if (!employee) {
+  // Si no se ha cargado la imagen, mostramos un loader
+  if (!image) {
     return <div>Cargando...</div>;
   }
 
@@ -24,16 +34,16 @@ function EmployeeCardLarge() {
     <div className="my-2 mx-2">
       <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] gap-2 md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center align-middle text-center">
 
-        {/* Mostrar la imagen del empleado */}
-        <figure className="mx-auto flex justify-center items-center w-[50px] h-[50px]">
+        {/* Mostrar la imagen obtenida de Pexels */}
+        <figure className="flex justify-center items-center w-[50px] h-[50px]">
           <img
-            src={employee.picture.thumbnail} // Usamos la imagen de la API
+            src={image} // Usamos la imagen aleatoria obtenida de Pexels
             alt="Empleado"
             className="w-[50px] h-[50px] rounded-full object-cover"
           />
         </figure>
 
-        {/* Información del empleado */}
+        {/* Información restante (sin cambios) */}
         <div>
           <h3 className="principalCard">Nombre Empleado</h3>
           <h4 className="secundarionCard">Apellidos</h4>
