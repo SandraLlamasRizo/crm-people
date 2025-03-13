@@ -99,6 +99,7 @@ html {
 
 .buttonPrincipal:hover {
     background-color: #2664A9;
+    cursor: pointer;
 }
 
 .buttonSecundario {

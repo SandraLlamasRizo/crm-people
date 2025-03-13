@@ -6,7 +6,7 @@ import { useEmployeesContext } from "../providers/EmployerProvider";
 function Dashboard() {
     
     const [employees] = useEmployeesContext();
-
+    
 
     return (
         <div className="mx-auto p-4 sm:p-6">
