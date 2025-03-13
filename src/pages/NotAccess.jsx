@@ -1,3 +1,7 @@
+// NotAccess.js
+import React from 'react';
+import { Link } from 'react-router';
+
 function NotAccess() {
     return (
         <div className="bg-[#F4F9FD] text-[#457FBF] min-h-screen flex items-center justify-center px-4">
@@ -8,20 +12,20 @@ function NotAccess() {
                     La página a la que estás intentando acceder no te permite.
                 </p>
                 <div className="flex justify-center space-x-4">
-                    <a
-                        href="/dashboard"
+                    <Link
+                        to="/dashboard"
                         className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
                     >
                         <i className="bi bi-house-door mr-2"></i>
                         Inicio
-                    </a>
-                    <a
-                        href="/contacto"
+                    </Link>
+                    <Link
+                        to="/contacto"
                         className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
                     >
                         <i className="bi bi-envelope me-2"></i>
                         Contacto
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
