@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function EmployeeCardSmall() {
+function EmployeeCardSmall({empleado}) {
     const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
