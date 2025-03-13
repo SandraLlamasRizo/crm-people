@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-function EmployeeCardLarge() {
+function EmployeeCardLarge({ empleado }) {
+
   const [image, setImage] = useState(null); // Para la imagen de Pexels
   const apiKey = 'Yyn3gO8VM4ySq0Eedoy1qNxDovlzenPyj08lqh4UYoNPJHvz3BwKkFj8';
 
@@ -45,15 +46,15 @@ function EmployeeCardLarge() {
 
         {/* Información restante (sin cambios) */}
         <div>
-          <h3 className="principalCard">Nombre Empleado</h3>
-          <h4 className="secundarionCard">Apellidos</h4>
+          <h3 className="principalCard">{empleado.nombre}</h3>
+                  <h4 className="secundarionCard">{empleado.apellidos}</h4>
         </div>
 
-        <h5 className="hidden md:block secundarionCard">Email</h5>
-        <h5 className="secundarionCard">Departamento</h5>
-        <h5 className="hidden md:block secundarionCard">Salario</h5>
+              <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
+              <h5 className="secundarionCard">{empleado.departamento}</h5>
+              <h5 className="hidden md:block secundarionCard">{empleado.salario}</h5>
 
-        <div>
+        <div className='hover:cursor-pointer'>
           <i className="bi bi-three-dots-vertical"></i>
         </div>
       </div>
