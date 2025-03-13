@@ -32,7 +32,7 @@ function NavBar() {
             <a
               href="/employees"
               className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
-              <i className="bi bi-table mr-2"></i>
+              <i className="bi bi-people mr-2"></i>
               Empleados
             </a>
           </li>
@@ -40,16 +40,8 @@ function NavBar() {
             <a
               href="/departments"
               className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
-              <i className="bi bi-grid mr-2"></i>
+              <i className="bi bi-diagram-3 mr-2"></i>
               Departamentos
-            </a>
-          </li>
-          <li>
-            <a
-              href="/oldEmployees"
-              className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
-              <i className="bi bi-person-circle mr-2"></i>
-              Antiguos Empleados
             </a>
           </li>
         </ul>
@@ -85,7 +77,7 @@ function NavBar() {
               <a
                 href="/newEmployee"
                 className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                <i className="bi bi-trash mr-2"></i>
+                <i className="bi bi-trash3 mr-2"></i>
                 Eliminar empleado
               </a>
             </li>
@@ -123,8 +115,8 @@ function NavBar() {
       {/* Menu desplegable en pantallas pequeñas */}
       {
         isMenuOpen && (
-<>
-          <div className=" absolute w-screen h-screen bg-[#b0adad9b] mt-15"></div>
+          <>
+            <div className=" absolute w-screen h-screen bg-[#b0adad9b] mt-15"></div>
 
 
 
@@ -144,7 +136,7 @@ function NavBar() {
                     <a
                       href="#"
                       className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
-                      <i className="bi bi-table mr-2"></i>
+                      <i className="bi bi-people mr-2"></i>
                       Empleados
                     </a>
                   </li>
@@ -153,16 +145,8 @@ function NavBar() {
                       href="#"
                       className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
 
-                      <i className="bi bi-grid mr-2"></i>
+                      <i className="bi bi-diagram-3 mr-2"></i>
                       Departamentos
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
-                      <i className="bi bi-person-circle mr-2"></i>
-                      Antiguos Empleados
                     </a>
                   </li>
                 </ul>
@@ -173,10 +157,7 @@ function NavBar() {
 
                   {/* Dropdown Menu */}
                   <ul>
-
-
                     <p className="block px-5 py-2 text-xs text-gray-400" > Gestión de empleados</p>
-
                     <li>
                       <a
                         href="/newEmployee"
@@ -197,11 +178,11 @@ function NavBar() {
                       <a
                         href="/newEmployee"
                         className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                        <i className="bi bi-trash mr-2"></i>
+                        <i className="bi bi-trash3 mr-2"></i>
                         Eliminar empleado
                       </a>
                     </li>
-                  
+
 
                     <hr className="border-gray-300 my-4" />
 
