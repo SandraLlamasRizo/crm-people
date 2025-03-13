@@ -1,14 +1,30 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, Route, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function LoginUser() {
+    const navigate = useNavigate();
 
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     
     const enviarFormulario = (data) => {
-        console.log(data);
+        loginUsuario(data);
     }
+
+
+    const loginUsuario = async (usuario) => {
+        try {
+            const { data } = await axios.post('https://crm-empleados.onrender.com/api/usuarios/login', usuario);
+            console.log(data);
+            localStorage.setItem('token', data.token);
+            navigate('/dashboard')
+        } catch (error) {
+            console.error("Error en el login:", error.response?.data || error.message);
+        }
+        
+    }
+    
 
     return (
         <div className="flex h-screen items-center justify-center">

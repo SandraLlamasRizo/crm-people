@@ -1,12 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function RegisterUser() {
 
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     
     const enviarFormulario = (data) => {
+        registrarUsuario(data)
+        console.log(data)
+    }
+
+    const registrarUsuario = async (nuevoUsuario) => {
+        console.log(nuevoUsuario)
+        const {data} = await axios.post('https://crm-empleados.onrender.com/api/usuarios/registro', nuevoUsuario);
         console.log(data);
     }
 

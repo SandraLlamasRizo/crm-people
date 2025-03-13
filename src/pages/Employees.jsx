@@ -1,14 +1,14 @@
+import { useEffect } from "react";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
+import { useEmployeesContext } from "../providers/EmployerProvider";
 
 function Employees() {
-    const empleado = {
-        nombre: 'Sandra',
-        apellidos: 'Llamas Rizo',
-        email: 'sandra@gmail.com',
-        telefono: '666666666',
-        departamento: 'desarrollo',
-        salario: 30000
-    }
+
+    const [employees, setEmployees] = useEmployeesContext();
+    useEffect(() => {
+        console.log("empleados actualizados", employees)
+    }, [employees])
+  
 
     return <>
         <div className="container">
@@ -26,16 +26,14 @@ function Employees() {
                         <option value="15">15</option>
                         <option value="20">20</option>
                     </select>
-                    <button className="flex-1 btn btn-light min-w-[70px] md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg  bg-[#457FBF]"><i class="bi bi-plus "></i> <span className="hidden md:inline">Añadir empleado</span></button>
+                    <button className="flex-1 btn btn-light min-w-[70px] md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg  bg-[#457FBF]"><i className="bi bi-plus "></i> <span className="hidden md:inline">Añadir empleado</span></button>
                 </div>
                     
             </div>
             <div className="flex flex-col w-full">
-                <EmployeeCardLarge empleado={empleado}  />
-                <EmployeeCardLarge empleado={empleado}/>
-                <EmployeeCardLarge empleado={empleado}/>
-                <EmployeeCardLarge empleado={empleado}/>
-                <EmployeeCardLarge empleado={empleado}/>
+                {employees.map((empleado, index) => (
+                        <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+                        ))}
             </div>
             <div className="flex flex-col-reverse gap-4 md:flex-row items-center justify-between p-4 ">
                 <span className="text-gray-700 text-sm">
