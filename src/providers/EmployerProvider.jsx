@@ -1,27 +1,28 @@
 import { createContext, useContext, useState } from "react";
 
-//CUSTOM CONTEXTS
-const employeesContext = createContext();
-const departmentsContext = createContext();
+//CUSTOM CONTEXTS ==> creo los contextos:
+const EmployeesContext = createContext();
+const DepartmentsContext = createContext();
 
-//CUSTOM HOOKS
-export function useEmployeesContext() {
-    return useContext(employeesContext);
+//CUSTOM HOOKS ==> Los creo para acceder a los contextos fácilmente:
+export function useEmployees() {
+    return useContext(EmployeesContext);
 }
-export function useDepartmentsContext() {
-    return useContext(departmentsContext);
+export function useDepartments() {
+    return useContext(DepartmentsContext);
 }
 
-
+// CREO EL PROVIDER ==> para envolver la app y poder manejar con useState los datos:
 function EmployerProvider({ children }) {
+    //Estos son los estados globales para empleados y departamentos:
     const [employees, setEmployees] = useState([]);
     const [departments, setDepartments] = useState([]);
     
-    return <employeesContext.Provider value={[employees, setEmployees ]}>
-        <departmentsContext.Provider value={[departments, setDepartments]}>
+    return <EmployeesContext.Provider value={[employees, setEmployees ]}>
+        <DepartmentsContext.Provider value={[departments, setDepartments]}>
             {children}
-        </departmentsContext.Provider>
-    </employeesContext.Provider>
+        </DepartmentsContext.Provider>
+    </EmployeesContext.Provider>
 
 }
 

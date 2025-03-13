@@ -5,22 +5,29 @@ import MainRoutes from './routes.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NavBar from './components/NavBar.jsx'
-import EmployerProvider from './providers/EmployerProvider.jsx'
+import EmployerProvider from './providers/EmployerProvider.jsx' // Ya he importado el provider!!
 
 function AppLayout() {
   const location = useLocation(); // Obtiene la URL actual
-  const noLayoutPages = ['/', '/login', '/register', '/resetpassword', '/contacto' ];
+  const noLayoutPages = ['/', '/login', '/register', '/resetpassword', '/contacto'];
   const isNoLayoutPage = noLayoutPages.includes(location.pathname);
 
   return (
     <>
       {!isNoLayoutPage && <NavBar />}
       {!isNoLayoutPage && <Header />}
-      <EmployerProvider>
-        <MainRoutes />
-      </EmployerProvider>
+      <PageContent />
       {!isNoLayoutPage && <Footer />}
     </>
+  );
+}
+
+function PageContent() {
+  return (
+    <EmployerProvider>
+
+      <MainRoutes />
+    </EmployerProvider>
   );
 }
 
