@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 function RegisterUser() {
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     
     const enviarFormulario = (data) => {
         registrarUsuario(data)
