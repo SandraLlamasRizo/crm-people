@@ -12,6 +12,25 @@ function Dashboard() {
     console.log("empleados actualizados", employees);
   }, [employees]);
     
+    //funcion para sacar departamentos con total de empleados y total salario
+    const departamentos = employees.reduce((acum, empleado) => {
+        const { departamento, salario } = empleado;
+
+        if (!acum[departamento]) {
+            acum[departamento] = { totalEmpleados: 0, totalSalario: 0 };
+        }
+
+        acum[departamento].totalEmpleados += 1;
+        acum[departamento].totalSalario += salario;
+
+        return acum;
+    }, {});
+    
+    //convertir departamentps en array
+    const departamentosArray = Object.entries(departamentos);
+    console.log(departamentosArray)
+
+    
     return (
         <div className="mx-auto p-4 sm:p-6">
             {/* Sección de Bienvenida */}
@@ -33,13 +52,14 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
-                    
-                    {employees.map((empleado, index) => (
-                        <EmployeeCardSmall key={empleado._id} empleado={empleado} />
-                    ))}
-                    
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-6 md:grid-rows-2 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
+                    {employees
+                        .slice(0, window.innerWidth < 768 ? 2 : 12) // Muestra 2 en móvil y 12 en escritorio
+                        .map((empleado) => (
+                            <EmployeeCardSmall key={empleado._id} empleado={empleado} />
+                        ))}
                 </div>
+
             </div>
 
 
@@ -58,15 +78,13 @@ function Dashboard() {
                     </div>
 
                     <div className="flex flex-col gap-2 sm:gap-4">
-                        <div>
-                            <DeparmentCardSmall />
-                        </div>
-                        <div className="hidden sm:block">
-                            <DeparmentCardSmall  />
-                        </div>
-                        <div className="hidden sm:block">
-                            <DeparmentCardSmall  />
-                        </div>
+                        {departamentosArray.map(([departamento, datos]) => (
+                        <DeparmentCardSmall
+                            key={departamento}
+                            departamento={departamento}
+                            datos={datos}
+                        />
+                        ))}
                     </div>
                 </div>
 
@@ -76,8 +94,11 @@ function Dashboard() {
                         Últimos Empleados
                     </h4>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
-                        {employees.map((empleado, index) => (
-                        <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+                        {employees
+                            .slice(0, window.innerWidth < 768 ? 2 : 6)  // Muestra 2 en móvil y 6 en escritorio
+                            .reverse()
+                            .map((empleado, index) => (
+                            <EmployeeCardLarge key={empleado._id} empleado={empleado} />
                         ))}
                         
                     </div>

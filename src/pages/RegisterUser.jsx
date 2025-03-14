@@ -17,6 +17,8 @@ function RegisterUser() {
         console.log(data);
     }
 
+    const aceptarTerminos = watch('aceptarTerminos');
+
     return (
         <div className="flex h-screen items-center justify-center">
             <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
@@ -84,17 +86,20 @@ function RegisterUser() {
 
                     <div className="mb-6">
                         <label className="inline-flex items-center">
-                            <input type="checkbox" className="form-checkbox text-[#47A7BD]" />
+                            <input type="checkbox"{...register('acceptTerms', { required: "Debe aceptar los Términos y Condiciones" })} className="form-checkbox text-[#47A7BD]" />
                             <span className="ml-2 text-gray-700">Acepto los {" "}
                                 <a href="#" className="font-extralight text-[#47A7BD] hover:underline">
                                     Términos y Condiciones
                                 </a>
                             </span>
                         </label>
+                        {errors.acceptTerms && <p className="text-red-500 text-xs italic">{errors.acceptTerms.message}</p>}
                     </div>
 
+                
+
                     <div className="flex gap-4 w-full justify-center">
-                        <input type="submit" className="buttonPrincipal buttonPrincipal:hover"/>
+                        <input type="submit" className="buttonPrincipal buttonPrincipal:hover" disabled={!aceptarTerminos} />
                     </div>
 
                     <div className="flex gap-4 w-full justify-center">

@@ -1,4 +1,4 @@
-function DepartmentCardLarge() {
+function DepartmentCardLarge({ departamento, datos }) {
     return (
         <div className="max-w-[500px] w-full h-[300px] rounded-lg shadow-xl overflow-hidden p-4 flex flex-col justify-between relative bg-white mx-auto">
             <div>
@@ -10,15 +10,15 @@ function DepartmentCardLarge() {
                     />
                 </figure>
                 <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                    Departamento
+                    {departamento}
                 </h3>
-                <h4 className="text-md text-gray-500 mb-3">Número de Empleados</h4>
+                <h4 className="text-md text-gray-500 mb-3">Número de Empleados: {datos.totalEmpleados }</h4>
                 <div className="flex gap-2">
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
                         Rendimiento
                     </h5>
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
-                        Salario total
+                        Salario total: {datos.totalSalario} €
                     </h5>
                 </div>
             </div>
