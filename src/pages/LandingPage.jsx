@@ -20,7 +20,7 @@ function LandingPage() {
                     </NavLink>
                 </div>
             </header>
-            <div className="relative bottom-0 w-full max-w-l md:max-w-4xl flex justify-center">
+            <div className="relative bottom-0 w-auto max-w-l md:max-w-4xl flex justify-center">
                 <img src="./LandingHero.svg" alt="CRM-HERO" className="w-full max-w-lg md:max-w-4xl  object-cover" />
             </div>
         </div>
