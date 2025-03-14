@@ -34,6 +34,10 @@ function EmployerProvider({ children }) {
             console.log(error);
         }
     }
+
+
+
+    
     
     return <EmployeesContext.Provider value={[employees, setEmployees ]}>
         {children}
