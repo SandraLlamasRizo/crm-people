@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 function NavBar() {
     const navigate = useNavigate()
@@ -37,20 +37,19 @@ function NavBar() {
             </a>
           </li>
           <li>
-            <a
-              href="/employees"
+            <NavLink to={'employees'}
               className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-people mr-2"></i>
               Empleados
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/departments"
+            <NavLink to={'departments'}
+
               className="flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
               <i className="bi bi-diagram-3 mr-2"></i>
               Departamentos
-            </a>
+            </NavLink>
           </li>
         </ul>
 

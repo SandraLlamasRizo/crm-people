@@ -101,8 +101,8 @@ function RegisterUser() {
                     <div className="flex gap-4 w-full justify-center">
                         <p className="text-center text-gray-600 mt-4">
                             ¿Ya tienes una cuenta?{" "}
-                            <a href="/login" className="font-extralight text-[#47A7BD] hover:underline">
-                                Inicia sesión aquí</a>
+                            <NavLink to={'/login'} className="font-extralight text-[#47A7BD] hover:underline">
+                                Inicia sesión aquí</NavLink>
                         </p>
                     </div>
                 </form>
