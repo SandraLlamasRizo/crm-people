@@ -1,23 +1,37 @@
+import { useEffect } from "react";
 import DepartmentCardLarge from "../components/DepartmentsCardLarge";
+import { useEmployeesContext } from "../providers/EmployerProvider";
 
 function Departments() {
+    const [employees] = useEmployeesContext();
+    useEffect(() => {
+    console.log("empleados actualizados", employees);
+  }, [employees]);
+    
+
+    //funcion para sacar departamentos con total de empleados y total salario
+    const departamentos = employees.reduce((acum, empleado) => {
+        const { departamento, salario } = empleado;
+
+        if (!acum[departamento]) {
+            acum[departamento] = { totalEmpleados: 0, totalSalario: 0 };
+        }
+
+        acum[departamento].totalEmpleados += 1;
+        acum[departamento].totalSalario += salario;
+
+        return acum;
+    }, {});
+    
+    //convertir departamentps en array
+    const departamentosArray = Object.entries(departamentos);
+    console.log(departamentosArray)
+
     return (
         <>
             <div>
                 <h3 className="homeH3 md:ml-76 ">Departamentos</h3>
             </div>
-            <div className="flex flex-wrap justify-between gap-6 pt-4 pb-6 px-6 mr-2 md:ml-70">
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                    <DepartmentCardLarge />
-                </div>
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                    <DepartmentCardLarge />
-                </div>
-                <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                    <DepartmentCardLarge />
-                </div>
-            </div>
-
             <div>
                 <a
                     href="/dashboard"
@@ -26,6 +40,18 @@ function Departments() {
                     Volver al Inicio
                 </a>
             </div>
+            <div className="flex flex-wrap justify-between gap-6 pt-4 pb-6 px-6 mr-2 md:ml-70">
+                {departamentosArray.map(([departamento, datos]) => (
+                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                    <DepartmentCardLarge
+                        key={departamento}
+                            departamento={departamento}
+                            datos={datos}/>
+                </div>
+                ))}
+            </div>
+
+            
         </>
     );
 }
