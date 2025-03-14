@@ -12,6 +12,25 @@ function Dashboard() {
     console.log("empleados actualizados", employees);
   }, [employees]);
     
+    //funcion para sacar departamentos con total de empleados y total salario
+    const departamentos = employees.reduce((acum, empleado) => {
+        const { departamento, salario } = empleado;
+
+        if (!acum[departamento]) {
+            acum[departamento] = { totalEmpleados: 0, totalSalario: 0 };
+        }
+
+        acum[departamento].totalEmpleados += 1;
+        acum[departamento].totalSalario += salario;
+
+        return acum;
+    }, {});
+    
+    //convertir departamentps en array
+    const departamentosArray = Object.entries(departamentos);
+    console.log(departamentosArray)
+
+    
     return (
         <div className="mx-auto p-4 sm:p-6">
             {/* Sección de Bienvenida */}
@@ -38,7 +57,6 @@ function Dashboard() {
                     {employees.map((empleado, index) => (
                         <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                     ))}
-                    
                 </div>
             </div>
 
@@ -58,15 +76,13 @@ function Dashboard() {
                     </div>
 
                     <div className="flex flex-col gap-2 sm:gap-4">
-                        <div>
-                            <DeparmentCardSmall />
-                        </div>
-                        <div className="hidden sm:block">
-                            <DeparmentCardSmall  />
-                        </div>
-                        <div className="hidden sm:block">
-                            <DeparmentCardSmall  />
-                        </div>
+                        {departamentosArray.map(([departamento, datos]) => (
+                        <DeparmentCardSmall
+                            key={departamento}
+                            departamento={departamento}
+                            datos={datos}
+                        />
+                        ))}
                     </div>
                 </div>
 
