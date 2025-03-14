@@ -52,12 +52,14 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-6 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
-                    
-                    {employees.map((empleado, index) => (
-                        <EmployeeCardSmall key={empleado._id} empleado={empleado} />
-                    ))}
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-6 md:grid-rows-2 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
+                    {employees
+                        .slice(0, window.innerWidth < 768 ? 2 : 12) // Muestra 2 en móvil y 12 en escritorio
+                        .map((empleado) => (
+                            <EmployeeCardSmall key={empleado._id} empleado={empleado} />
+                        ))}
                 </div>
+
             </div>
 
 
@@ -92,8 +94,11 @@ function Dashboard() {
                         Últimos Empleados
                     </h4>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
-                        {employees.map((empleado, index) => (
-                        <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+                        {employees
+                            .slice(0, window.innerWidth < 768 ? 2 : 4)  // Muestra 2 en móvil y 12 en escritorio
+                            .reverse()
+                            .map((empleado, index) => (
+                            <EmployeeCardLarge key={empleado._id} empleado={empleado} />
                         ))}
                         
                     </div>

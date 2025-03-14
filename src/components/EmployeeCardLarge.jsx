@@ -52,7 +52,7 @@ function EmployeeCardLarge({ empleado }) {
 
               <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
               <h5 className="secundarionCard">{empleado.departamento}</h5>
-              <h5 className="hidden md:block secundarionCard">{empleado.salario}</h5>
+              <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
 
         <div className='hover:cursor-pointer'>
           <i className="bi bi-three-dots-vertical"></i>
