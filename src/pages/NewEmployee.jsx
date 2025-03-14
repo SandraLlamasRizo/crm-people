@@ -5,7 +5,7 @@ import React from "react";
 function NewEmployee() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
 
-    // Obtener el token del localStorage
+    // Traigo el token del localStorage:
     const token = localStorage.getItem('token');
 
     const enviarFormulario = (data) => {
@@ -13,7 +13,7 @@ function NewEmployee() {
     };
 
     const registrarEmpleado = async (nuevoEmpleado) => {
-        // Configuración para incluir el token en las cabeceras
+        // Incluyo el token:
         const config = {
             headers: {
                 'Authorization': token,
