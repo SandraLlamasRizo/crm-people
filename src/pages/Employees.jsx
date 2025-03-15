@@ -88,7 +88,7 @@ function Employees() {
           </div>
         </div>
         <div className="flex flex-col w-full">
-          {currentItems.map((empleado, index) => (
+          {currentItems.map((empleado) => (
             <EmployeeCardLarge key={empleado._id} empleado={empleado} />
           ))}
         </div>

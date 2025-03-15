@@ -11,7 +11,8 @@ function Dashboard() {
   useEffect(() => {
     console.log("empleados actualizados", employees);
   }, [employees]);
-    
+    //funcion para ordenar empleados
+    const ordenarEmpleados = [...employees].sort((a, b) =>b._id. localeCompare(a._id));
     //funcion para sacar departamentos con total de empleados y total salario
     const departamentos = employees.reduce((acum, empleado) => {
         const { departamento, salario } = empleado;
@@ -94,10 +95,9 @@ function Dashboard() {
                         Últimos Empleados
                     </h4>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
-                        {employees
+                        {ordenarEmpleados
                             .slice(0, window.innerWidth < 768 ? 2 : 6)  // Muestra 2 en móvil y 6 en escritorio
-                            .reverse()
-                            .map((empleado, index) => (
+                            .map((empleado) => (
                             <EmployeeCardLarge key={empleado._id} empleado={empleado} />
                         ))}
                         

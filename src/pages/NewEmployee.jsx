@@ -1,19 +1,25 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import React from "react";
+import React, { useState } from "react";
 
 function NewEmployee() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
-
+    
     // Traigo el token del localStorage:
     const token = localStorage.getItem('token');
+
+    // Controlar la alerta de registro correcto:
+
+    const [alerta, setAlerta] = useState(null);
+
+
+   
 
     const enviarFormulario = (data) => {
         registrarEmpleado(data);
     };
 
     const registrarEmpleado = async (nuevoEmpleado) => {
-        // Incluyo el token:
         const config = {
             headers: {
                 'Authorization': token,
@@ -24,8 +30,16 @@ function NewEmployee() {
             console.log(nuevoEmpleado);
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/empleados', nuevoEmpleado, config);
             console.log(data);
+            setAlerta({
+                type: 'success',
+                message: `El empleado ${nuevoEmpleado.nombre} ha sido registrado correctamente`,
+            });
         } catch (error) {
             console.error("Error al registrar el empleado:", error);
+            setAlerta({
+                type: 'error',
+                message: `Hubo un problema al registrar al empleado ${nuevoEmpleado.nombre}. Intenta nuevamente.`,
+            });
         }
     };
 
@@ -34,6 +48,16 @@ function NewEmployee() {
             <div className="w-full max-w-4xl">
                 <h2 className="text-center text-3xl font-medium text-[#457FBF]"> Nuevo empleado</h2>
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
+
+                {alerta && (
+                    <div className={`flex items-center p-4 mb-4 text-sm rounded-lg ${alerta.type === "success" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`} role="alert">
+                        <svg className="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span><p>{alerta.message}</p></span>
+                    </div>
+                )}
+
 
                 <form onSubmit={handleSubmit(enviarFormulario)}>
                     <div className="mb-3">
@@ -172,3 +196,4 @@ function NewEmployee() {
 }
 
 export default NewEmployee;
+
