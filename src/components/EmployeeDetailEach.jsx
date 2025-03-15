@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function EmployeeDetailEach() {
     const [employee, setEmployee] = useState(null);      //PROBLEMA AQUI NOS DEVUELVE LOS DATOS DE LA API DE RANDOM USER, PERO NO SE COMO AHCER PARA QUE DEVUELVA LOS DE LA OTRA API DE EMPLEADOS
-
+    
     // Usamos useEffect para hacer la llamada a la API cuando el componente se monta
     useEffect(() => {
         fetch('https://randomuser.me/api/')

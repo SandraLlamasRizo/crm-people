@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
 import { useEmployeesContext } from "../providers/EmployerProvider";
+import { useNavigate } from "react-router";
 
 function Employees() {
   const [employees] = useEmployeesContext();
@@ -8,40 +9,41 @@ function Employees() {
     console.log("empleados actualizados", employees);
   }, [employees]);
 
-  //estado para paginado:
+  // estado para paginado:
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
 
-  //Filtrar empleados:
+  // Filtrar empleados:
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = employees.slice(indexOfFirstItem, indexOfLastItem);
-    let showingItems = Math.min(indexOfLastItem, employees.length)
+  const currentItems = employees.slice(indexOfFirstItem, indexOfLastItem);
+  let showingItems = Math.min(indexOfLastItem, employees.length);
 
-
-
-  //Total de paginas:
+  // Total de paginas:
   const totalPages = Math.ceil(employees.length / itemsPerPage);
 
-  useEffect(() => {
-    console.log("empleados actualizados", employees);
-  }, [employees]);
-
-  //Cambiar pagina:
+  // Cambiar pagina:
   const nextPage = () => {
-      if (currentPage < totalPages)
-      { setCurrentPage(currentPage + 1) };
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
   const prevPage = () => {
-      if (currentPage > 1) {
-        setCurrentPage(currentPage - 1);    
-    } 
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
-  //Cambiar numero de empleado por pagina:
+  // Cambiar numero de empleado por pagina:
   const handleItemsPerPage = (e) => {
     setItemsPerPage(Number(e.target.value));
     setCurrentPage(1); // Volver a la primera página al cambiar el número de empleados por página
+  };
+
+  // Boton para añadir empleado
+  const navigate = useNavigate();
+  const handleAddEmployee = () => {
+    navigate("/dashboard/newemployee"); // Asegúrate de que la ruta sea la correcta
   };
 
   return (
@@ -76,7 +78,10 @@ function Employees() {
               <option value="15">15</option>
               <option value="20">20</option>
             </select>
-            <button className="flex-1 btn btn-light min-w-[70px] md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg  bg-[#457FBF]">
+            <button
+              className="flex-1 btn btn-light min-w-[70px] md:min-w-[195px] max-w-[195px] rounded-full px-4 py-2 text-white text-sm md:text-lg bg-[#457FBF] cursor-pointer hover:bg-[#2A5885] transition"
+              onClick={handleAddEmployee}
+            >
               <i className="bi bi-plus "></i>{" "}
               <span className="hidden md:inline">Añadir empleado</span>
             </button>
@@ -89,15 +94,24 @@ function Employees() {
         </div>
         <div className="flex flex-col-reverse gap-4 md:flex-row items-center justify-between p-4 ">
           <span className="text-gray-700 text-sm">
-            Mostrando <strong>{showingItems }</strong> de{" "}
+            Mostrando <strong>{showingItems}</strong> de{" "}
             <strong>{employees.length}</strong> elementos
           </span>
           <div className="flex gap-2">
-        
-                      <button onClick={prevPage} disabled={currentPage === 1} className="buttonPrincipal disabled:opacity-50 min-w-[140px] disabled:pointer-events-none"
-                    > ◀ Anterior </button>
-                    <button onClick={nextPage} disabled={currentPage === totalPages} className="buttonPrincipal min-w-[140px] disabled:opacity-50 disabled:pointer-events-none"
-                    >Siguiente  ▶ </button>
+            <button
+              onClick={prevPage}
+              disabled={currentPage === 1}
+              className="buttonPrincipal disabled:opacity-50 min-w-[140px] disabled:pointer-events-none"
+            >
+              ◀ Anterior{" "}
+            </button>
+            <button
+              onClick={nextPage}
+              disabled={currentPage === totalPages}
+              className="buttonPrincipal min-w-[140px] disabled:opacity-50 disabled:pointer-events-none"
+            >
+              Siguiente ▶{" "}
+            </button>
           </div>
         </div>
       </div>
