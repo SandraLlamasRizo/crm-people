@@ -15,7 +15,7 @@ function DepartmentCardLarge({ departamento, datos }) {
                 <h4 className="text-md text-gray-500 mb-3">Número de Empleados: {datos.totalEmpleados }</h4>
                 <div className="flex gap-2">
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
-                        Rendimiento
+                        Salario medio: {datos.medioSalario} €
                     </h5>
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
                         Salario total: {datos.totalSalario} €
@@ -25,7 +25,7 @@ function DepartmentCardLarge({ departamento, datos }) {
 
             <div className="absolute bottom-4 right-4 flex flex-col items-end">
                 <h6 className="text-sm text-gray-500 hover:text-gray-700 cursor-pointer">
-                    <a href="departments/:departmentId">Ver mas detalles</a>
+                    <a href="/dashboard/departments/:">Ver mas detalles</a>
                 </h6>
             </div>
         </div>

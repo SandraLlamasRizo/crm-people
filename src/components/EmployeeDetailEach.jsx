@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function EmployeeDetailEach() {
-    const [employee, setEmployee] = useState(null);
+    const [employee, setEmployee] = useState(null);      //PROBLEMA AQUI NOS DEVUELVE LOS DATOS DE LA API DE RANDOM USER, PERO NO SE COMO AHCER PARA QUE DEVUELVA LOS DE LA OTRA API DE EMPLEADOS
 
     // Usamos useEffect para hacer la llamada a la API cuando el componente se monta
     useEffect(() => {
@@ -32,8 +32,8 @@ function EmployeeDetailEach() {
             {/* Información del empleado */}
             <div className="flex-1">
                 <div className="mb-4">
-                    <h1 className="text-3xl font-bold text-gray-800">{employee.name.first} {employee.name.last}</h1>
-                    <h2 className="text-2xl font-bold text-gray-600">Apellidos</h2>
+                    <h1 className="text-3xl font-bold text-gray-800">{employee.name.first}</h1>
+                    <h2 className="text-2xl font-bold text-gray-600">{employee.name.last}</h2>
                 </div>
 
                 <div className="mb-4">
@@ -43,7 +43,7 @@ function EmployeeDetailEach() {
 
                 <div className="mb-4">
                     <h3 className="font-bold text-gray-700">Departamento</h3>
-                    <p className="text-gray-500">Departamento de Ejemplo</p>
+                    <p className="text-gray-500">{employee.departamento}</p>
                 </div>
 
                 <div className="mb-4">

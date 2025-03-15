@@ -1,3 +1,4 @@
+
 import EmployeeCardSmall from "./EmployeeCardSmall";
 
 function DepartmentDetailsEach() {

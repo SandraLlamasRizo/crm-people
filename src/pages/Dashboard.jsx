@@ -46,7 +46,7 @@ function Dashboard() {
                 <div className="flex justify-between items-center mb-4">
                     <h4 className="text-xl sm:text-2xl font-bold text-gray-800">Empleados</h4>
                     <a
-                        href="/employees"
+                        href="dashboard/employees"
                         className="font-normal text-xs text-[#47A7BD] hover:underline"
                     >
                         Ver todos los empleados
@@ -70,7 +70,7 @@ function Dashboard() {
                     <div className="flex justify-between items-center mb-4">
                         <h4 className="text-xl sm:text-2xl font-bold text-gray-800">Departamentos</h4>
                         <a
-                            href="/departments"
+                            href="/dashboard/departments"
                             className="font-normal text-xs text-[#47A7BD] hover:underline"
                         >
                             Ver todos

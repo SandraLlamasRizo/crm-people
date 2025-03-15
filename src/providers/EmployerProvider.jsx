@@ -50,6 +50,8 @@ function EmployerProvider({ children }) {
             </UserContext.Provider>
     </EmployeesContext.Provider>
 
+    
+    
 }
 
 export default EmployerProvider;
