@@ -23,7 +23,7 @@ function NavBar() {
         <div
           className="flex flex-col items-center">
           <img
-            src="./Logo_CRM.svg"
+            src="/Logo_CRM.svg"
             alt="logo CRM people"
             className="rounded-full w-24 h-24 mb-4"
           />
