@@ -19,7 +19,7 @@ function NotFound() {
                         href="/login"
                         className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
                     >
-                        <i className="bi bi-envelope me-2"></i>
+                        <i className="bi bi-box-arrow-in-right mr-2"></i>
                         Login
                     </a>
                 </div>
