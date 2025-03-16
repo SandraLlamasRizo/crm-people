@@ -54,7 +54,7 @@ function MainRoutes() {
                 {/* TENEMOS QUE HACER: la ruta edit ==> edit/:employeeId, igual que en detailEmployee y con eso ya podemos seguir con el proceso. */}
                 <Route path="newEmployee" element={<NewEmployee />} />
                 <Route path="departments" element={<Departments />} />
-                <Route path="departments/:departmentId" element={<DetailDepartments />} />
+                <Route path="departments/:departmento" element={<DetailDepartments />} />
                 <Route path="contacto" element={<Contacto />} />
             </Route>
         </Routes>

@@ -134,6 +134,8 @@ html {
 }
 
 
+
+
 @media (width >= 768px) {
     .container {
         width: auto;
@@ -153,4 +155,5 @@ html {
     .icon-large {
         font-size: 50px;
     }
+
 }
