@@ -3,7 +3,7 @@ function EditEmployee() {
         <div className="container flex justify-center">
             <div className="w-full max-w-4xl">
                 <h2 className="text-center text-3xl font-medium text-[#457FBF]">Editar empleado</h2>
-                
+
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
                 <form>
                     {/* Información Personal */}
@@ -26,7 +26,7 @@ function EditEmployee() {
                         <label className="block text-gray-700">Teléfono</label>
                         <input type="number" placeholder="+34" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" required />
                     </div>
-                    
+
                     <hr className="border-gray-300 mb-5 mt-6" />
 
                     {/* Departamento */}
@@ -46,7 +46,7 @@ function EditEmployee() {
 
                     <div className="mb-3">
                         <label className="block text-gray-700">Salario</label>
-                        <input type="number" placeholder="€"  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" accept="image/*" required />
+                        <input type="number" placeholder="€" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]" accept="image/*" required />
                     </div>
 
                     <div className="mb-3">

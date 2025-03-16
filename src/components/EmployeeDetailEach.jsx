@@ -52,12 +52,18 @@ function EmployeeDetailEach() {
                 </div>
 
                 {/* Botones de acción */}
+
+
+                {/* TENEMOS QUE PONER LA RUTA PARA LLEGAR A EditEmployee.jsx */}
                 <div className="flex justify-end gap-4">
                     <button
                         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
                     >
                         Editar
                     </button>
+
+                    {/* TENEMOS QUE PONER UN AVISO PARA CONFIRMAR QUE SE QUIERE ELIMINAR EL EMPLEADO Y YA eliminarlo de la API!!! */}
+
                     <button
                         className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
                     >
