@@ -13,20 +13,23 @@ function Dashboard() {
   }, [employees]);
     //funcion para ordenar empleados
     const ordenarEmpleados = [...employees].sort((a, b) =>b._id. localeCompare(a._id));
-    //funcion para sacar departamentos con total de empleados y total salario
+    //funcion para sacar departamentos con total de empleados y total salario 
     const departamentos = employees.reduce((acum, empleado) => {
         const { departamento, salario } = empleado;
 
         if (!acum[departamento]) {
-            acum[departamento] = { totalEmpleados: 0, totalSalario: 0 };
+            acum[departamento] = { totalEmpleados: 0, totalSalario: 0, medioSalario: 0 };
         }
 
         acum[departamento].totalEmpleados += 1;
         acum[departamento].totalSalario += salario;
+       
 
         return acum;
     }, {});
-    
+
+    //calcular salario medio
+   
     //convertir departamentps en array
     const departamentosArray = Object.entries(departamentos);
     console.log(departamentosArray)

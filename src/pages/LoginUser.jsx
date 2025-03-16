@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -6,29 +6,31 @@ import { useUserContext } from "../providers/EmployerProvider";
 
 function LoginUser() {
     const navigate = useNavigate();
-    const [user, setUser] = useUserContext();
+    const [, setUser] = useUserContext(); // Destructuring solo el setter
 
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
-    
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [alerta, setAlerta] = useState(null);
+
     const enviarFormulario = (data) => {
         loginUsuario(data);
-    }
-
+    };
 
     const loginUsuario = async (usuario) => {
         try {
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/usuarios/login', usuario);
             console.log(data);
             localStorage.setItem('token', data.token);
-            const user = data.user
-            localStorage.setItem('username', user.username);
-            navigate('/dashboard')
+            localStorage.setItem('username', data.user.username);
+            setUser(data.user); // Actualizar el contexto con el usuario
+            navigate('/dashboard');
         } catch (error) {
             console.error("Error en el login:", error.response?.data || error.message);
+            setAlerta({
+                type: 'error',
+                message: 'Usuario o contraseña incorrectos. Intenta nuevamente.',
+            });
         }
-        
-    }
-    
+    };
 
     return (
         <div className="flex h-screen items-center justify-center">
@@ -38,7 +40,18 @@ function LoginUser() {
                     ¡Encantados de volver a verte! Ingresa tus datos para iniciar sesión.
                 </p>
 
+                {alerta && (
+                    <div className={`flex items-center p-4 mb-4 text-sm rounded-lg ${alerta.type === "error" ? "bg-red-50 text-red-800" : "bg-green-50 text-green-800"
+                        }`} role="alert">
+                        <svg className="shrink-0 inline w-4 h-4 mr-3 mt-[2px]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span>{alerta.message}</span>
+                    </div>
+                )}
+
                 <form onSubmit={handleSubmit(enviarFormulario)} className="mt-8 mb-2">
+                    {/* Email */}
                     <div className="mb-4">
                         <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                             Tu correo electrónico
@@ -47,17 +60,21 @@ function LoginUser() {
                             id="email"
                             type="email"
                             {...register('email', {
-                            required: {value: true, message: 'El correo es requerido'},
-                            pattern: {value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 
-                                message: 'El formato del correo no es válido'}
+                                required: 'El correo es requerido',
+                                pattern: {
+                                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                    message: 'El formato del correo no es válido',
+                                },
                             })}
                             placeholder="name@mail.com"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
-                        {errors.email &&
-                            <div className="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert"><svg className="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" /></svg><span className="sr-only">Atención</span><div><span className="font-medium">Asegúrese de que se cumplan los requisitos: </span>{errors.email.message }</div></div>}
+                        {errors.email && (
+                            <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>
+                        )}
                     </div>
 
+                    {/* Password */}
                     <div className="mb-4">
                         <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">
                             Contraseña
@@ -66,31 +83,41 @@ function LoginUser() {
                             id="password"
                             type="password"
                             {...register('password', {
-                            required: {value: true, message: 'La contraseña es requerida'},
-                            pattern: {value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/, 
-                                message: 'Debe tener mínimo 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial'}
+                                required: 'La contraseña es requerida',
+                                pattern: {
+                                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+                                    message: 'Debe tener mínimo 8 caracteres, una mayúscula, una minúscula, un número y un caracter especial',
+                                },
                             })}
                             placeholder="Introduce tu contraseña"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
-                        {errors.password &&
-                            <div className="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert"><svg className="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" /></svg><span className="sr-only">Atención</span><div><span className="font-medium">Asegúrese de que se cumplan los requisitos: </span>{errors.password.message }</div></div>}
+                        {errors.password && (
+                            <p className="text-sm text-red-600 mt-1">{errors.password.message}</p>
+                        )}
                     </div>
 
+                    {/* Remember me */}
                     <div className="flex items-center mb-4">
                         <input type="checkbox" id="remember-me" className="mr-2" />
                         <label htmlFor="remember-me" className="text-gray-700 text-sm">Recuérdame</label>
                     </div>
+
+                    {/* Submit */}
                     <div className="flex gap-4 w-full justify-center">
-                            <input type="submit" className="buttonPrincipal buttonPrincipal:hover"/>
+                        <input
+                            type="submit"
+                            value="Iniciar sesión"
+                            className="bg-[#457FBF] text-white font-bold py-2 px-4 rounded-md cursor-pointer hover:bg-[#47A7BD] transition duration-300"
+                        />
                     </div>
+
                     <p className="text-center text-gray-600 mt-4">
                         ¿Has olvidado tu contraseña?{" "}
                         <a href="/resetpassword" className="font-extralight text-[#47A7BD] hover:underline">
                             Recúperala aquí
                         </a>
                     </p>
-
                 </form>
             </div>
         </div>
