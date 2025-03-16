@@ -54,21 +54,23 @@ function EmployeeDetailEach() {
                 {/* Botones de acción */}
 
 
-                {/* TENEMOS QUE PONER LA RUTA PARA LLEGAR A EditEmployee.jsx */}
                 <div className="flex justify-end gap-4">
-                    <button
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+
+                    <a
+                        href="/edit"
+                        className="buttonPrincipal buttonPrincipal:hover"
                     >
+                        <i className="bi bi-pencil mr-2"></i>
                         Editar
-                    </button>
-
-                    {/* TENEMOS QUE PONER UN AVISO PARA CONFIRMAR QUE SE QUIERE ELIMINAR EL EMPLEADO Y YA eliminarlo de la API!!! */}
-
-                    <button
-                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                    </a>
+                    <a
+                        href="/*"
+                        className="w-auto bg-[#cc2c2c] text-white rounded-full px-6 py-3 hover:bg-[#a21e1e] transition"
                     >
+                        <i className="bi bi-trash3 mr-2"></i>
                         Eliminar
-                    </button>
+                    </a>
+                    {/* TENEMOS QUE PONER UN AVISO PARA CONFIRMAR QUE SE QUIERE ELIMINAR EL EMPLEADO Y YA eliminarlo de la API!!! */}
                 </div>
             </div>
         </div>
