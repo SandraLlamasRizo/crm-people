@@ -20,8 +20,8 @@ function PrivateRoute({ element }) {
     //añadimos las comprobaciones para auth (por ejemplo con localstorage)
     const token = localStorage.getItem('token');
 
-    console.log("routes",token)
-    
+    console.log("routes", token)
+
     if (token) {
         return element;
     } else {
@@ -30,12 +30,9 @@ function PrivateRoute({ element }) {
 }
 
 function MainRoutes() {
-    
-
     return (
         <Routes>
-
-            <Route path="" element={<App/>}>
+            <Route path="" element={<App />}>
                 <Route index element={<LandingPage />} />
                 <Route path="register" element={<RegisterUser />} />
                 <Route path="login" element={<LoginUser />} />
@@ -44,14 +41,12 @@ function MainRoutes() {
                 <Route path="*" element={<NotFound />} />
             </Route>
 
-            
-            <Route path="dashboard" element={<PrivateRoute element={<MainLayout/>}/> }>
+            <Route path="dashboard" element={<PrivateRoute element={<MainLayout />} />}>
                 <Route index element={<Dasboard />} />
                 <Route path="employees" element={<Employees />} />
                 <Route path="employees/:employeeId" element={<DetailEmployee />} />
-                <Route path="edit" element={<EditEmployee />} />
-
-                {/* TENEMOS QUE HACER: la ruta edit ==> edit/:employeeId, igual que en detailEmployee y con eso ya podemos seguir con el proceso. */}
+                {/* <Route path="edit" element={<EditEmployee />} /> */}
+                <Route path="edit/:employeeId" element={<EditEmployee />} />
                 <Route path="newEmployee" element={<NewEmployee />} />
                 <Route path="departments" element={<Departments />} />
                 <Route path="departments/:departmento" element={<DetailDepartments />} />

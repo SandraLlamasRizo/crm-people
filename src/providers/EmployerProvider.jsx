@@ -32,11 +32,11 @@ function EmployerProvider({ children }) {
         }
         try {
             const { data } = await axios.get('https://crm-empleados.onrender.com/api/empleados', config);
-            console.log(data)
+            console.log("Datos recibidos desde la API:", data)
             setEmployees(data);
-            console.log(employees)
+            // console.log(employees)
         } catch (error) {
-            console.log(error);
+            console.log("Error al cargar los empleados", error);
         }
     }
 

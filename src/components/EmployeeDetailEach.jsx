@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-function EmployeeDetailEach() {
+function EmployeeDetailEach({ employeeId, showActions = true }) {
     const [employee, setEmployee] = useState(null);      //PROBLEMA AQUI NOS DEVUELVE LOS DATOS DE LA API DE RANDOM USER, PERO NO SE COMO AHCER PARA QUE DEVUELVA LOS DE LA OTRA API DE EMPLEADOS
-    
+
     // Usamos useEffect para hacer la llamada a la API cuando el componente se monta
     useEffect(() => {
         fetch('https://randomuser.me/api/')
@@ -51,25 +51,28 @@ function EmployeeDetailEach() {
                     <p className="text-gray-500">40,000 €/año</p>
                 </div>
 
-                {/* Botones de acción */}
+                {/* Botones de acción, que solo se mostrarán si showActions es true: */}
+                {showActions && (
+                    <div className="flex justify-end gap-4">
 
+                        <a
+                            href="/dashboard/edit/:employeeId"
+                            className="buttonPrincipal buttonPrincipal:hover"
+                        >
+                            <i className="bi bi-pencil mr-2"></i>
+                            Editar
+                        </a>
+                        <a
+                            href="/*"
+                            className="w-auto bg-[#cc2c2c] text-white rounded-full px-6 py-3 hover:bg-[#a21e1e] transition"
+                        >
+                            <i className="bi bi-trash3 mr-2"></i>
+                            Eliminar
+                        </a>
+                        {/* TENEMOS QUE PONER UN AVISO PARA CONFIRMAR QUE SE QUIERE ELIMINAR EL EMPLEADO Y YA eliminarlo de la API!!! */}
+                    </div>
+                )}
 
-                {/* TENEMOS QUE PONER LA RUTA PARA LLEGAR A EditEmployee.jsx */}
-                <div className="flex justify-end gap-4">
-                    <button
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300"
-                    >
-                        Editar
-                    </button>
-
-                    {/* TENEMOS QUE PONER UN AVISO PARA CONFIRMAR QUE SE QUIERE ELIMINAR EL EMPLEADO Y YA eliminarlo de la API!!! */}
-
-                    <button
-                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
-                    >
-                        Eliminar
-                    </button>
-                </div>
             </div>
         </div>
     );

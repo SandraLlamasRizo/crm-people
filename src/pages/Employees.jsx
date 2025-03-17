@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
 import { useEmployeesContext } from "../providers/EmployerProvider";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Employees() {
   const [employees] = useEmployeesContext();
+  const navigate = useNavigate();
+
   useEffect(() => {
     console.log("empleados actualizados", employees);
   }, [employees]);
@@ -41,7 +43,6 @@ function Employees() {
   };
 
   // Boton para añadir empleado
-  const navigate = useNavigate();
   const handleAddEmployee = () => {
     navigate("/dashboard/newemployee"); // Asegúrate de que la ruta sea la correcta
   };
@@ -87,9 +88,26 @@ function Employees() {
             </button>
           </div>
         </div>
+        {/* Aquí añadimos el link para editar los datos del empleado: */}
         <div className="flex flex-col w-full">
           {currentItems.map((empleado) => (
-            <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+            <div key={empleado._id}>
+              {empleado._id ? (
+                <>
+                  <EmployeeCardLarge empleado={empleado} />
+                  {/* NO SE SI DEJAR EL BOTÓN EN ESTA PARTE O EN LA EmployeeCardLarge.jsx:
+                  
+                   <button
+                    onClick={() => navigate(`/dashboard/edit/${empleado._id}`)} // Aquí se corrigió el espacio entre `$` y `{empleado._id}`
+                    className="buttonPrincipal buttonPrincipal:hover"
+                  >
+                    Editar
+                  </button> */}
+                </>
+              ) : (
+                <p>Error: El empleado no tiene ID</p>
+              )}
+            </div>
           ))}
         </div>
         <div className="flex flex-col-reverse gap-4 md:flex-row items-center justify-between p-4 ">
