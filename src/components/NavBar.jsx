@@ -34,7 +34,7 @@ function NavBar() {
         <ul className="space-y-2">
           <li>
             <Link to="/dashboard"
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+              className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
               <i
                 className="bi bi-house-door mr-2">
               </i>
@@ -43,7 +43,7 @@ function NavBar() {
           </li>
           <li>
             <Link to="/dashboard/employees"
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+              className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
               <i
                 className="bi bi-people mr-2">
               </i>
@@ -52,7 +52,7 @@ function NavBar() {
           </li>
           <li>
             <Link to="/dashboard/departments"
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+              className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
               <i
                 className="bi bi-diagram-3 mr-2">
               </i>
@@ -103,7 +103,7 @@ function NavBar() {
 
             <li>
               <a
-                className="flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-300"
+                className="flex items-center p-2 rounded-md text-gray-600 hover:bg-red-400 hover:text-white"
                 onClick={logout}>
                 <i
                   className="bi bi-box-arrow-left mr-2 ml-2">
@@ -185,7 +185,7 @@ git
 
                   <li>
                     <Link to="/dashboard/newEmployee"
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                       <i className="bi bi-calendar4-week mr-2">
                       </i>
                       Agenda
@@ -193,7 +193,7 @@ git
                   </li>
                   <li>
                     <Link to="/dashboard/edit"
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                       <i className="bi bi-envelope mr-2">
                       </i>
                       Correo
@@ -201,7 +201,7 @@ git
                   </li>
                   <li>
                     <Link to="/dashboard/delete"
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-gray-300">
+                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                       <i
                         className="bi bi-check2-square mr-2">
                       </i>
@@ -212,7 +212,7 @@ git
                   <hr className="border-gray-300 my-4" />
 
                   <li>
-                    <a className="flex items-center p-2 rounded-md text-gray-600 dark:hover:bg-gray-300"
+                    <a className="flex items-center p-2 rounded-md text-grey-800 hover:bg-red-500 hover:text-white"
                       onClick={logout}>
                       <i
                         className="bi bi-box-arrow-left mr-2 ml-2">

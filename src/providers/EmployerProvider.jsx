@@ -39,10 +39,6 @@ function EmployerProvider({ children }) {
             console.log("Error al cargar los empleados", error);
         }
     }
-
-
-
-    
     
     return <EmployeesContext.Provider value={[employees, setEmployees ]}>
         <UserContext.Provider value={[user, setUser]}>
