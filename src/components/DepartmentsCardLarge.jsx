@@ -1,10 +1,19 @@
 import { Link } from "react-router";
 
+// Los nombres de los departamentos:
+const nombresPersonalizados = {
+    direccion: 'Dirección',
+    diseño: 'Diseño',
+    desarrollo: 'Desarrollo',
+    recursoshumanos: 'Recursos Humanos',
+};
+
+// HE PUESTO ICONOS DEL MISMO ESTILO:
 const departamentosImagenes = {
-    direccion: '/direccion.jpg',
-    diseño: '/diseno.jpg', // NO CARGA LA IMAGEN NO SE PORQUEN
-    desarrollo: '/desarrolloicon.jpg',
-    recursoshumanos: '/rrhhicon.png',
+    direccion: '/DepartamentoDireccion.svg',
+    diseño: '/DepartamentoDiseno.svg',
+    desarrollo: '/DepartamentoDesarrollo.svg',
+    recursoshumanos: '/Departamentorrhh.svg',
 };
 
 function DepartmentCardLarge({ departamento, datos }) {
@@ -14,23 +23,23 @@ function DepartmentCardLarge({ departamento, datos }) {
                 <figure>
                     <img
                         className="w-[100px] h-[100px] mx-auto"
-                        src={departamentosImagenes[departamento] || '/default.png'}
+                        // src={departamentosImagenes[departamento] || '/default.png'}  porqué es '/default.png'?? No encuentro ese archivo... LO HE BORRADO 
+                        src={departamentosImagenes[departamento]}
                         alt="Icono de Departamento"
                     />
                 </figure>
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                    {departamento}
+                <h3 className="text-xl font-semibold text-gray-700 mb-1">
+                    {nombresPersonalizados[departamento] || departamento}
                 </h3>
                 <h4 className="text-md text-gray-500 mb-3">
-                    Número de Empleados: {datos.totalEmpleados}
+                    Número de Empleados: {datos?.totalEmpleados || 'N/A'}
                 </h4>
                 <div className="flex gap-2">
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
-                        Salario medio: {datos.medioSalario} €
+                        Salario medio: {datos?.medioSalario ? `${datos.medioSalario} €` : 'N/A'}
                     </h5>
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
-                        Salario total: {datos.totalSalario} € 
-                        
+                        Salario total: {datos?.totalSalario ? `${datos.totalSalario} €` : 'N/A'}
                     </h5>
                 </div>
             </div>
