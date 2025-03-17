@@ -126,14 +126,14 @@ function NavBar() {
         className="md:hidden w-full shadow-md p-4 flex justify-between items-center">
         <button
           onClick={toggleMenu}
-          className="text-gray-800 dark:text-gray-800">
+          className="text-gray-800">
           <i
             className={`bi ${isMenuOpen ? 'bi-x' : 'bi-list'} text-xl`}>
           </i>
         </button>
       </div>
 
-      {/* Menú principal: */}
+      {/* Menú principal: */}git 
 
       {isMenuOpen && (
         <>
@@ -154,7 +154,7 @@ function NavBar() {
                     Dashboard
                   </Link>
                 </li>
-
+git
                 <li>
                   <Link to="/dashboard/employees"
                     className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
