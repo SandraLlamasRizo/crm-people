@@ -70,35 +70,37 @@ function NavBar() {
             className="space-y-2">
             <p
               className="block px-5 py-2 text-xs text-gray-400" >
-              Gestiona tus empleados
+              ÁREA PERSONAL
             </p>
             <li>
               <Link to="/dashboard/newEmployee"
                 className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
                 <i
-                  className="bi bi-plus-circle mr-2">
+                  className="bi bi-calendar4-week mr-2">
                 </i>
-                Añadir empleado
+                Agenda
               </Link>
+            </li>
+
+            <li><Link to="/dashboard/delete"
+              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
+              <i
+                className="bi bi-envelope mr-2">
+              </i>
+              Correo
+            </Link>
             </li>
             <li>
               <Link to="/dashboard/edit"
                 className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
                 <i
-                  className="bi bi-pencil mr-2">
+                  className="bi bi-check2-square mr-2">
                 </i>
-                Editar empleado
+                Tareas
               </Link>
             </li>
-            <li><Link to="/dashboard/delete"
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-              <i
-                className="bi bi-trash3 mr-2">
-              </i>
-              Eliminar empleado
-            </Link>
-            </li>
             <hr className="border-gray-300 my-4" />
+
             <li>
               <a
                 className="flex items-center p-2 rounded-md text-gray-600 dark:hover:bg-gray-300"
@@ -106,7 +108,7 @@ function NavBar() {
                 <i
                   className="bi bi-box-arrow-left mr-2 ml-2">
                 </i>
-                Logout
+                Cerrar sesión
               </a>
             </li>
           </ul>
@@ -178,32 +180,32 @@ function NavBar() {
                   className="space-y-2">
                   <p
                     className="block px-5 py-2 text-xs text-gray-400" >
-                    Gestiona tus empleados
+                    ÁREA PERSONAL
                   </p>
 
                   <li>
                     <Link to="/dashboard/newEmployee"
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                      <i className="bi bi-plus-circle mr-2">
+                      <i className="bi bi-calendar4-week mr-2">
                       </i>
-                      Añadir empleado
+                      Agenda
                     </Link>
                   </li>
                   <li>
                     <Link to="/dashboard/edit"
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
-                      <i className="bi bi-pencil mr-2">
+                      <i className="bi bi-envelope mr-2">
                       </i>
-                      Editar empleado
+                      Correo
                     </Link>
                   </li>
                   <li>
                     <Link to="/dashboard/delete"
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
                       <i
-                        className="bi bi-trash3 mr-2">
+                        className="bi bi-check2-square mr-2">
                       </i>
-                      Eliminar empleado
+                      Tareas
                     </Link>
                   </li>
 
@@ -215,7 +217,7 @@ function NavBar() {
                       <i
                         className="bi bi-box-arrow-left mr-2 ml-2">
                       </i>
-                      Logout
+                      Cerrar sesión
                     </a>
                   </li>
                 </ul>

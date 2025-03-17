@@ -5,9 +5,9 @@ import { useEmployeesContext } from "../providers/EmployerProvider";
 function Departments() {
     const [employees] = useEmployeesContext();
     useEffect(() => {
-    console.log("empleados actualizados", employees);
-  }, [employees]);
-    
+        console.log("empleados actualizados", employees);
+    }, [employees]);
+
 
     //funcion para sacar departamentos con total de empleados y total salario
     const departamentos = employees.reduce((acum, empleado) => {
@@ -22,7 +22,7 @@ function Departments() {
 
         return acum;
     }, {});
-    
+
     //convertir departamentps en array
     const departamentosArray = Object.entries(departamentos);
     console.log(departamentosArray)
@@ -42,16 +42,15 @@ function Departments() {
             </div>
             <div className="flex flex-wrap justify-between gap-6 pt-4 pb-6 px-6 mr-2 md:ml-70">
                 {departamentosArray.map(([departamento, datos]) => (
-                    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                    <DepartmentCardLarge
-                        key={departamento}
+                    <div key={departamento} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <DepartmentCardLarge
                             departamento={departamento}
-                            datos={datos}/>
-                </div>
+                            datos={datos} />
+                    </div>
                 ))}
             </div>
 
-            
+
         </>
     );
 }
