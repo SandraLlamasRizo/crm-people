@@ -58,15 +58,23 @@ function EmployeeCardLarge({ empleado }) {
         {/* Información restante (sin cambios) */}
         <div>
           <h3 className="principalCard">{empleado.nombre}</h3>
-                  <h4 className="secundarionCard">{empleado.apellidos}</h4>
+          <h4 className="secundarionCard">{empleado.apellidos}</h4>
         </div>
 
-              <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
-              <h5 className="secundarionCard">{empleado.departamento}</h5>
-              <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
+        <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
+        <h5 className="secundarionCard">{empleado.departamento}</h5>
+        <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
 
         <div className='hover:cursor-pointer'>
-          <i className="bi bi-three-dots-vertical"></i>
+          {/* ESTE ES EL BOTÓN AL QUE ME REFIERO,
+           en vez de dejar los 3 puntitos os parece bien indicar algo como para ver la ficha al completo?? */}
+          <button
+            onClick={() => navigate(`/dashboard/edit/${empleado._id}`)} // Aquí se corrigió el espacio entre `$` y `{empleado._id}`
+            className="buttonPrincipal buttonPrincipal:hover"
+          >
+            Ver
+          </button>
+          {/* <i className="bi bi-three-dots-vertical"></i> */}
         </div>
       </div>
     </div>

@@ -4,16 +4,12 @@ import React, { useState } from "react";
 
 function NewEmployee() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
-    
+
     // Traigo el token del localStorage:
     const token = localStorage.getItem('token');
 
     // Controlar la alerta de registro correcto:
-
     const [alerta, setAlerta] = useState(null);
-
-
-   
 
     const enviarFormulario = (data) => {
         registrarEmpleado(data);
