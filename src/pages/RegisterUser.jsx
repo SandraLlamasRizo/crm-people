@@ -1,10 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { NavLink } from "react-router";
 
 function RegisterUser() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, watch } = useForm();
     
     const enviarFormulario = (data) => {
         registrarUsuario(data)
@@ -17,7 +18,7 @@ function RegisterUser() {
         console.log(data);
     }
 
-    const aceptarTerminos = watch('aceptarTerminos');
+    const aceptarTerminos = watch('accceptTerms');
 
     return (
         <div className="flex h-screen items-center justify-center">
@@ -86,7 +87,7 @@ function RegisterUser() {
 
                     <div className="mb-6">
                         <label className="inline-flex items-center">
-                            <input type="checkbox"{...register('acceptTerms', { required: "Debe aceptar los Términos y Condiciones" })} className="form-checkbox text-[#47A7BD]" />
+                            <input type="checkbox"{...register('acceptTerms', { required: {value: true, message: 'Debe aceptar los Términos y Condiciones'} })} className="form-checkbox text-[#47A7BD]" />
                             <span className="ml-2 text-gray-700">Acepto los {" "}
                                 <a href="#" className="font-extralight text-[#47A7BD] hover:underline">
                                     Términos y Condiciones
