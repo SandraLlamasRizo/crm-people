@@ -3,7 +3,9 @@ import { useOneEmployeeContext } from '../providers/EmployerProvider';
 
 function EmployeeDetailEach({ employeeId, showActions = true }) {
     const [employee, setEmployee] = useState(null);//PROBLEMA AQUI NOS DEVUELVE LOS DATOS DE LA API DE RANDOM USER, PERO NO SE COMO AHCER PARA QUE DEVUELVA LOS DE LA OTRA API DE EMPLEADOS
-    const {OneEmployee} = useOneEmployeeContext();
+    const [OneEmployee, setOneEmployee ] = useOneEmployeeContext();
+    
+    console.log(OneEmployee)
 
     // Usamos useEffect para hacer la llamada a la API cuando el componente se monta
     // useEffect(() => {
@@ -34,13 +36,18 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
             {/* Información del empleado */}
             <div className="flex-1">
                 <div className="mb-4">
-                    <h1 className="text-3xl font-bold text-gray-800">{OneEmployee.name.first}</h1>
-                    <h2 className="text-2xl font-bold text-gray-600">{OneEmployee.name.last}</h2>
+                    <h1 className="text-3xl font-bold text-gray-800">{OneEmployee.nombre}</h1>
+                    <h2 className="text-2xl font-bold text-gray-600">{OneEmployee.apellidos}</h2>
                 </div>
 
                 <div className="mb-4">
                     <h3 className="font-bold text-gray-700">Email</h3>
                     <p className="text-gray-500">{OneEmployee.email}</p>
+                </div>
+
+                <div className="mb-4">
+                    <h3 className="font-bold text-gray-700">Telefono</h3>
+                    <p className="text-gray-500">{OneEmployee.telefono}</p>
                 </div>
 
                 <div className="mb-4">
@@ -50,7 +57,7 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
 
                 <div className="mb-4">
                     <h3 className="font-bold text-gray-700">Salario</h3>
-                    <p className="text-gray-500">40,000 €/año</p>
+                    <p className="text-gray-500">{OneEmployee.salario} €/año</p>
                 </div>
 
                 {/* Botones de acción, que solo se mostrarán si showActions es true: */}

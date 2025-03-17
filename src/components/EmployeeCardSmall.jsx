@@ -7,7 +7,7 @@ function EmployeeCardSmall({ empleado }) {
     const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const {setOneEmployee} = useOneEmployeeContext();
+    const [, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
     
@@ -22,7 +22,7 @@ function EmployeeCardSmall({ empleado }) {
             const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
             console.log("Datos recibidos desde la API:", data)
             setOneEmployee(data);
-            //navigate(`/dashboard/employees/${id}`)
+            navigate(`/dashboard/employees/${id}`)
             // console.log(employees)
         } catch (error) {
             console.log("Error al cargar los empleados", error);
