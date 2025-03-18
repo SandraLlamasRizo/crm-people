@@ -36,10 +36,10 @@ const departamentosImagenes = {
 
     return (
         <>
-            <div className=" mx-auto p-6">
+            <div className="mx-auto p-6">
                 <figure>
                     <img
-                        className="w-[100px] h-[100px] mx-auto"
+                        className="w-[100px] h-[100px]"
                         // src={departamentosImagenes[departamento] || '/default.png'}  porqué es '/default.png'?? No encuentro ese archivo... LO HE BORRADO 
                         src={departamentosImagenes[departamento]}
                         alt="Icono de Departamento"

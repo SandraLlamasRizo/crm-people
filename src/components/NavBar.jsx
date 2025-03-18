@@ -65,7 +65,7 @@ function NavBar() {
 
         {/* Submenú Gestiona tus empleados: */}
         <div
-          className="relative">
+          className="reative">
           <ul
             className="space-y-2">
             <p
@@ -73,7 +73,7 @@ function NavBar() {
               ÁREA PERSONAL
             </p>
             <li>
-              <Link to="/dashboard/newEmployee"
+              <Link to=""
                 className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                 <i
                   className="bi bi-calendar4-week mr-2">
@@ -82,27 +82,16 @@ function NavBar() {
               </Link>
             </li>
 
-            <li><Link to="/dashboard/delete"
-<<<<<<< HEAD
+            <li><Link to=""
               className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
+
               <i
                 className="bi bi-envelope mr-2">
               </i>
               Correo
             </Link>
             </li>
-            <li>
-              <Link to="/dashboard/edit"
-                className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-                <i
-                  className="bi bi-check2-square mr-2">
-                </i>
-                Tareas
-              </Link>
-            </li>
+          
             <hr className="border-gray-300 my-4" />
 
             <li>
@@ -133,11 +122,11 @@ function NavBar() {
         </button>
       </div>
 
-      {/* Menú principal: */}git 
+      {/* Menú principal: */}
 
       {isMenuOpen && (
         <>
-          {/* Transparencia fondo menú */}
+          {/* Transparencia fondo menú ==> NO LOGRO QUE OCUPE TODA LA PANTALLA HACIA ABAJO!! */}
           <div className="absolute w-screen h-screen bg-[#b0adad9b] mt-15"></div>
 
           <div className="lg:hidden absolute top-19 left-4 mt-18 z-50 ">
@@ -154,7 +143,6 @@ function NavBar() {
                     Dashboard
                   </Link>
                 </li>
-git
                 <li>
                   <Link to="/dashboard/employees"
                     className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
@@ -179,7 +167,7 @@ git
 
               <div className="relative">
 
-                {/* Submenú Gestiona tus empleados: */}
+                {/* Submenú área personal recursos humanos: */}
                 <ul
                   className="space-y-2">
                   <p
@@ -188,38 +176,23 @@ git
                   </p>
 
                   <li>
-                    <Link to="/dashboard/newEmployee"
-<<<<<<< HEAD
+                    <Link to=""
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
                       <i className="bi bi-calendar4-week mr-2">
                       </i>
                       Agenda
                     </Link>
                   </li>
                   <li>
-                    <Link to="/dashboard/edit"
-<<<<<<< HEAD
+                    <Link to=""
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
+
                       <i className="bi bi-envelope mr-2">
                       </i>
                       Correo
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/dashboard/delete"
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-                      <i
-                        className="bi bi-check2-square mr-2">
-                      </i>
-                      Tareas
-                    </Link>
-                  </li>
+                 
 
                   <hr className="border-gray-300 my-4" />
 
