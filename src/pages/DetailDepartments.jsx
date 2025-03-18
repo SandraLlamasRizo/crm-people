@@ -8,21 +8,22 @@ function DetailDepartments() {
 
     return (
         <>
-            <div className="md:ml-76">
-                {/* Aquí le pasas el 'departamento' al componente para cargar los detalles */}
-                <DepartmentDetailsEach departamento={departamento} /> 
-                
-            </div>
-
-            <div>
+            <div className="mr-2 md:mr-8">
                 <a
-                    href="/departments"
-                    className="no-underline hover:underline text-sm bottom-4 right-4 flex flex-col items-end pr-4"
+                    href="/dashboard/departments"
+                    className="no-underline hover:underline text-sm bottom-4 right-4 flex flex-col items-end pr-8 pt-8"
                     style={{ color: "#457FBF" }}
                 >
                     Volver a departamentos
                 </a>
             </div>
+            <div className="md:ml-76 mr-2 md:mr-8">
+                {/* Aquí le pasas el 'departamento' al componente para cargar los detalles */}
+                <DepartmentDetailsEach departamento={departamento} /> 
+                
+            </div>
+
+            
         </>
     );
 }
