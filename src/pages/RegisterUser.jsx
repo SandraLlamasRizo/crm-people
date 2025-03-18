@@ -36,7 +36,7 @@ function RegisterUser() {
         <div className="flex h-screen items-center justify-center">
             {/* Aquí va el modal que avisa del registro exitoso: */}
             {showSuccessModal && (
-                <div className="fixed inset-0 flex items-center justify-center  bg-gray-500 bg-opacity-50 z-50">
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p6 rounded-lg shadow-lg text-center m-30 p-4">
                         <h1>¡Te has registrado correctamente!</h1>
                         <p className="text-gray-700 mb-4">En unos segundos te redigiremos a la página de inicio de sesión</p>

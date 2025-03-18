@@ -28,7 +28,7 @@ function EmployeeCardLarge({ empleado }) {
         }
         }
 
-    // ✅ Ruta relativa (si estás dentro de /dashboard)
+    // Ruta relativa (si estás dentro de /dashboard)
     const handleClick = (id) => {
         fetchOneEmployee(id)
     };
@@ -84,15 +84,8 @@ function EmployeeCardLarge({ empleado }) {
         <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
 
         <div className='hover:cursor-pointer'>
-          {/* ESTE ES EL BOTÓN AL QUE ME REFIERO,
-           en vez de dejar los 3 puntitos os parece bien indicar algo como para ver la ficha al completo?? */}
-          <button
-            onClick={() => navigate(`/dashboard/edit/${empleado._id}`)} // Aquí se corrigió el espacio entre `$` y `{empleado._id}`
-            className="buttonPrincipal buttonPrincipal:hover"
-          >
-            Ver
-          </button>
-          {/* <i className="bi bi-three-dots-vertical"></i> */}
+          
+          <i className="bi bi-three-dots-vertical"></i>
         </div>
       </div>
     </div>
