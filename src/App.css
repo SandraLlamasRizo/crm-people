@@ -40,10 +40,16 @@ html {
 
 .homeH3 {
     /*Estilos para el 'Inicio' de Dadshboard*/
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bolder;
-    color: #000000;
+    color: #004896;
+}
 
+.homeH6 {
+    /*Estilos para el 'Bienvenido' de Dadshboard*/
+    font-size: 24px;
+    font-weight: normal;
+    color: #004896;
 }
 
 .container {

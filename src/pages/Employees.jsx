@@ -49,6 +49,7 @@ function Employees() {
 
   return (
     <>
+      <h3 className="homeH3 p-4 md:ml-76">Empleados</h3>
       <div className="container">
         <h2 className="px-4 py-2 text-xl md:text-2xl font-bold">
           Gestiona tus empleados

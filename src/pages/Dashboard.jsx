@@ -39,10 +39,10 @@ function Dashboard() {
         <div className="mx-auto p-4 sm:p-6">
             {/* Sección de Bienvenida */}
             <div className="  mx-auto p-4  mb-4 md:ml-70 ">
-                <h6 className="text-lg sm:text-xl font-semibold text-gray-600">
+                <h6 className="homeH6 text-gray-600">
                     Bienvenido de nuevo, {username}
                 </h6>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Inicio</h3>
+                <h3 className="homeH3 text-gray-800">Inicio</h3>
             </div>
 
             {/* Sección de Empleados */}
