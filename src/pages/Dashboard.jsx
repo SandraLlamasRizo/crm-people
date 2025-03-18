@@ -51,7 +51,7 @@ function Dashboard() {
                     <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Empleados</h4>
                     <a
                         href="dashboard/employees"
-                        className="font-normal text-xs text-[#47A7BD] hover:underline"
+                        className="font-normal text-[#47A7BD] hover:underline"
                     >
                         Ver todos los empleados
                     </a>
@@ -75,7 +75,7 @@ function Dashboard() {
                         <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Departamentos</h4>
                         <a
                             href="/dashboard/departments"
-                            className="font-normal text-xs text-[#47A7BD] hover:underline"
+                            className="font-normal text-[#47A7BD] hover:underline"
                         >
                             Ver todos
                         </a>
@@ -98,7 +98,7 @@ function Dashboard() {
                         <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Nuevos Empleados</h4>
                         <a
                             href="/dashboard/employees"
-                            className="font-normal text-xs text-[#47A7BD] hover:underline"
+                            className="font-normal text-[#47A7BD] hover:underline"
                         >
                             Ver todos
                         </a>

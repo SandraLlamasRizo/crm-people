@@ -8,14 +8,10 @@ function DetailDepartments() {
 
     return (
         <>
-            <div className="mr-2 md:mr-8">
-                <a
-                    href="/dashboard/departments"
-                    className="no-underline hover:underline text-sm bottom-4 right-4 flex flex-col items-end pr-8 pt-8"
-                    style={{ color: "#457FBF" }}
-                >
-                    Volver a departamentos
-                </a>
+            <div className="mr-2 md:mr-8 p-4">
+                <a href="/dashboard/departments" className=" no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal text-[#47A7BD] hover:underline">
+                        Volver a departamentos
+                    </a>
             </div>
             <div className="md:ml-76 mr-2 md:mr-8">
                 {/* Aquí le pasas el 'departamento' al componente para cargar los detalles */}
