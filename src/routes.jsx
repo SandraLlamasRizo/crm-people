@@ -16,6 +16,7 @@ import EditEmployee from "./pages/EditEmployee";
 import NotAccess from "./pages/NotAccess";
 import MainLayout from "./components/MainLayout";
 import Calendar from "./components/Calendar";
+import CorreosEmpleados from "./pages/CorreosEmpleados";
 
 function PrivateRoute({ element }) {
     //añadimos las comprobaciones para auth (por ejemplo con localstorage)
@@ -46,6 +47,7 @@ function MainRoutes() {
                 <Route index element={<Dasboard />} />
                 <Route path="employees" element={<Employees />} />
                 <Route path="calendar" element={<Calendar />} />
+                <Route path="correo" element={<CorreosEmpleados />} />
                 <Route path="employees/:employeeId" element={<DetailEmployee />} />
                 {/* <Route path="edit" element={<EditEmployee />} /> */}
                 <Route path="edit/:employeeId" element={<EditEmployee />} />

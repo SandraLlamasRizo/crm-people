@@ -73,7 +73,7 @@ function NavBar() {
               ÁREA PERSONAL
             </p>
             <li>
-              <Link to=""
+              <Link to="/dashboard/calendar"
                 className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                 <i
                   className="bi bi-calendar4-week mr-2">
@@ -82,7 +82,7 @@ function NavBar() {
               </Link>
             </li>
 
-            <li><Link to=""
+            <li><Link to="/dashboard/correo"
               className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
 
               <i
@@ -176,7 +176,7 @@ function NavBar() {
                   </p>
 
                   <li>
-                    <Link to=""
+                    <Link to="/dashboard/calendar"
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                       <i className="bi bi-calendar4-week mr-2">
                       </i>
@@ -184,7 +184,7 @@ function NavBar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to=""
+                    <Link to="/dashboard/correo"
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
 
                       <i className="bi bi-envelope mr-2">

@@ -56,12 +56,12 @@ function Employees() {
         </a>
       </div>
       <div className="container">
-        <h2 className="px-4 py-2 text-xl md:text-2xl font-bold">
+        <h2 className="px-4 py-2 text-xl md:text-2xl font-bold text-gray-600">
           Gestiona tus empleados
         </h2>
         <div className="flex flex-row items-center my-2">
           <div className="flex-1 pl-4">
-            <h6 className="text-lg md:text-md">
+            <h6 className="text-lg md:text-md text-gray-600">
               Empleados({employees.length})
             </h6>
           </div>
@@ -69,14 +69,14 @@ function Employees() {
           <div className="flex-2 flex flex-col-reverse lg:flex-row gap-2 items-end lg:items-center justify-end mr-4">
             <label
               htmlFor="numItems"
-              className="hidden md:inline min-w-[152px] text-sm md:text-md text-gray-800 font-medium"
+              className="hidden md:inline min-w-[152px] text-sm md:text-md text-gray-600 font-medium"
             >
               Empleados por pagina:{" "}
             </label>
             <select
               name="numItems"
               id="numItems"
-              className="px-3 py-1 ml-auto md:ml-0 bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-full transition"
+              className="px-3 py-1 ml-auto md:ml-0 bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-full transition text-gray-600"
               value={itemsPerPage}
               onChange={handleItemsPerPage}
             >

@@ -77,7 +77,7 @@ function EmployeeCardLarge({ empleado, propCompact }) {
       onClick={() => handleClick(empleado._id)}
       className="my-2 mx-2 cursor-pointer transition duration-200 ease-in-out"
     >
-      <div className={`w-full grid ${gridClass} bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center h-[120px]`}>
+      <div className={`w-full grid ${gridClass} bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-lg shadow-xl p-4 items-center text-center h-[120px]`}>
         {/* Imagen del empleado */}
         <figure className="flex justify-center items-center w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] mx-auto">
           <img
@@ -88,14 +88,14 @@ function EmployeeCardLarge({ empleado, propCompact }) {
         </figure>
 
         {/* Información */}
-        <div className="gap-2">
+        <div className="gap-2 text-gray-600">
           <h3 className="principalCard">{empleado.nombre}</h3>
           <h4 className="secundarionCard">{empleado.apellidos}</h4>
         </div>
 
-        {!isCompact && <h5 className="secundarionCard">{empleado.email}</h5>}
-        <h5 className="secundarionCard">{empleado.departamento}</h5>
-        {!isCompact && <h5 className="secundarionCard">{empleado.salario + '€'}</h5>}
+        {!isCompact && <h5 className="secundarionCard text-gray-600">{empleado.email}</h5>}
+        <h5 className="secundarionCard text-gray-600">{empleado.departamento}</h5>
+        {!isCompact && <h5 className="secundarionCard text-gray-600">{empleado.salario + '€'}</h5>}
 
         <div className='hover:cursor-pointer'>
           

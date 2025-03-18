@@ -82,7 +82,7 @@ function EmployeeCardSmall({ empleado }) {
                             />
                         )}
                     </figure>
-                    <h3 className="text-gray-800 font-semibold text-lg">
+                    <h3 className="text-gray-600 font-semibold text-lg">
                         {empleado.nombre}
                     </h3>
                     <h4 className="text-gray-600 text-sm mb-2">

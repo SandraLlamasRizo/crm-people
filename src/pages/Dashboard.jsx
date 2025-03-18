@@ -81,7 +81,7 @@ function Dashboard() {
                         </a>
                     </div>
 
-                    <div className="flex flex-col gap-2 sm:gap-4">
+                    <div className="flex flex-col gap-4">
                         {departamentosArray.map(([departamento, datos]) => (
                         <DeparmentCardSmall
                             key={departamento}
@@ -103,7 +103,7 @@ function Dashboard() {
                             Ver todos
                         </a>
                     </div>
-                    <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
+                    <div className="flex flex-col gap-4">
                         {ordenarEmpleados
                             .slice(0, window.innerWidth < 768 ? 2 : 5)  // Muestra 2 en móvil y 5 en escritorio
                             .map((empleado) => (
