@@ -1,19 +1,36 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useOneEmployeeContext } from '../providers/EmployerProvider';
+import axios from 'axios';
 
 function EmployeeCardSmall({ empleado }) {
     const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
+    const token = localStorage.getItem('token');
+    
 
-    // ✅ Ruta relativa (si estás dentro de /dashboard)
-    const handleClick = () => {
-        if (empleado._id)
-            navigate(`/dashboard/employees/${empleado._id}`)
-        else {
-            navigate(`/notfound`)
+     const fetchOneEmployee = async (id) => {
+        const config = {
+            headers: {
+                'Authorization': token
+            }
         }
+        try {
+            const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
+            console.log("Datos recibidos desde la API:", data);
+            setOneEmployee(data);
+            navigate(`/dashboard/employees/${id}`)
+            // console.log(employees)
+        } catch (error) {
+            console.error("Error al cargar los empleados:", error);
+        }
+    };
+
+    const handleClick = (id) => {
+        fetchOneEmployee(id);
     };
 
     useEffect(() => {
@@ -44,10 +61,11 @@ function EmployeeCardSmall({ empleado }) {
         };
 
         fetchImage();
-    }, []); 
+    }, []);
+
     return (
         <div className="flex gap-4 w-[174px] h-[180px]">
-            <div onClick={handleClick} className="cursor-pointer">
+            <div onClick={() => handleClick(empleado._id)} className="cursor-pointer">
                 <div className="w-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md transition duration-200 ease-in-out">
                     <figure className="flex justify-center items-center">
                         {loading ? (

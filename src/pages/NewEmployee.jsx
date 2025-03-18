@@ -89,6 +89,7 @@ function NewEmployee() {
                             placeholder="Introducir apellidos"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                         />
+                        
                     </div>
 
                     <div className="mb-3">
