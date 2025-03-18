@@ -45,34 +45,34 @@ const departamentosImagenes = {
                         alt="Icono de Departamento"
                     />
                 </figure>
-                <h3 className="text-xl font-semibold text-gray-700 mb-1">
+                <h3 className="text-4xl font-semibold text-gray-700 p-4">
                     {nombresPersonalizados[departamento] || departamento}
                 </h3>
-                <div className="mb-6 shadow-lg bg-white rounded-2xl">
+                <div className="mb-6 shadow-lg bg-white rounded-2xl p-4">
                     <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
                         Salarios
                     </h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 gap-y-10 sm:gap-y-6 pt-4 pb-6 px-6 justify-between">
-                        <div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 gap-y-10 pt-4 pb-6 px-6 justify-between">
+                        <div className="text-gray-500">
                             <h3>Salario Total</h3>
                             <p>{calculo.totalSalario } €</p>
                         </div>
-                        <div>
+                        <div className="text-gray-500">
                             <h3>Salario Promedio</h3>
                             <p>{promSalario } €</p>
                         </div>
-                        <div>
+                        <div className="text-gray-500">
                             <h3>Salario Máximo</h3>
                             <p> {calculo.salarioMaximo} €</p>
                         </div>
-                        <div>
+                        <div className="text-gray-500">
                             <h3>Salario Minimo</h3>
                             <p>{calculo.salarioMinimo} €</p>
                         </div>
                     </div>
                 </div>
-                <div className="mb-6 shadow-lg">
-                    <div className="flex flex-col bg-white rounded-2xl">
+                <div className="mb-6  bg-white rounded-2xl shadow-lg p-4">
+                    <div className="flex flex-col">
                         <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
                             Empleados
                         </h2>
@@ -90,7 +90,7 @@ const departamentosImagenes = {
                         </div>
                         <div className="flex justify-end mt-4 px-6 pb-4">
 
-                         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-md w-[100px]">
+                         <button className="bg-[#457FBF] hover:bg-[#2664A9] hover:cursor-pointer text-white font-bold py-1 px-2 rounded-md w-[100px]">
                                 Ver todos 
                             
                         </button>    

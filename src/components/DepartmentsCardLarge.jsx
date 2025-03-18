@@ -27,8 +27,8 @@ function DepartmentCardLarge({ departamento, datos }) {
     
 
     return (
-        <div className="max-w-[500px] w-full h-[300px] rounded-lg shadow-xl overflow-hidden p-4 flex flex-col justify-between relative bg-white mx-auto">
-            <div>
+    
+        <div className="max-w-[500px] w-full h-auto rounded-lg shadow-xl overflow-hidden p-4 flex flex-col gap-4 relative bg-white mx-auto">
                 <figure>
                     <img
                         className="w-[100px] h-[100px] mx-auto"
@@ -45,20 +45,18 @@ function DepartmentCardLarge({ departamento, datos }) {
                 </h4>
                 <div className="flex gap-2">
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
-                        Salario medio: {datos?.medioSalario ? `${datos.medioSalario} €` : 'N/A'}
+                        Salario medio: {datos?.promSalario ? `${datos.promSalario} €` : 'N/A'}
                     </h5>
                     <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-full">
                         Salario total: {datos?.totalSalario ? `${datos.totalSalario} €` : 'N/A'}
                     </h5>
                 </div>
-            </div>
-
-            <div className="absolute bottom-4 right-4 flex flex-col items-end">
-                <a className="text-sm text-gray-500 hover:text-gray-700 cursor-pointer" onClick={handleClick}>
+                <div className="flex flex-col items-end">
+                    <a className="text-sm text-gray-500 hover:text-gray-700 cursor-pointer" onClick={handleClick}>
                         Ver más detalles
                 </a>
             </div>
-        </div>
+            </div>
     );
 }
 

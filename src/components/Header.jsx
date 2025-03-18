@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
-import { useEmployeesContext } from "../providers/EmployerProvider";
+import { useEmployeesContext, useOneEmployeeContext } from "../providers/EmployerProvider";
 import SearchEmployeeCard from "./SearchEmployeeCard";
 import { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 function Header() {
     const [employees] = useEmployeesContext();
@@ -12,6 +13,9 @@ function Header() {
     const [showResults, setShowResults] = useState(false);
     const searchRef = useRef(null);
     const username = localStorage.getItem('username');
+    const [, setOneEmployee] = useOneEmployeeContext();
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
 
     //Cerrar drop down si clickas fuera
     useEffect(() => {
@@ -47,10 +51,29 @@ function Header() {
      
     }, [searchValue, employees]);
 
-    function handleEmployeeClick() {
+    function handleEmployeeClick(id) {
         setShowResults(false); 
         setValue('search', '');
+        fetchOneEmployee(id)
     }
+
+    const fetchOneEmployee = async (id) => {
+        const config = {
+            headers: {
+                'Authorization': token
+            }
+        }
+        try {
+            const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
+            console.log("Datos recibidos desde la API:", data)
+            setOneEmployee(data);
+            navigate(`/dashboard/employees/${id}`)
+            // console.log(employees)
+        } catch (error) {
+            console.log("Error al cargar los empleados", error);
+        }
+        }
+
     
     return (<>
     
@@ -70,13 +93,13 @@ function Header() {
             </form>
             
             {showResults && <div className="absolute inset-0 md:inset-20 w-full h-screen bg-[#ffffff84] mr-8">
-                <div ref={searchRef}  className="bg-white p-6 rounded-lg shadow-xl max-w-[390px] md:max-w-[500px] relative top-35 md:top-0 left-5 md:left-60 z-60">
+                <div ref={searchRef}  className="bg-white p-6 rounded-lg shadow-xl max-w-[390px] md:max-w-[600px] relative top-35 md:top-0 left-5 md:left-60 z-60">
                 {filteredEmployees.length > 0 ? (
                     <ul>
                         {filteredEmployees.map((empl, index) => (
-                            <li className="cursor-pointer"><NavLink to={'/employees/:employeeId'} onClick={handleEmployeeClick}>
+                            <li className="cursor-pointer" onClick={() => handleEmployeeClick(empl._id)}>
                                 <SearchEmployeeCard empleado={empl } />
-                            </NavLink></li>
+                            </li>
                         ))}
                         
                     </ul>
