@@ -64,7 +64,7 @@ function Calendar() {
                 Hoy, {day} {month} {year}
                 </h6>
             <h3 className="homeH3 p-4">Agenda</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6 h-[60hv]">
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6 transition-discrete ">
                 <div className=" h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                 {/* Header con navegación entre meses */}
                     <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white ">
@@ -81,7 +81,7 @@ function Calendar() {
                         ))}
                     </div>
                 {/* Días del mes */}
-                    <div className="grid grid-cols-7 text-center p-2 h-[90%]">
+                    <div className="grid grid-cols-7 text-center p-2 h-[90%] text-gray-600">
                         {generateCalendarDays().map((day, index) => (
                             <div
                                 key={index} className={`py-2 px-4 ${day ? 'cursor-pointer hover:bg-blue-100' : ''} ${!day ? 'bg-gray-100' : ''}
@@ -98,25 +98,25 @@ function Calendar() {
                         <div className="w-full mb-8">
                             <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Reuniones</h5>
                             <ul className="my-2 pl-4">
-                                <li className="text-sm text-gray-800 p-2">8:15h: Proyecto crm-people</li>
-                                <li className="text-sm text-gray-800 p-2">10:00h: Cliente</li>
-                                <li className="text-sm text-gray-800 p-2">21:00h: Presentación Proyecto crm-people</li>
+                                <li className="text-sm text-gray-600 p-2">8:15h: Proyecto crm-people</li>
+                                <li className="text-sm text-gray-600 p-2">10:00h: Cliente</li>
+                                <li className="text-sm text-gray-600 p-2">21:00h: Presentación Proyecto crm-people</li>
                             </ul>
                         </div>
                         <div className="w-full mb-8">
                             <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Deadlines</h5>
                             <ul className="my-2 pl-4">
-                                <li className="text-sm text-gray-800 p-2">Hoy! Proyecto crm-people</li>
-                                <li className="text-sm text-gray-800 p-2">En 10 dias - Proyecto X</li>
-                                <li className="text-sm text-gray-800 p-2">En 2 meses - Proyecto Y</li>
+                                <li className="text-sm text-gray-600 p-2">Hoy! Proyecto crm-people</li>
+                                <li className="text-sm text-gray-600 p-2">En 10 dias - Proyecto X</li>
+                                <li className="text-sm text-gray-600 p-2">En 2 meses - Proyecto Y</li>
                             </ul>
                         </div>
                         <div className="w-full mb-8">
                             <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Tareas</h5>
                             <ul className="my-2 ml-5 pl-4 list-disc ">
-                                <li className="text-sm text-gray-800 p-2">Terminar funcionalidad Header</li>
-                                <li className="text-sm text-gray-800 p-2">Añadir estilos boton </li>
-                                <li className="text-sm text-gray-800 p-2">Comprobar peticiones API</li>
+                                <li className="text-sm text-gray-600 p-2">Terminar funcionalidad Header</li>
+                                <li className="text-sm text-gray-600 p-2">Añadir estilos boton </li>
+                                <li className="text-sm text-gray-600 p-2">Comprobar peticiones API</li>
                             </ul>
                             <button className="flex mt-4 buttonPrincipal mx-auto w-auto">Añadir tarea</button>
                         </div>

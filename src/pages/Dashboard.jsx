@@ -56,7 +56,7 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
-                <div className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-4 lg:px-6">
+                <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-1 md:px-4 lg:px-6">
                     {employees
                         .slice(0, window.innerWidth < 1024 ? 2 : 10) // Muestra 2 en móvil y 12 en escritorio
                         .map((empleado) => (

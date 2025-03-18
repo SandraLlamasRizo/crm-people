@@ -95,7 +95,7 @@ function Employees() {
           </div>
         </div>
         {/* Aquí añadimos el link para editar los datos del empleado: */}
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full gap-4 p-4">
           {currentItems.map((empleado) => (
             <div key={empleado._id}>
               {empleado._id ? (

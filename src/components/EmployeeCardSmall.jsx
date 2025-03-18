@@ -63,7 +63,7 @@ function EmployeeCardSmall({ empleado }) {
     }, []);
 
     return (
-        <div className="w-[174px] h-[180px]">
+        <div className="w-[160px] h-[180px]">
             <div
                 onClick={handleClick}
                 className="cursor-pointer transition duration-200 ease-in-out"
