@@ -79,10 +79,11 @@ const departamentosImagenes = {
                         <h5 className="text-md text-gray-500 mb-3 px-6">
                             Numero de empleados: {totalEmpleados}
                         </h5>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 gap-y-10 sm:gap-y-6 pt-4 pb-6 px-6 ">
+                        <div className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-4 lg:px-6">
                             
-                    {filteredEmployees
-                        .slice(0, window.innerWidth < 768 ? 2 : 12) // Muestra 2 en móvil y 12 en escritorio
+                            
+                    {filteredEmployees 
+                        .slice(0, window.innerWidth < 1024 ? 2 : 10) // Muestra 2 en móvil y 12 en escritorio
                         .map((empleado) => (
                             <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                         ))}

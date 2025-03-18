@@ -52,7 +52,7 @@ function DepartmentCardLarge({ departamento, datos }) {
                 </div>
             <div className="bottom-4 right-4 flex flex-col items-end">
                 <a
-                    className="no-underline hover:underline text-sm abslute flex flex-col items-end pr-4" style={{ color: "#457FBF" }} onClick={handleClick}>
+                    className="no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal hover:cursor-pointer text-[#47A7BD] hover:underline" onClick={handleClick}>
                     Ver más detalles
                 </a>
             </div>
