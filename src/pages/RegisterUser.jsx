@@ -9,7 +9,7 @@ function RegisterUser() {
     
     const enviarFormulario = (data) => {
         registrarUsuario(data)
-        console.log(data)
+        console.log(errors)
     }
 
     const registrarUsuario = async (nuevoUsuario) => {
@@ -97,10 +97,8 @@ function RegisterUser() {
                         {errors.acceptTerms && <p className="text-red-500 text-xs italic">{errors.acceptTerms.message}</p>}
                     </div>
 
-                
-
                     <div className="flex gap-4 w-full justify-center">
-                        <input type="submit" className="buttonPrincipal buttonPrincipal:hover" disabled={!aceptarTerminos} />
+                        <input type="submit" className="buttonPrincipal buttonPrincipal:hover"  />
                     </div>
 
                     <div className="flex gap-4 w-full justify-center">
