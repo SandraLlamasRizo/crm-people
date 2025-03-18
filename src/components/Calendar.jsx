@@ -59,15 +59,15 @@ function Calendar() {
     const currentDayIndex = generateCalendarDays().indexOf(day);
 
     return <>
-        <div className="mx-4 md:ml-76 md:mr-10">
+        <div className="mx-4 md:ml-76 md:mr-10 p-4 h-[85vh]">
             <h6 className="homeH6 text-gray-600">
                 Hoy, {day} {month} {year}
                 </h6>
             <h3 className="homeH3 p-4">Agenda</h3>
-            <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-0 md:gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-6 h-[60hv]">
                 <div className=" h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                 {/* Header con navegación entre meses */}
-                    <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white">
+                    <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white ">
                         <button onClick={handlePrevMonth} className="text-lg">←</button>
                         <span className="text-xl font-semibold">
                             {month} {currentDate.getFullYear()}
@@ -81,7 +81,7 @@ function Calendar() {
                         ))}
                     </div>
                 {/* Días del mes */}
-                    <div className="grid grid-cols-7 text-center p-2 h-[60vh]">
+                    <div className="grid grid-cols-7 text-center p-2 h-[90%]">
                         {generateCalendarDays().map((day, index) => (
                             <div
                                 key={index} className={`py-2 px-4 ${day ? 'cursor-pointer hover:bg-blue-100' : ''} ${!day ? 'bg-gray-100' : ''}
