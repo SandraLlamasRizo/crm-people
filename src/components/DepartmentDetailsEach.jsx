@@ -1,4 +1,3 @@
-
 import EmployeeCardSmall from "./EmployeeCardSmall";
 
 function DepartmentDetailsEach() {
@@ -7,6 +6,30 @@ function DepartmentDetailsEach() {
             <div className="md:ml-70 mx-auto p-6">
                 <h1 className="text-3xl font-bold mb-4">Nombre del departamento</h1>
                 <div className="mb-6 shadow-lg">
+                    <div className="mb-6 shadow-lg bg-white rounded-2xl">
+                        <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
+                            Salarios
+                        </h2>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 gap-y-10 sm:gap-y-6 pt-4 pb-6 px-6 justify-between">
+                            <div>
+                                <h3>Salario Total</h3>
+                                <p>....</p>
+                            </div>
+                            <div>
+                                <h3>Salario Promedio</h3>
+                                <p>....</p>
+                            </div>
+                            <div>
+                                <h3>Salario Máximo</h3>
+                                <p> ....</p>
+                            </div>
+                            <div>
+                                <h3>Salario Minimo</h3>
+                                <p>....</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col bg-white rounded-2xl">
                         <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
                             Empleados
@@ -63,32 +86,10 @@ function DepartmentDetailsEach() {
                     </div>
                 </div>
 
-                <div className="mb-6 shadow-lg bg-white rounded-2xl">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
-                        Salarios
-                    </h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 gap-y-10 sm:gap-y-6 pt-4 pb-6 px-6 justify-between">
-                        <div>
-                            <h3>Salario Total</h3>
-                            <p>....</p>
-                        </div>
-                        <div>
-                            <h3>Salario Promedio</h3>
-                            <p>....</p>
-                        </div>
-                        <div>
-                            <h3>Salario Máximo</h3>
-                            <p> ....</p>
-                        </div>
-                        <div>
-                            <h3>Salario Minimo</h3>
-                            <p>....</p>
-                        </div>
-                    </div>
                 </div>
 
-             
-            </div>
+            
+            
         </>
     );
 }

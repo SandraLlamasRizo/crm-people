@@ -49,7 +49,7 @@ function MainRoutes() {
                 <Route path="edit/:employeeId" element={<EditEmployee />} />
                 <Route path="newEmployee" element={<NewEmployee />} />
                 <Route path="departments" element={<Departments />} />
-                <Route path="departments/:departmento" element={<DetailDepartments />} />
+                <Route path="departments/:departamento" element={<DetailDepartments />} />
                 <Route path="contacto" element={<Contacto />} />
             </Route>
         </Routes>
