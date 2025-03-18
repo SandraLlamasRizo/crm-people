@@ -5,11 +5,13 @@ function DetailDepartments() {
     // Cambia 'departemento' por 'departamento'
     const { departamento } = useParams(); // Aquí debes utilizar 'departamento' si tu ruta es '/departments/:departamento'
 
+
     return (
         <>
-            <div>
+            <div className="md:ml-76">
                 {/* Aquí le pasas el 'departamento' al componente para cargar los detalles */}
-                <DepartmentDetailsEach departamento={departamento} />
+                <DepartmentDetailsEach departamento={departamento} /> 
+                
             </div>
 
             <div>
