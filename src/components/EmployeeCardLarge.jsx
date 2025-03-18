@@ -3,13 +3,31 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
 
-function EmployeeCardLarge({ empleado }) {
+function EmployeeCardLarge({ empleado, propCompact }) {
 
   const [image, setImage] = useState(null);
   const apiKey = 'Yyn3gO8VM4ySq0Eedoy1qNxDovlzenPyj08lqh4UYoNPJHvz3BwKkFj8';
   const navigate = useNavigate();
   const [, setOneEmployee] = useOneEmployeeContext();
+  const [isCompact, setIsCompact] = useState(propCompact ?? (window.innerWidth < 768));
   const token = localStorage.getItem('token');
+
+  const gridClass = isCompact
+    ? "grid-cols-[repeat(3,1fr)_0.5fr]"  // 3 columnas + icono
+    : "grid-cols-[repeat(5,1fr)_0.5fr]"; // 5 columnas + icono
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (propCompact === undefined) {
+        setIsCompact(window.innerWidth < 768);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [propCompact]); // Se ejecuta cada vez que cambia propCompact
+
+
 
   const fetchOneEmployee = async (id) => {
     const config = {
@@ -59,13 +77,13 @@ function EmployeeCardLarge({ empleado }) {
       onClick={() => handleClick(empleado._id)}
       className="my-2 mx-2 cursor-pointer transition duration-200 ease-in-out"
     >
-      <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center h-[120px]">
+      <div className={`w-full grid ${gridClass} bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center h-[120px]`}>
         {/* Imagen del empleado */}
-        <figure className="flex justify-center items-center w-[50px] h-[50px] mx-auto">
+        <figure className="flex justify-center items-center w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] mx-auto">
           <img
             src={image}
             alt="Empleado"
-            className="w-[50px] h-[50px] rounded-full object-cover"
+            className="w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] rounded-full object-cover"
           />
         </figure>
 
@@ -75,9 +93,9 @@ function EmployeeCardLarge({ empleado }) {
           <h4 className="secundarionCard">{empleado.apellidos}</h4>
         </div>
 
-        <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
+        {!isCompact && <h5 className="secundarionCard">{empleado.email}</h5>}
         <h5 className="secundarionCard">{empleado.departamento}</h5>
-        <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
+        {!isCompact && <h5 className="secundarionCard">{empleado.salario + '€'}</h5>}
 
         <div className='hover:cursor-pointer'>
           

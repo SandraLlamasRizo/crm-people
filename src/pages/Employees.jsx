@@ -50,6 +50,11 @@ function Employees() {
   return (
     <>
       <h3 className="homeH3 p-4 md:ml-76">Empleados</h3>
+      <div>
+        <a href="/dashboard"className=" no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal text-[#47A7BD] hover:underline">
+          Volver al Inicio
+        </a>
+      </div>
       <div className="container">
         <h2 className="px-4 py-2 text-xl md:text-2xl font-bold">
           Gestiona tus empleados

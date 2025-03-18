@@ -48,7 +48,7 @@ function Dashboard() {
             {/* Sección de Empleados */}
             <div className=" bg-white rounded-2xl mx-auto p-4 md:ml-70 " >
                 <div className="flex justify-between items-center mb-4">
-                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800">Empleados</h4>
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Empleados</h4>
                     <a
                         href="dashboard/employees"
                         className="font-normal text-xs text-[#47A7BD] hover:underline"
@@ -56,9 +56,9 @@ function Dashboard() {
                         Ver todos los empleados
                     </a>
                 </div>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-6 md:grid-rows-2 md:auto-rows-fr pt-2 md:pt-4 pb-4 md:pb-6 px-4 md:px-6">
+                <div className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-4 lg:px-6">
                     {employees
-                        .slice(0, window.innerWidth < 768 ? 2 : 12) // Muestra 2 en móvil y 12 en escritorio
+                        .slice(0, window.innerWidth < 1024 ? 2 : 10) // Muestra 2 en móvil y 12 en escritorio
                         .map((empleado) => (
                             <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                         ))}
@@ -68,11 +68,11 @@ function Dashboard() {
 
 
             {/* Sección de Departamentos y Rendimiento */}
-            <div className="flex flex-col sm:flex-row justify-start gap-4 sm:gap-8 mt-4 sm:mt-6 md:ml-70">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 md:ml-70">
                 {/* Departamentos */}
-                <div className="bg-white rounded-2xl p-4 sm:p-8 w-full">
+                <div className="bg-white rounded-2xl p-4 w-full">
                     <div className="flex justify-between items-center mb-4">
-                        <h4 className="text-xl sm:text-2xl font-bold text-gray-800">Departamentos</h4>
+                        <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Departamentos</h4>
                         <a
                             href="/dashboard/departments"
                             className="font-normal text-xs text-[#47A7BD] hover:underline"
@@ -93,15 +93,21 @@ function Dashboard() {
                 </div>
 
                 {/* Últimos Empleados */}
-                <div className="bg-white rounded-2xl w-full sm:w-2/3">
-                    <h4 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800 p-4 sm:p-5">
-                        Últimos Empleados
-                    </h4>
+                <div className="bg-white rounded-2xl p-4 w-full ">
+                    <div className="flex justify-between items-center mb-4">
+                        <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Nuevos Empleados</h4>
+                        <a
+                            href="/dashboard/employees"
+                            className="font-normal text-xs text-[#47A7BD] hover:underline"
+                        >
+                            Ver todos
+                        </a>
+                    </div>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
                         {ordenarEmpleados
                             .slice(0, window.innerWidth < 768 ? 2 : 5)  // Muestra 2 en móvil y 5 en escritorio
                             .map((empleado) => (
-                            <EmployeeCardLarge key={empleado._id} empleado={empleado} />
+                            <EmployeeCardLarge key={empleado._id} empleado={empleado} propCompact={true}/>
                         ))}
                         
                     </div>

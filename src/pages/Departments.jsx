@@ -34,7 +34,7 @@ function Departments() {
             <div className="md:ml-76">
                     <h3 className="homeH3 p-4">Departamentos</h3>
                 <div>
-                    <a href="/dashboard"className=" no-underline hover:underline text-sm abslute flex flex-col items-end pr-4" style={{ color: "#457FBF" }}>
+                    <a href="/dashboard"className=" no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal text-[#47A7BD] hover:underline">
                         Volver al Inicio
                     </a>
                 </div>
