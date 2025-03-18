@@ -10,27 +10,24 @@ function EmployeeCardSmall({ empleado }) {
     const [, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
-    
 
-     const fetchOneEmployee = async (id) => {
-        const config = {
-            headers: {
-                'Authorization': token
-            }
-        }
+    const fetchOneEmployee = async (id) => {
         try {
-            const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
-            console.log("Datos recibidos desde la API:", data);
+            const { data } = await axios.get(
+                `https://crm-empleados.onrender.com/api/empleados/${id}`,
+                {
+                    headers: { Authorization: token }
+                }
+            );
             setOneEmployee(data);
-            navigate(`/dashboard/employees/${id}`)
-            // console.log(employees)
+            navigate(`/dashboard/employees/${id}`);
         } catch (error) {
             console.error("Error al cargar los empleados:", error);
         }
     };
 
-    const handleClick = (id) => {
-        fetchOneEmployee(id);
+    const handleClick = () => {
+        fetchOneEmployee(empleado._id);
     };
 
     useEffect(() => {
@@ -44,9 +41,11 @@ function EmployeeCardSmall({ empleado }) {
                         },
                     }
                 );
+
                 if (!response.ok) {
                     throw new Error(`Error HTTP: ${response.status}`);
                 }
+
                 const data = await response.json();
 
                 // ✅ Seleccionamos una foto aleatoria
@@ -64,10 +63,13 @@ function EmployeeCardSmall({ empleado }) {
     }, []);
 
     return (
-        <div className="flex gap-4 w-[174px] h-[180px]">
-            <div onClick={() => handleClick(empleado._id)} className="cursor-pointer">
-                <div className="w-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md transition duration-200 ease-in-out">
-                    <figure className="flex justify-center items-center">
+        <div className="w-[174px] h-[180px]">
+            <div
+                onClick={handleClick}
+                className="cursor-pointer transition duration-200 ease-in-out"
+            >
+                <div className="w-full h-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md flex flex-col items-center">
+                    <figure className="w-16 h-16 flex justify-center items-center mb-2">
                         {loading ? (
                             <div className="animate-spin w-8 h-8 border-4 border-t-[#47A7BD] border-gray-300 rounded-full"></div>
                         ) : error ? (
@@ -75,20 +77,20 @@ function EmployeeCardSmall({ empleado }) {
                         ) : (
                             <img
                                 src={image}
-                                alt="Foto de perfil"
+                                alt={`Foto de perfil de ${empleado.nombre} ${empleado.apellidos}`}
                                 className="w-16 h-16 rounded-full object-cover"
                             />
                         )}
                     </figure>
-                    <h3 className="principalCard pb-2 font-semibold text-gray-800">
+                    <h3 className="text-gray-800 font-semibold text-lg">
                         {empleado.nombre}
                     </h3>
-                    <h4 className="secundarioCard pb-3 text-gray-600">
+                    <h4 className="text-gray-600 text-sm mb-2">
                         {empleado.apellidos}
                     </h4>
-                    <h5 className="terciarioBorderCard inline-block p-1 bg-[#E3F2FD] text-[#47A7BD] rounded-md">
+                    <span className="bg-[#E3F2FD] text-[#47A7BD] text-sm px-3 py-1 rounded-md">
                         {empleado.departamento}
-                    </h5>
+                    </span>
                 </div>
             </div>
         </div>

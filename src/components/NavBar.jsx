@@ -90,15 +90,7 @@ function NavBar() {
               Correo
             </Link>
             </li>
-            <li>
-              <Link to="/dashboard/edit"
-                className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-                <i
-                  className="bi bi-check2-square mr-2">
-                </i>
-                Tareas
-              </Link>
-            </li>
+            
             <hr className="border-gray-300 my-4" />
 
             <li>
@@ -199,15 +191,7 @@ function NavBar() {
                       Correo
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/dashboard/delete"
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-                      <i
-                        className="bi bi-check2-square mr-2">
-                      </i>
-                      Tareas
-                    </Link>
-                  </li>
+                  
 
                   <hr className="border-gray-300 my-4" />
 
