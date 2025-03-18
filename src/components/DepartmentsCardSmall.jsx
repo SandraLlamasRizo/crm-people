@@ -32,26 +32,26 @@ function DeparmentCardSmall({ departamento, datos }) {
         >
             <div
                 className="flex flex-col items-center">
-                
-                <figure className="flex justify-center items-center mx-auto">
+
+                <figure className="">
                     <img
-                        className="w-[60px] h-[60px] rounded-full object-cover"
+                        className="w-[60px] h-[60px] object-cover"
                         src={departamentosImagenes[departamento]}
                         alt="Icono de Departamento"
                     />
                 </figure>
 
-                <h3 className="text-[#457FBF] font-semibold text-xl">
+                <h3 className="text-center text-[#457FBF] font-semibold text-xl">
                     {nombresPersonalizados[departamento] || departamento}
                 </h3>
 
             </div>
             <h4 className="text-gray-500 text-sm mb-2">
-                    Número de Empleados: {datos?.totalEmpleados || 'N/A'}
-                </h4>
-                <h5 className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl flex items-center justify-center">
-                    Salario total: {datos?.totalSalario ? `${datos.totalSalario} €` : 'No disponible'}
-                </h5>
+                Número de Empleados: {datos?.totalEmpleados || 'N/A'}
+            </h4>
+            <h5 className="bg-[#E3F2FD] text-[#47A7BD] text-sm px-3 py-1 rounded-md">
+                Salario total: {datos?.totalSalario ? `${datos.totalSalario} €` : 'N/A'}
+            </h5>
         </div>
 
     );
