@@ -5,38 +5,33 @@ import { useOneEmployeeContext } from '../providers/EmployerProvider';
 
 function EmployeeCardLarge({ empleado }) {
 
-  const [image, setImage] = useState(null); // Para la imagen de Pexels
+  const [image, setImage] = useState(null);
   const apiKey = 'Yyn3gO8VM4ySq0Eedoy1qNxDovlzenPyj08lqh4UYoNPJHvz3BwKkFj8';
   const navigate = useNavigate();
   const [, setOneEmployee] = useOneEmployeeContext();
-    const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 
   const fetchOneEmployee = async (id) => {
-        const config = {
-            headers: {
-                'Authorization': token
-            }
-        }
-        try {
-            const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
-            console.log("Datos recibidos desde la API:", data)
-            setOneEmployee(data);
-            navigate(`/dashboard/employees/${id}`)
-            // console.log(employees)
-        } catch (error) {
-            console.log("Error al cargar los empleados", error);
-        }
-        }
-
-    // ✅ Ruta relativa (si estás dentro de /dashboard)
-    const handleClick = (id) => {
-        fetchOneEmployee(id)
+    const config = {
+      headers: {
+        'Authorization': token
+      }
     };
+    try {
+      const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
+      console.log("Datos recibidos desde la API:", data);
+      setOneEmployee(data);
+      navigate(`/dashboard/employees/${id}`);
+    } catch (error) {
+      console.log("Error al cargar los empleados", error);
+    }
+  };
 
+  const handleClick = (id) => {
+    fetchOneEmployee(id);
+  };
 
-  // Usamos el hook useEffect para obtener la imagen cuando el componente se monta
   useEffect(() => {
-    // Obtenemos una imagen aleatoria usando la API de Pexels
     fetch('https://api.pexels.com/v1/curated?per_page=5', {
       headers: {
         Authorization: apiKey,
@@ -45,7 +40,6 @@ function EmployeeCardLarge({ empleado }) {
       .then((response) => response.json())
       .then((data) => {
         if (data.photos && data.photos.length > 0) {
-          // Seleccionamos una imagen aleatoria de las fotos obtenidas
           const randomIndex = Math.floor(Math.random() * data.photos.length);
           setImage(data.photos[randomIndex].src.large);
         } else {
@@ -55,26 +49,27 @@ function EmployeeCardLarge({ empleado }) {
       .catch((error) => console.error('Error fetching image from Pexels: ', error));
   }, []);
 
-  // Si no se ha cargado la imagen, mostramos un loader
   if (!image) {
     return <div>Cargando...</div>;
   }
 
   return (
-    <div onClick={() => {handleClick(empleado._id)}} className="my-2 mx-2 cursor-pointer transition duration-200 ease-in-out">
-      <div className=" w-full grid grid-cols-[repeat(3,1fr)_0.5fr] gap-2 md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center align-middle text-center">
-
-        {/* Mostrar la imagen obtenida de Pexels */}
+    <div
+      onClick={() => handleClick(empleado._id)}
+      className="my-2 mx-2 cursor-pointer transition duration-200 ease-in-out"
+    >
+      <div className="w-full grid grid-cols-[repeat(3,1fr)_0.5fr] md:grid-cols-[repeat(5,1fr)_0.5fr] bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] p-4 items-center text-center h-[120px]">
+        {/* Imagen del empleado */}
         <figure className="flex justify-center items-center w-[50px] h-[50px] mx-auto">
           <img
-            src={image} // Usamos la imagen aleatoria obtenida de Pexels
+            src={image}
             alt="Empleado"
             className="w-[50px] h-[50px] rounded-full object-cover"
           />
         </figure>
 
-        {/* Información restante (sin cambios) */}
-        <div>
+        {/* Información */}
+        <div className="gap-2">
           <h3 className="principalCard">{empleado.nombre}</h3>
           <h4 className="secundarionCard">{empleado.apellidos}</h4>
         </div>
@@ -82,18 +77,6 @@ function EmployeeCardLarge({ empleado }) {
         <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
         <h5 className="secundarionCard">{empleado.departamento}</h5>
         <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
-
-        <div className='hover:cursor-pointer'>
-          {/* ESTE ES EL BOTÓN AL QUE ME REFIERO,
-           en vez de dejar los 3 puntitos os parece bien indicar algo como para ver la ficha al completo?? */}
-          <button
-            onClick={() => navigate(`/dashboard/edit/${empleado._id}`)} // Aquí se corrigió el espacio entre `$` y `{empleado._id}`
-            className="buttonPrincipal buttonPrincipal:hover"
-          >
-            Ver
-          </button>
-          {/* <i className="bi bi-three-dots-vertical"></i> */}
-        </div>
       </div>
     </div>
   );

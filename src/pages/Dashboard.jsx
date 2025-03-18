@@ -99,7 +99,7 @@ function Dashboard() {
                     </h4>
                     <div className="gap-2 sm:gap-4 px-4 sm:px-5 pb-4 sm:pb-6">
                         {ordenarEmpleados
-                            .slice(0, window.innerWidth < 768 ? 2 : 6)  // Muestra 2 en móvil y 6 en escritorio
+                            .slice(0, window.innerWidth < 768 ? 2 : 5)  // Muestra 2 en móvil y 5 en escritorio
                             .map((empleado) => (
                             <EmployeeCardLarge key={empleado._id} empleado={empleado} />
                         ))}
