@@ -83,11 +83,8 @@ function NavBar() {
             </li>
 
             <li><Link to="/dashboard/delete"
-<<<<<<< HEAD
               className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
+
               <i
                 className="bi bi-envelope mr-2">
               </i>
@@ -133,7 +130,7 @@ function NavBar() {
         </button>
       </div>
 
-      {/* Menú principal: */}git 
+      {/* Menú principal: */}
 
       {isMenuOpen && (
         <>
@@ -154,7 +151,7 @@ function NavBar() {
                     Dashboard
                   </Link>
                 </li>
-git
+
                 <li>
                   <Link to="/dashboard/employees"
                     className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
@@ -189,11 +186,7 @@ git
 
                   <li>
                     <Link to="/dashboard/newEmployee"
-<<<<<<< HEAD
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
                       <i className="bi bi-calendar4-week mr-2">
                       </i>
                       Agenda
@@ -201,11 +194,7 @@ git
                   </li>
                   <li>
                     <Link to="/dashboard/edit"
-<<<<<<< HEAD
                       className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
-=======
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 dark:hover:bg-[#47A7BD]">
->>>>>>> a660dea (Flecos)
                       <i className="bi bi-envelope mr-2">
                       </i>
                       Correo
