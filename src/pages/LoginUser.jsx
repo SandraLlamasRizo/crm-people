@@ -108,14 +108,15 @@ function LoginUser() {
                         <input
                             type="submit"
                             value="Iniciar sesión"
-                            className="bg-[#457FBF] text-white font-bold py-2 px-4 rounded-md cursor-pointer hover:bg-[#47A7BD] transition duration-300"
+                            className=" buttonPrincipal buttonPrincipal:hover"
                         />
+
                     </div>
 
                     <p className="text-center text-gray-600 mt-4">
-                        ¿Has olvidado tu contraseña?{" "}
-                        <a href="/resetpassword" className="font-extralight text-[#47A7BD] hover:underline">
-                            Recúperala aquí
+                        ¿No tienes cuenta todavía?{" "}
+                        <a href="/register" className="font-extralight text-[#47A7BD] hover:underline">
+                            Regístrate aquí
                         </a>
                     </p>
                 </form>

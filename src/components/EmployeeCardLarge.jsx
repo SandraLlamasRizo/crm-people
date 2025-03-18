@@ -27,9 +27,10 @@ function EmployeeCardLarge({ empleado }) {
     }
   };
 
-  const handleClick = (id) => {
-    fetchOneEmployee(id);
-  };
+    // Ruta relativa (si estás dentro de /dashboard)
+    const handleClick = (id) => {
+        fetchOneEmployee(id)
+    };
 
   useEffect(() => {
     fetch('https://api.pexels.com/v1/curated?per_page=5', {
@@ -77,6 +78,11 @@ function EmployeeCardLarge({ empleado }) {
         <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
         <h5 className="secundarionCard">{empleado.departamento}</h5>
         <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
+
+        <div className='hover:cursor-pointer'>
+          
+          <i className="bi bi-three-dots-vertical"></i>
+        </div>
       </div>
     </div>
   );
