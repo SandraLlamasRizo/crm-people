@@ -55,41 +55,74 @@ function Calendar() {
 
     const weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
+    //encontrar current Day index:
+    const currentDayIndex = generateCalendarDays().indexOf(day);
+
     return <>
         <div className="mx-4 md:ml-76 md:mr-10">
             <h6 className="homeH6 text-gray-600">
                 Hoy, {day} {month} {year}
                 </h6>
-            <h3 className="homeH3 p-4">Calendario</h3>
-            <div className=" h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            {/* Header con navegación entre meses */}
-            <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white">
-                <button onClick={handlePrevMonth} className="text-lg">←</button>
-                <span className="text-xl font-semibold">
-                    {month} {currentDate.getFullYear()}
-                </span>
-                <button onClick={handleNextMonth} className="text-lg">→</button>
-            </div>
-
-            {/* Días de la semana */}
-            <div className="grid grid-cols-7 text-center bg-gray-100 p-2">
-                {weekdays.map((day, index) => (
-                    <div key={index} className="text-sm font-semibold text-gray-700">{day}</div>
-                ))}
-            </div>
-
-            {/* Días del mes */}
-            <div className="grid grid-cols-7 text-center p-2 h-[60vh] md:h-[60vh]">
-                {generateCalendarDays().map((day, index) => (
-                    <div
-                        key={index}
-                        className={`py-2 px-4 ${day ? 'cursor-pointer hover:bg-blue-100' : ''} ${!day ? 'bg-gray-100' : ''}`}
-                    >
-                        {day}
+            <h3 className="homeH3 p-4">Agenda</h3>
+            <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-0 md:gap-6">
+                <div className=" h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                {/* Header con navegación entre meses */}
+                    <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white">
+                        <button onClick={handlePrevMonth} className="text-lg">←</button>
+                        <span className="text-xl font-semibold">
+                            {month} {currentDate.getFullYear()}
+                        </span>
+                        <button onClick={handleNextMonth} className="text-lg">→</button>
                     </div>
-                ))}
+                {/* Días de la semana */}
+                    <div className="grid grid-cols-7 text-center bg-gray-100 p-2">
+                        {weekdays.map((day, index) => (
+                            <div key={index} className="text-sm font-semibold text-gray-700">{day}</div>
+                        ))}
+                    </div>
+                {/* Días del mes */}
+                    <div className="grid grid-cols-7 text-center p-2 h-[60vh]">
+                        {generateCalendarDays().map((day, index) => (
+                            <div
+                                key={index} className={`py-2 px-4 ${day ? 'cursor-pointer hover:bg-blue-100' : ''} ${!day ? 'bg-gray-100' : ''}
+                                ${day === currentDate.getDate() ? 'bg-[#457FBF] text-white ' : ''}`}
+                                >
+                                {day}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="flex flex-col justify-center items-center ">
+                        <h4 className="w-full text-center p-4 text-xl font-semibold bg-[#457FBF] text-white">Eventos</h4>
+                        <div className="w-full mb-8">
+                            <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Reuniones</h5>
+                            <ul className="my-2 pl-4">
+                                <li className="text-sm text-gray-800 p-2">8:15h: Proyecto crm-people</li>
+                                <li className="text-sm text-gray-800 p-2">10:00h: Cliente</li>
+                                <li className="text-sm text-gray-800 p-2">21:00h: Presentación Proyecto crm-people</li>
+                            </ul>
+                        </div>
+                        <div className="w-full mb-8">
+                            <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Deadlines</h5>
+                            <ul className="my-2 pl-4">
+                                <li className="text-sm text-gray-800 p-2">Hoy! Proyecto crm-people</li>
+                                <li className="text-sm text-gray-800 p-2">En 10 dias - Proyecto X</li>
+                                <li className="text-sm text-gray-800 p-2">En 2 meses - Proyecto Y</li>
+                            </ul>
+                        </div>
+                        <div className="w-full mb-8">
+                            <h5 className="w-full text-center bg-gray-100 p-2 text-sm font-semibold text-gray-700">Tareas</h5>
+                            <ul className="my-2 ml-5 pl-4 list-disc ">
+                                <li className="text-sm text-gray-800 p-2">Terminar funcionalidad Header</li>
+                                <li className="text-sm text-gray-800 p-2">Añadir estilos boton </li>
+                                <li className="text-sm text-gray-800 p-2">Comprobar peticiones API</li>
+                            </ul>
+                            <button className="flex mt-4 buttonPrincipal mx-auto w-auto">Añadir tarea</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </>
 }
