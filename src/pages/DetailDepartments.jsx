@@ -4,7 +4,7 @@ import DepartmentDetailsEach from "../components/DepartmentDetailsEach";
 function DetailDepartments() {
     // Cambia 'departemento' por 'departamento'
     const { departamento } = useParams(); // Aquí debes utilizar 'departamento' si tu ruta es '/departments/:departamento'
-
+    window.scrollTo(0, 0); 
 
     return (
         <>

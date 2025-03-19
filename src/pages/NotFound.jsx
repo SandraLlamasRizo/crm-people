@@ -9,7 +9,7 @@ function NotFound() {
                 </p>
                 <div className="flex justify-center space-x-4">
                     <a
-                        href="/"
+                        href="/dashboard"
                         className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
                     >
                         <i className="bi bi-house-door mr-2"></i>

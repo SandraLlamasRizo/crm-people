@@ -13,7 +13,7 @@ function NotAccess() {
                 </p>
                 <div className="flex justify-center space-x-4">
                     <Link
-                        to="/dashboard"
+                        to="/"
                         className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
                     >
                         <i className="bi bi-house-door mr-2"></i>

@@ -5,7 +5,7 @@ import { useEmployeesContext } from "../providers/EmployerProvider";
 function Departments() {
     const [employees] = useEmployeesContext();
     useEffect(() => {
-        console.log("empleados actualizados", employees);
+        window.scrollTo(0, 0); ;
     }, [employees]);
 
 
@@ -27,7 +27,6 @@ function Departments() {
 
     //convertir departamentps en array
     const departamentosArray = Object.entries(departamentos);
-    console.log(departamentosArray)
 
     return (
         <>

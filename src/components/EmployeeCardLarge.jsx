@@ -37,7 +37,6 @@ function EmployeeCardLarge({ empleado, propCompact }) {
     };
     try {
       const { data } = await axios.get(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
-      console.log("Datos recibidos desde la API:", data);
       setOneEmployee(data);
       navigate(`/dashboard/employees/${id}`);
     } catch (error) {

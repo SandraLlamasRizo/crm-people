@@ -77,7 +77,7 @@ function Header() {
     
     return (<>
     
-    <div className="sticky-header m-4 grid grid-cols-3 md:grid-cols-2 md:ml-70">
+    <div className=" m-4 grid grid-cols-3 md:grid-cols-2 md:ml-70">
   
         <form className="relative md:pl-10 col-span-2 md:col-span-1" role="search">
             <div className="flex items-center md:max-w-[412px] rounded-2xl px-3 border border-gray-300 hover:border-gray-500 bg-white">

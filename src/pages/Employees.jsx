@@ -8,7 +8,7 @@ function Employees() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("empleados actualizados", employees);
+    window.scrollTo(0, 0); ;
   }, [employees]);
 
   // estado para paginado:

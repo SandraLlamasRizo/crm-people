@@ -32,8 +32,6 @@ const departamentosImagenes = {
 
     const promSalario = (calculo.totalSalario / totalEmpleados).toFixed(2);
 
-    console.log(calculo);
-
     return (
         <>
             <div className="mx-auto p-6">

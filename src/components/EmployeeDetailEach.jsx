@@ -20,7 +20,6 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
     }
 
     const handleEliminar =( ) => {
-        console.log("eliminar")
         eliminarEmpleado(OneEmployee._id)
     }
 
@@ -33,7 +32,6 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
 
         try {
             const { data } = await axios.delete(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
-            console.log(data);
             
             setShowSuccessModal(true);
             setTimeout(() => {

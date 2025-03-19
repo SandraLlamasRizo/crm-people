@@ -8,8 +8,8 @@ function Dashboard() {
     const [employees] = useEmployeesContext();
     const username = localStorage.getItem('username');
 
-  useEffect(() => {
-    console.log("empleados actualizados", employees);
+    useEffect(() => {
+    window.scrollTo(0, 0); 
   }, [employees]);
     //funcion para ordenar empleados
     const ordenarEmpleados = [...employees].sort((a, b) =>b._id. localeCompare(a._id));
@@ -32,9 +32,7 @@ function Dashboard() {
    
     //convertir departamentps en array
     const departamentosArray = Object.entries(departamentos);
-    console.log(departamentosArray)
 
-    
     return (
         <div className="mx-auto p-4 sm:p-6">
             {/* Sección de Bienvenida */}

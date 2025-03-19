@@ -8,7 +8,6 @@ function NavBar() {
 
   const logout = () => {
     localStorage.removeItem('token');
-    console.log("token borrado")
     navigate('/');
   }
 

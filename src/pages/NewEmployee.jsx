@@ -23,9 +23,7 @@ function NewEmployee() {
         };
 
         try {
-            console.log(nuevoEmpleado);
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/empleados', nuevoEmpleado, config);
-            console.log(data);
             setAlerta({
                 type: 'success',
                 message: `El empleado ${nuevoEmpleado.nombre} ha sido registrado correctamente`,

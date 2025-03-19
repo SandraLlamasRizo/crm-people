@@ -18,7 +18,6 @@ function LoginUser() {
     const loginUsuario = async (usuario) => {
         try {
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/usuarios/login', usuario);
-            console.log(data);
             localStorage.setItem('token', data.token);
             localStorage.setItem('username', data.user.username);
             setUser(data.user); // Actualizar el contexto con el usuario
