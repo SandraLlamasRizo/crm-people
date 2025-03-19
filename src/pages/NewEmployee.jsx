@@ -163,8 +163,8 @@ function NewEmployee() {
                             <option value="">Selecciona el departamento</option>
                             <option value="direccion">Dirección</option>
                             <option value="desarrollo">Desarrollo</option>
-                            <option value="diseno">Diseño</option>
-                            <option value="recursos humanos">Recursos Humanos</option>
+                            <option value="diseño">Diseño</option>
+                            <option value="recursoshumanos">Recursos Humanos</option>
                         </select>
                     </div>
 
