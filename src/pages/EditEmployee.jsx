@@ -9,6 +9,7 @@ function EditEmployee() {
     const [employees] = useEmployeesContext();
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     // console.log("useParams() employeeId:", employeeId);
 
@@ -73,9 +74,12 @@ function EditEmployee() {
         };
         try {
             await axios.put(`https://crm-empleados.onrender.com/api/empleados/${employeeId}`, formData, config);
-                alert(`El empleado ${formData.nombre} se ha actualizado correctamente`);
             // Vamos a la card del empleado para ver su ficha actualizada:
-            navigate(`/dashboard/employees/${employeeId}`);
+            
+            setShowSuccessModal(true);
+            setTimeout(() => {
+                navigate(`/dashboard/employees/${employeeId}`);
+            }, 3000);
         } catch (error) {
             console.error("Error en la actualización del empleado", error);
         }
@@ -83,6 +87,14 @@ function EditEmployee() {
 
     return (
         <div className="container flex justify-center">
+            {showSuccessModal && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1>El empleado {formData.nombre} ha sido editado correctamente</h1>
+                        <p className="text-gray-700 mb-4">En unos segundos te redigiremos a la pagina del empleado</p>
+                    </div>
+                </div>
+            )}
             <div className="w-full max-w-4xl">
                 <h2 className="text-center text-3xl font-medium text-[#457FBF]">Editar empleado</h2>
 
