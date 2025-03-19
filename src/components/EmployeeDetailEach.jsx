@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { nombresPersonalizados } from "./DepartmentsCardLarge";
 
-function EmployeeDetailEach({ employeeId, showActions = true }) {
+function EmployeeDetailEach() {
     const [OneEmployee, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
     const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -76,8 +76,8 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
         fetchRandomImage();
     }, []);  // Solo se ejecuta una vez al montar el componente
 
-    return (
-        <div className="flex items-center gap-6 p-6 shadow-md rounded-2xl bg-white">
+    return ( <>
+        
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className="bg-white p-6 rounded-lg shadow-lg text-center m-30">
@@ -87,62 +87,63 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
                 </div>
             )}
 
-            {/* Foto de perfil */}
-            <figure className="relative w-32 h-32">
-                {/* Mostrar un ícono de carga mientras se obtiene la imagen */}
-                {loading ? (
-                    <div className="animate-spin w-32 h-32 border-4 border-t-[#47A7BD] border-gray-300 rounded-full"></div>
-                ) : (
-                    <img
-                        src={randomImage || OneEmployee.foto || '/default-avatar.png'} // Si no hay foto aleatoria, muestra la foto del empleado
-                        alt="Foto de perfil"
-                        className="w-full h-full rounded-full object-cover"
-                    />
-                )}
-            </figure>
-
-            {/* Información del empleado */}
-            <div className="flex-1">
-                <div className="mb-4">
-                    <h1 className="text-3xl font-bold text-gray-800">{OneEmployee?.nombre}</h1>
-                    <h2 className="text-2xl font-bold text-gray-600">{OneEmployee?.apellidos}</h2>
+            <div className='grid grid-cols-1 gap-6 py-6 px-4 items-center shadow-md rounded-2xl bg-white max-w-[90vh] text-center mx-auto'>
+                {/*PERFIL */}
+                <div className='flex flex-col items-center'>
+                    <figure className="m-4 w-32 h-32">
+                        {loading ? (
+                            <div className="animate-spin w-32 h-32 border-4 border-t-[#47A7BD] border-gray-300 rounded-full"></div>
+                        ) : (
+                        <img
+                            src={randomImage || OneEmployee.foto || '/default-avatar.png'} // Si no hay foto aleatoria, muestra la foto del empleado
+                            alt="Foto de perfil"
+                            className="w-full h-full rounded-full object-cover"
+                        />
+                        )}
+                    </figure>
+                    <div className="mb-4">
+                        <h3 className="text-3xl font-bold text-gray-800">{OneEmployee?.nombre}</h3>
+                        <h6 className="text-2xl font-bold text-gray-600">{OneEmployee?.apellidos}</h6>
+                    </div>
+                    
                 </div>
-
-                <div className="mb-4">
-                    <h3 className="font-bold text-gray-700">Email</h3>
-                    <p className="text-gray-500">{OneEmployee?.email}</p>
+                {/*CONTACT */}
+                <div>
+                <div className="mb-4 flex flex-col gap-2 content-center text-left flex-wrap">
+                    <h1 className='text-xl font-bold text-gray-600 '>Información de contacto:</h1>
+                        <h3 className="font-bold text-gray-600">Email</h3>
+                        <p className="text-gray-500">{OneEmployee?.email}</p>
+                    
+                        <h3 className="font-bold text-gray-600">Teléfono</h3>
+                        <p className="text-gray-500">{OneEmployee.telefono}</p>
+                    </div>
                 </div>
-
-                <div className="mb-4">
-                    <h3 className="font-bold text-gray-700">Teléfono</h3>
-                    <p className="text-gray-500">{OneEmployee.telefono}</p>
-                </div>
-
-                <div className="mb-4">
-                    <h3 className="font-bold text-gray-700">Departamento</h3>
-                    <p className="text-gray-500">
+                {/*INFO COMPANY */}
+                <div>
+                <div className="mb-4 flex flex-col gap-2 content-center text-left flex-wrap">
+                    <h1 className='text-xl font-bold text-gray-600'>Información de empresa:</h1>
+                        <h3 className="font-bold text-gray-600">Departamento</h3>
+                        <p className="text-gray-500">
                         {nombresPersonalizados[OneEmployee?.departamento] || OneEmployee?.departamento}
-                    </p>
+                        </p>
+                    
+                        <h3 className="font-bold text-gray-700">Salario</h3>
+                        <p className="text-gray-500">{OneEmployee?.salario} €/año</p>
+                    </div>
                 </div>
 
-                <div className="mb-4">
-                    <h3 className="font-bold text-gray-700">Salario</h3>
-                    <p className="text-gray-500">{OneEmployee?.salario} €/año</p>
-                </div>
-
-                {/* Botones de acción */}
-                {showActions && (
+                {OneEmployee && (
                     <div className="flex justify-end gap-4">
                         <button
                             onClick={handleEditClick}
-                            className="buttonPrincipal"
+                            className="buttonPrincipal my-auto"
                         >
                             <i className="bi bi-pencil mr-2"></i>
                             Editar
                         </button>
                         <button
                             onClick={handleEliminar}
-                            className="buttonPrincipalRojo"
+                            className="buttonPrincipalRojo my-auto"
                         >
                             <i className="bi bi-trash3 mr-2"></i>
                             Eliminar
@@ -150,8 +151,10 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
                     </div>
                 )}
             </div>
-        </div>
-    );
+            
+            
+        </>
+    )
 }
 
 export default EmployeeDetailEach;

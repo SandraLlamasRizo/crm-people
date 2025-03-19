@@ -43,12 +43,12 @@ function DepartmentCardLarge({ departamento, datos }) {
                 Número de Empleados: {datos?.totalEmpleados || 'N/A'}
             </p>
             <div className="flex justify-center items-center gap-4 mb-4">
-                <p className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl w-[170px] h-[80px] flex flex-col items-center justify-center text-center">
+                <p className="text-sm text-[#457FBF] font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl w-[170px] h-[80px] flex flex-col items-center justify-center text-center">
                     <span>Salario medio:</span>
                     <span>{datos?.promSalario ? `${datos.promSalario}€` : 'N/A'}</span>
                 </p>
 
-                <p className="text-sm text-blue-600 font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl w-[170px] h-[80px] flex flex-col items-center justify-center text-center">
+                <p className="text-sm text-[#457FBF] font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl w-[170px] h-[80px] flex flex-col items-center justify-center text-center">
                     <span>Salario total:</span>
                     <span>{datos?.totalSalario ? `${datos.totalSalario}€` : 'N/A'}</span>
                 </p>
@@ -59,7 +59,7 @@ function DepartmentCardLarge({ departamento, datos }) {
                     className="no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal hover:cursor-pointer text-[#47A7BD] hover:underline" onClick={handleClick}>
                     Ver más detalles
                 </a>
-            </div>
+            </div> 
         </div>
     );
 }

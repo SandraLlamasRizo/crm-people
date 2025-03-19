@@ -17,6 +17,22 @@ function Header() {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
 
+    const [placeholder, setPlaceholder] = useState('Buscar...');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) { // Pantallas grandes (a partir de 768px)
+        setPlaceholder('Buscar empleado');
+      } else {
+        setPlaceholder('Buscar...');
+      }
+    };
+      handleResize(); // Establecer el valor inicial
+    window.addEventListener('resize', handleResize); // Escuchar los cambios de tamaño
+
+    return () => window.removeEventListener('resize', handleResize); // Limpiar el listener
+  }, []);
+
     //Cerrar drop down si clickas fuera
     useEffect(() => {
         function handleClickOutside(event) {
@@ -77,15 +93,24 @@ function Header() {
     
     return (<>
     
-    <div className=" m-4 grid grid-cols-3 md:grid-cols-2 md:ml-70">
+    <div className="m-4 grid grid-cols-3 md:grid-cols-2 md:ml-70 items-center">
+            <div
+          className="md:hidden flex flex-col items-start pl-2">
+          <img
+            src="/Logo_CRM.svg"
+            alt="logo CRM people"
+            className="rounded-full w-16 h-16"
+          />
+        </div>        
   
-        <form className="relative md:pl-10 col-span-2 md:col-span-1" role="search">
+  
+        <form className="relative md:pl-10 col-span-1" role="search">
             <div className="flex items-center md:max-w-[412px] rounded-2xl px-3 border border-gray-300 hover:border-gray-500 bg-white">
                 <span className="text-gray-500"><i className="bi bi-search"></i></span>
             <input 
                 type="search" 
                 className="form-input w-full p-2 rounded-full outline-none text-md"
-                placeholder="Buscar empleado..." 
+                placeholder={placeholder} 
                 aria-label="Search"
                 {...register ('search')}  
             />
