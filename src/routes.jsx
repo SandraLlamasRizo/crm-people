@@ -15,7 +15,8 @@ import EditEmployee from "./pages/EditEmployee";
 import NotAccess from "./pages/NotAccess";
 import MainLayout from "./components/MainLayout";
 import Calendar from "./components/Calendar";
-import CorreosEmpleados from "./pages/CorreosEmpleados";
+import CorreosEmpleados from './pages/CorreosEmpleados';
+
 
 function PrivateRoute({ element }) {
     //añadimos las comprobaciones para auth (por ejemplo con localstorage)
