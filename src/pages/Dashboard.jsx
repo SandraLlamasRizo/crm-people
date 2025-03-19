@@ -2,15 +2,31 @@ import DeparmentCardSmall from "../components/DepartmentsCardSmall";
 import EmployeeCardSmall from "../components/EmployeeCardSmall";
 import EmployeeCardLarge from "../components/EmployeeCardLarge";
 import { useEmployeesContext } from "../providers/EmployerProvider";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Dashboard() {
     const [employees] = useEmployeesContext();
     const username = localStorage.getItem('username');
+    const [numEmployeesSmall, setNumEmployeesSmall] = useState(2);
+    const [numEmployeesLarge, setNumEmployeesLarge] = useState(2);
 
     useEffect(() => {
     window.scrollTo(0, 0); 
-  }, [employees]);
+    }, [employees]);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            setNumEmployeesSmall(width < 1024 ? 2 : 10);
+            setNumEmployeesLarge(width < 768 ? 2 : 4);
+        };
+
+        handleResize(); // Ejecutar al inicio
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     //funcion para ordenar empleados
     const ordenarEmpleados = [...employees].sort((a, b) =>b._id. localeCompare(a._id));
     //funcion para sacar departamentos con total de empleados y total salario 
@@ -56,7 +72,7 @@ function Dashboard() {
                 </div>
                 <div className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-1 md:px-4 lg:px-6">
                     {employees
-                        .slice(0, window.innerWidth < 1024 ? 2 : 10) // Muestra 2 en móvil y 12 en escritorio
+                        .slice(0, numEmployeesSmall) // Muestra 2 en móvil y 12 en escritorio
                         .map((empleado) => (
                             <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                         ))}
@@ -97,7 +113,7 @@ function Dashboard() {
                     </div>
                     <div className="flex flex-col gap-4">
                         {ordenarEmpleados
-                            .slice(0, window.innerWidth < 768 ? 2 : 4)  // Muestra 2 en móvil y 4 en escritorio
+                            .slice(0, numEmployeesLarge)  // Muestra 2 en móvil y 4 en escritorio
                             .map((empleado) => (
                             <EmployeeCardLarge key={empleado._id} empleado={empleado} propCompact={true}/>
                         ))}
