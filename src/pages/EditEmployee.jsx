@@ -141,9 +141,8 @@ function EditEmployee() {
                             value={formData.telefono}
                             onChange={handleChange}
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
-                            placeholder="+34"
+                            placeholder=""
                             required
-
                         />
                     </div>
 
