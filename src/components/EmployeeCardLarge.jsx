@@ -77,7 +77,7 @@ function EmployeeCardLarge({ empleado, propCompact }) {
       onClick={() => handleClick(empleado._id)}
       className="m2 cursor-pointer transition duration-200 ease-in-out"
     >
-      <div className={`w-full grid ${gridClass} bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-lg shadow-xl p-4 items-center text-center h-[120px]`}>
+      <div className={`w-full grid ${gridClass} bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-lg shadow-xl p-4 items-center text-center h-[120px]  transition-transform duration-200 hover:scale-105`}>
         {/* Imagen del empleado */}
         <figure className="flex justify-center items-center w-[50px] h-[50px] lg:w-[70px] lg:h-[70px] mx-auto">
           <img

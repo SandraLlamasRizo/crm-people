@@ -13,7 +13,7 @@ function DetailEmployee() {
             </div>
             <div>
                 <a
-                    href="/departments"
+                    href="/dashboard/employees"
                     className="no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal text-[#47A7BD] hover:underline"
                 >
                     Volver a los empleados

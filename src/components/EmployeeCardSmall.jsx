@@ -69,7 +69,7 @@ function EmployeeCardSmall({ empleado }) {
                 onClick={handleClick}
                 className="cursor-pointer transition duration-200 ease-in-out"
             >
-                <div className="w-full h-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md flex flex-col items-center">
+                <div className="w-full h-full p-3 text-center bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-[30px] shadow-md flex flex-col items-center  transition-transform duration-200 hover:scale-115">
                     <figure className="w-16 h-16 flex justify-center items-center mb-2">
                         {loading ? (
                             <div className="animate-spin w-8 h-8 border-4 border-t-[#47A7BD] border-gray-300 rounded-full"></div>
