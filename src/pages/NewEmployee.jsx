@@ -1,18 +1,23 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import { data, useNavigate } from "react-router";
+
 
 function NewEmployee() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const navigate = useNavigate();
 
+    const [newEmployee, setNewEmployee] = useState("");
     // Traigo el token del localStorage:
     const token = localStorage.getItem('token');
 
     // Controlar la alerta de registro correcto:
-    const [alerta, setAlerta] = useState(null);
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const enviarFormulario = (data) => {
         registrarEmpleado(data);
+        setNewEmployee(data.nombre);
     };
 
     const registrarEmpleado = async (nuevoEmpleado) => {
@@ -24,33 +29,29 @@ function NewEmployee() {
 
         try {
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/empleados', nuevoEmpleado, config);
-            setAlerta({
-                type: 'success',
-                message: `El empleado ${nuevoEmpleado.nombre} ha sido registrado correctamente`,
-            });
+            setShowSuccessModal(true);
+            setTimeout(() => {
+                navigate("/dashboard"); //Llevamos al usuario registrado correctamente a la página de login!
+            }, 3000);
         } catch (error) {
             console.error("Error al registrar el empleado:", error);
-            setAlerta({
-                type: 'error',
-                message: `Hubo un problema al registrar al empleado ${nuevoEmpleado.nombre}. Intenta nuevamente.`,
-            });
+            
         }
     };
 
     return (
         <div className="container flex justify-center">
+            {showSuccessModal && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1>El empleado:  {newEmployee} ha sido registrado con exito </h1>
+                        <p className="text-gray-700 mb-4">En unos segundos te redigiremos a Dashboard</p>
+                    </div>
+                </div>
+            )}
             <div className="w-full max-w-4xl">
                 <h2 className="text-center text-3xl font-medium text-[#457FBF]"> Nuevo empleado</h2>
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
-
-                {alerta && (
-                    <div className={`flex items-center p-4 mb-4 text-sm rounded-lg ${alerta.type === "success" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`} role="alert">
-                        <svg className="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                        </svg>
-                        <span><p>{alerta.message}</p></span>
-                    </div>
-                )}
 
 
                 <form onSubmit={handleSubmit(enviarFormulario)}>
