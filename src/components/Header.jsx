@@ -103,7 +103,6 @@ function Header() {
           />
         </div>        
   
-  
         <form className="relative md:pl-10 col-span-1" role="search">
             <div className="flex items-center md:max-w-[412px] rounded-2xl px-3 border border-gray-300 hover:border-gray-500 bg-white">
                 <span className="text-gray-500"><i className="bi bi-search"></i></span>
