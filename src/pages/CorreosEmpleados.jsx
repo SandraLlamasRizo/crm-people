@@ -71,17 +71,17 @@ function CorreosEmpleados() {
     return (
         <div className="flex flex-col md:ml-70">
             {/* Título */}
-            <h1 className="homeH3 mb-4 ml-4">
+            <h1 className="homeH3 p-4 pt-0">
                 Correo
             </h1>
-            <div className="flex flex-col">
-                <div className="bg-[#457FBF] text-white p-4 shadow-md rounded-2xl mb-3 ml-4 mr-3">
+            <div className="flex flex-col pt-4 pb-6 px-6 mr-4">
+                <div className="bg-[#457FBF] text-white p-4 shadow-md rounded-2xl ">
                     <h2 className="text-xl font-bold">Bandeja de Entrada</h2>
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:space-x-4">
+                <div className="flex flex-col-reverse md:flex-row space-x-4 ">
                     {/* Email List */}
-                    <div className="w-full sm:w-1/3 p-4 overflow-y-auto bg-white shadow-md rounded-lg mx-auto sm:mx-0 my-4">
+                    <div className="w-full lg:w-1/3 p-4 overflow-y-auto bg-white shadow-md rounded-lg mx-auto sm:mx-0 my-4">
                         {currentEmails.map((email) => (
                             <div
                                 key={email.id}
@@ -94,12 +94,14 @@ function CorreosEmpleados() {
                                 </div>
                                 <p className="text-gray-700 mt-2">{email.subject}</p>
                                 <p className="text-sm text-gray-500 mt-1">{email.preview}</p>
+                                <hr className='text-gray-200 mt-4'/>
                             </div>
                         ))}
+
                     </div>
 
                     {/* Email Detail View */}
-                    <div className="w-full sm:w-2/3 p-6 bg-white shadow-md rounded-lg mx-auto sm:mx-0 my-4">
+                    <div className="w-full lg:w-2/3 p-6 bg-white shadow-md rounded-lg mx-auto sm:mx-0 my-4">
                         {selectedEmail ? (
                             <>
                                 <h2 className="text-2xl font-semibold text-gray-800">{selectedEmail.subject}</h2>
