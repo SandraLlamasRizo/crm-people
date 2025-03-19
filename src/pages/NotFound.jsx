@@ -10,14 +10,14 @@ function NotFound() {
                 <div className="flex justify-center space-x-4">
                     <a
                         href="/dashboard"
-                        className="buttonPrincipal buttonPrincipal:hover"
+                        className="buttonPrincipal"
                     >
                         <i className="bi bi-house-door mr-2"></i>
                         Inicio
                     </a>
                     <a
                         href="/login"
-                        className="buttonSecundario buttonSecundario:hover"
+                        className="buttonSecundario"
                     >
                         <i className="bi bi-box-arrow-in-right mr-2"></i>
                         Login
