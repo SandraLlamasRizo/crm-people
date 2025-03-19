@@ -45,7 +45,7 @@ function Dashboard() {
 
             {/* Sección de Empleados */}
             <div className=" bg-white rounded-2xl mx-auto p-4 md:ml-70 " >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center mb-4 p-2">
                     <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Empleados</h4>
                     <a
                         href="dashboard/employees"
@@ -69,7 +69,7 @@ function Dashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 md:ml-70">
                 {/* Departamentos */}
                 <div className="bg-white rounded-2xl p-4 w-full">
-                    <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4 p-2">
                         <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Departamentos</h4>
                         <a
                             href="/dashboard/departments"
@@ -92,18 +92,12 @@ function Dashboard() {
 
                 {/* Últimos Empleados */}
                 <div className="bg-white rounded-2xl p-4 w-full ">
-                    <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4 p-2">
                         <h4 className="text-xl sm:text-2xl font-bold text-gray-600">Nuevos Empleados</h4>
-                        <a
-                            href="/dashboard/employees"
-                            className="font-normal text-[#47A7BD] hover:underline"
-                        >
-                            Ver todos
-                        </a>
                     </div>
                     <div className="flex flex-col gap-4">
                         {ordenarEmpleados
-                            .slice(0, window.innerWidth < 768 ? 2 : 5)  // Muestra 2 en móvil y 5 en escritorio
+                            .slice(0, window.innerWidth < 768 ? 2 : 4)  // Muestra 2 en móvil y 4 en escritorio
                             .map((empleado) => (
                             <EmployeeCardLarge key={empleado._id} empleado={empleado} propCompact={true}/>
                         ))}
