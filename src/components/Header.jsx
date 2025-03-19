@@ -98,7 +98,7 @@ function Header() {
                     <ul>
                         {filteredEmployees.map((empl, index) => (
                             <li className="cursor-pointer" onClick={() => handleEmployeeClick(empl._id)}>
-                                <SearchEmployeeCard empleado={empl } />
+                                <SearchEmployeeCard empleado={empl } key={index}/>
                             </li>
                         ))}
                         
