@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
 import { useNavigate } from 'react-router';
+import axios from 'axios';
 
 function EmployeeDetailEach({ employeeId, showActions = true }) {
     const [OneEmployee, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const token = localStorage.getItem('token')
 
     // Verifica si OneEmployee está disponible antes de renderizar.
     if (!OneEmployee) {
@@ -16,8 +19,41 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
         navigate(`/dashboard/edit/${OneEmployee._id}`);
     }
 
+    const handleEliminar =( ) => {
+        console.log("eliminar")
+        eliminarEmpleado(OneEmployee._id)
+    }
+
+    const eliminarEmpleado = async (id) => {
+        const config = {
+            headers: {
+                'Authorization': token,
+            },
+        };
+
+        try {
+            const { data } = await axios.delete(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
+            console.log(data);
+            
+            setShowSuccessModal(true);
+            setTimeout(() => {
+                navigate("/dashboard"); //Llevamos al usuario registrado correctamente a la página de login!
+            }, 3000);
+        } catch (error) {
+            console.error("Error al registrar el empleado:", error);
+        }
+    }
+
     return (
         <div className="flex items-center gap-6 p-6 shadow-md rounded-2xl bg-white">
+            {showSuccessModal && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1>El empleado: {OneEmployee.nombre} ha sido eliminado correctamente</h1>
+                        <p className="text-gray-700 mb-4">En unos segundos te redigiremos a Dashboard</p>
+                    </div>
+                </div>
+            )}
             {/* Foto de perfil */}
             <figure>
                 {/* Asume que OneEmployee tiene la propiedad 'foto' con la URL de la imagen */}
@@ -60,18 +96,18 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
                     <div className="flex justify-end gap-4">
                         <button
                             onClick={handleEditClick}
-                            className="buttonPrincipal buttonPrincipal:hover"
+                            className="buttonPrincipal "
                         >
                             <i className="bi bi-pencil mr-2"></i>
                             Editar
                         </button>
-                        <a
-                            href="/*"
-                            className="w-auto bg-[#cc2c2c] text-white rounded-full px-6 py-3 hover:bg-[#a21e1e] transition"
+                        <button
+                            onClick={handleEliminar}
+                            className="buttonPrincipalRojo"
                         >
                             <i className="bi bi-trash3 mr-2"></i>
                             Eliminar
-                        </a>
+                        </button>
                     </div>
                 )}
             </div>
