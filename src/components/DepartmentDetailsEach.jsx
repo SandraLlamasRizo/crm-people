@@ -90,8 +90,14 @@ const departamentosImagenes = {
                         </div>
                         <div className="flex justify-end mt-4 px-6 pb-4">
 
-                         <button className="bg-[#457FBF] hover:bg-[#2664A9] hover:cursor-pointer text-white font-bold py-1 px-2 rounded-md w-[100px]">
-                                Ver todos 
+                            <button className="bg-[#457FBF] hover:bg-[#2664A9] hover:cursor-pointer text-white font-bold py-1 px-2 rounded-md w-[140px]">
+                                
+                                <a
+                                    href="/dashboard/employees"
+                                    className="font-normal  text-white "
+                                >
+                                    Ver todos los empleados
+                                </a>
                             
                         </button>    
                         </div>
