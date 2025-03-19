@@ -100,7 +100,7 @@ function EditEmployee() {
 
                 {/* Pasamos el employeeId como prop al componente EmployeeDetailEach para que aparezca la card del empleado actual que queremos modificar: */}
                 <div className=" ">
-                    <EmployeeDetailEach employeeId={employeeId} showActions={false} />
+                    <EmployeeDetailEach showActions={false} />
                 </div>
 
                 {/* Y a continuación ya está el formulario para editar: */}

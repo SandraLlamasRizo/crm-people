@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { nombresPersonalizados } from "./DepartmentsCardLarge";
 
-function EmployeeDetailEach() {
+function EmployeeDetailEach({ showActions = true }) {
     const [OneEmployee, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
     const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -132,8 +132,8 @@ function EmployeeDetailEach() {
                     </div>
                 </div>
 
-                {OneEmployee && (
-                    <div className="flex justify-end gap-4">
+                {showActions && (
+                    <div className="flex justify-center md:justify-end gap-4">
                         <button
                             onClick={handleEditClick}
                             className="buttonPrincipal my-auto"

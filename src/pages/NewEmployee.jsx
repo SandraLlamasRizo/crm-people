@@ -39,7 +39,15 @@ function NewEmployee() {
         }
     };
 
-    return (
+    return (<>
+        <div className="flex justify-end pt-4 pr-6">
+            <a
+                            href="/dashboard/employees"
+                            className="font-normal text-[#47A7BD] hover:underline text-end text-sm md:text-md"
+                        >
+                            Volver a todos los empleados
+                        </a>
+        </div>
         <div className="container flex justify-center">
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
@@ -49,6 +57,7 @@ function NewEmployee() {
                     </div>
                 </div>
             )}
+            
             <div className="w-full max-w-4xl">
                 <h2 className="text-center text-3xl font-medium text-[#457FBF]"> Nuevo empleado</h2>
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
@@ -167,7 +176,7 @@ function NewEmployee() {
                         </select>
                     </div>
 
-                    <div className="mb-3">
+                    <div className="mb-3 ">
                         <label htmlFor="salario" className="block text-gray-700">Salario</label>
                         <input
                             id="salario"
@@ -190,7 +199,8 @@ function NewEmployee() {
                 </form>
             </div>
         </div>
-    );
+     </>   );
+        
 }
 
 export default NewEmployee;
