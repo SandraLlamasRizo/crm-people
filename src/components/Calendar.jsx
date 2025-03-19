@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Calendar() {
-    const [showModalTarea, setModalTarea] = useState(true);
+    const [showModalTarea, setModalTarea] = useState(false);
 
     const handleTarea = () => {
         setModalTarea(true)
