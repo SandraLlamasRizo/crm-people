@@ -52,8 +52,7 @@ function EditEmployee() {
             email: employeeFound.email || "",
             telefono: employeeFound.telefono || "",
             departamento: employeeFound.departamento || "",
-            salario: employeeFound.salario || "",
-            observaciones: employeeFound.observaciones || "",
+            salario: employeeFound.salario || ""
         });
     }, [employeeId, employees]);
     
@@ -67,13 +66,16 @@ function EditEmployee() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const config = {
+            headers: {
+                'Authorization': token,
+            },
+        };
         try {
-            await axios.put(`https://crm-empleados.onrender.com/api/empleados/:${employeeId}`, formData, {
-                headers: { 'Authorization': token }
-            });
-                alert("El empleado se ha actualizado correctamente");
+            await axios.put(`https://crm-empleados.onrender.com/api/empleados/${employeeId}`, formData, config);
+                alert(`El empleado ${formData.nombre} se ha actualizado correctamente`);
             // Vamos a la card del empleado para ver su ficha actualizada:
-            navigate(`/employees/${employeeId}`);
+            navigate(`/dashboard/employees/${employeeId}`);
         } catch (error) {
             console.error("Error en la actualización del empleado", error);
         }
@@ -136,7 +138,7 @@ function EditEmployee() {
                     <div className="mb-3">
                         <label className="block text-gray-700">Teléfono</label>
                         <input
-                            type="number"
+                            type="tel"
                             name="telefono"
                             value={formData.telefono}
                             onChange={handleChange}
@@ -163,8 +165,8 @@ function EditEmployee() {
                             <option value="">Selecciona el departamento</option>
                             <option value="direccion">Dirección</option>
                             <option value="desarrollo">Desarrollo</option>
-                            <option value="diseno">Diseño</option>
-                            <option value="recursos humanos">Recursos Humanos</option>
+                            <option value="diseño">Diseño</option>
+                            <option value="recursoshumanos">Recursos Humanos</option>
                         </select>
                     </div>
 
@@ -180,21 +182,6 @@ function EditEmployee() {
                             placeholder="€"
                             required
                         />
-                    </div>
-
-                    <div className="mb-3">
-                        <label className="block text-gray-700">Observaciones</label>
-                        <textarea
-                            name="observaciones"
-                            value={formData.observaciones}
-                            onChange={handleChange}
-                            id="auto-textarea"
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
-                            placeholder="Introduce texto..."
-                            maxLength={500}
-                        ></textarea>
-
-                        <div className="text-right text-sm text-gray-500">{formData.observaciones.length}/500</div>
                     </div>
 
                     {/* Submit Button */}
