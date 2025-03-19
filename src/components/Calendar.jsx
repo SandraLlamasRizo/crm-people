@@ -48,11 +48,11 @@ function Calendar() {
 
     return (
         <div className="mx-4 md:ml-76 md:mr-10">
-            <h6 className="homeH6 text-gray-600">
+            <h6 className="homeH6 text-gray-600 p-4 pb-0">
                 Hoy, {new Date().getDate()} {new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}
             </h6>
             <h3 className="homeH3 p-4">Agenda</h3>
-            <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-0 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-4 md:gap-6">
                 <div className="h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                     {/* Header con navegación entre meses */}
                     <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white">
@@ -64,14 +64,14 @@ function Calendar() {
                     </div>
 
                     {/* Días de la semana */}
-                    <div className="grid grid-cols-7 text-center bg-gray-100 p-2">
+                    <div className="grid grid-cols-7 text-center bg-gray-100 p-2 overflow-y-auto ">
                         {weekdays.map((day, index) => (
                             <div key={index} className="text-sm font-semibold text-gray-700">{day}</div>
                         ))}
                     </div>
 
                     {/* Días del mes */}
-                    <div className="grid grid-cols-7 text-center p-2 h-[60vh]">
+                    <div className="grid grid-cols-7 text-center p-2 md:h-[60vh]">
                         {generateCalendarDays().map((day, index) => (
                             <div
                                 key={index}

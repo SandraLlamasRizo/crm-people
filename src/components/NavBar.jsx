@@ -78,7 +78,7 @@ function NavBar() {
             </p>
             <li>
               <Link to="/dashboard/calendar"
-                className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                className="nav-link flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-300">
                 <i
                   className="bi bi-calendar4-week mr-2">
                 </i>
@@ -87,7 +87,7 @@ function NavBar() {
             </li>
 
             <li><Link to="/dashboard/correo"
-              className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+              className="nav-link flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-300">
 
               <i
                 className="bi bi-envelope mr-2">
