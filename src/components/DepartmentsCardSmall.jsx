@@ -58,4 +58,4 @@ function DeparmentCardSmall({ departamento, datos }) {
 }
 
 
-export default DeparmentCardSmall;
+export default DepartmentCardSmall;

@@ -82,8 +82,8 @@ const departamentosImagenes = {
                         <div className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-4 lg:px-6">
                             
                             
-                    {filteredEmployees 
-                        .slice(0, window.innerWidth < 1024 ? 2 : 10) // Muestra 2 en móvil y 12 en escritorio
+                    {filteredEmployees
+                        .slice(0, window.innerWidth < 768 ? 2 : 40) // Muestra 2 en móvil y 28 en escritorio
                         .map((empleado) => (
                             <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                         ))}
