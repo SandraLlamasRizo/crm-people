@@ -10,7 +10,12 @@ function NavBar() {
     localStorage.removeItem('token');
     console.log("token borrado")
     navigate('/');
-  }
+  };
+
+  // Función para cerrar el menú cuando se selecciona una opción
+  const handleMenuOptionClick = () => {
+    setIsMenuOpen(false); // Cierra el menú al hacer clic en una opción
+  };
 
   return (
     <nav className="flex">
@@ -73,7 +78,7 @@ function NavBar() {
               ÁREA PERSONAL
             </p>
             <li>
-              <Link to=""
+              <Link to="/dashboard/calendar"
                 className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
                 <i
                   className="bi bi-calendar4-week mr-2">
@@ -82,7 +87,7 @@ function NavBar() {
               </Link>
             </li>
 
-            <li><Link to=""
+            <li><Link to="/dashboard/correo"
               className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
 
               <i
@@ -91,7 +96,7 @@ function NavBar() {
               Correo
             </Link>
             </li>
-          
+
             <hr className="border-gray-300 my-4" />
 
             <li>
@@ -112,10 +117,10 @@ function NavBar() {
 
       {/* Menú hamburguesa: */}
       <div
-        className="md:hidden w-full shadow-md p-4 flex justify-between items-center">
+        className="md:hidden w-full shadow-md pt-0 pl-4 pb-2 flex justify-between items-center">
         <button
           onClick={toggleMenu}
-          className="text-gray-800">
+          className="text-gray-700">
           <i
             className={`bi ${isMenuOpen ? 'bi-x' : 'bi-list'} text-xl`}>
           </i>
@@ -127,16 +132,22 @@ function NavBar() {
       {isMenuOpen && (
         <>
           {/* Transparencia fondo menú ==> NO LOGRO QUE OCUPE TODA LA PANTALLA HACIA ABAJO!! */}
-          <div className="absolute w-screen h-screen bg-[#b0adad9b] mt-15"></div>
 
-          <div className="lg:hidden absolute top-19 left-4 mt-18 z-50 ">
+          <div
+            className="fixed top-0 left-0 w-screen h-screen bg-[#b0adad9b] z-40"
+            onClick={toggleMenu} // Cierra el menú al hacer clic en el fondo
+          ></div>
+         
+
+          <div className="lg:hidden absolute top-19 left-4 mt-10 z-50 ">
             <div
               className="w-64 bg-white p-4 shadow-md rounded-2xl">
               <ul
                 className="space-y-2">
                 <li>
                   <Link to="/dashboard"
-                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300"
+                    onClick={handleMenuOptionClick}>
                     <i
                       className="bi bi-house-door mr-2">
                     </i>
@@ -145,7 +156,8 @@ function NavBar() {
                 </li>
                 <li>
                   <Link to="/dashboard/employees"
-                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300"
+                    onClick={handleMenuOptionClick}>
                     <i
                       className="bi bi-people mr-2">
                     </i>
@@ -154,7 +166,8 @@ function NavBar() {
                 </li>
                 <li>
                   <Link to="/dashboard/departments"
-                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                    className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300"
+                    onClick={handleMenuOptionClick}>
                     <i
                       className="bi bi-diagram-3 mr-2">
                     </i>
@@ -176,23 +189,25 @@ function NavBar() {
                   </p>
 
                   <li>
-                    <Link to=""
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                    <Link to="/dashboard/calendar"
+                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300"
+                      onClick={handleMenuOptionClick}>
                       <i className="bi bi-calendar4-week mr-2">
                       </i>
                       Agenda
                     </Link>
                   </li>
                   <li>
-                    <Link to=""
-                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300">
+                    <Link to="/dashboard/correo"
+                      className="nav-link flex items-center p-2 rounded-md text-gray-800 hover:bg-gray-300"
+                      onClick={handleMenuOptionClick}>
 
                       <i className="bi bi-envelope mr-2">
                       </i>
                       Correo
                     </Link>
                   </li>
-                 
+
 
                   <hr className="border-gray-300 my-4" />
 
@@ -217,5 +232,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-

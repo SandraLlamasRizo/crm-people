@@ -56,7 +56,7 @@ function EditEmployee() {
             observaciones: employeeFound.observaciones || "",
         });
     }, [employeeId, employees]);
-    
+
     // Los cambios del formulario los manejamos ahora:
 
     const handleChange = (event) => {
@@ -71,7 +71,7 @@ function EditEmployee() {
             await axios.put(`https://crm-empleados.onrender.com/api/empleados/:${employeeId}`, formData, {
                 headers: { 'Authorization': token }
             });
-                alert("El empleado se ha actualizado correctamente");
+            alert("El empleado se ha actualizado correctamente");
             // Vamos a la card del empleado para ver su ficha actualizada:
             navigate(`/employees/${employeeId}`);
         } catch (error) {
@@ -88,7 +88,7 @@ function EditEmployee() {
                 <div className=" ">
                     <EmployeeDetailEach employeeId={employeeId} showActions={false} />
                 </div>
-                
+
                 {/* Y a continuación ya está el formulario para editar: */}
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
 
@@ -196,8 +196,16 @@ function EditEmployee() {
                         <div className="text-right text-sm text-gray-500">{formData.observaciones.length}/500</div>
                     </div>
 
-                    {/* Submit Button */}
-                    <div className="text-center">
+                    {/* Cancelar Button */}
+                    <div className="flex justify-center space-x-4">
+                        <button
+                            type="button"
+                            onClick={() => navigate(-1)}
+                            className="buttonSecundario buttonSecundario:hover">
+                            Cancelar edición
+                        </button>
+
+                        {/* Submit Button */}
                         <button
                             type="submit"
                             className="buttonPrincipal buttonPrincipal:hover">

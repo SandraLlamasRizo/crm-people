@@ -1,20 +1,6 @@
 import { useNavigate } from "react-router";
+import { nombresPersonalizados, departamentosImagenes } from "./DepartmentsCardLarge";
 
-// Los nombres de los departamentos:
-const nombresPersonalizados = {
-    direccion: 'Dirección',
-    diseño: 'Diseño',
-    desarrollo: 'Desarrollo',
-    recursoshumanos: 'Recursos Humanos',
-};
-
-// HE PUESTO ICONOS DEL MISMO ESTILO:
-const departamentosImagenes = {
-    direccion: '/DepartamentoDireccion.svg',
-    diseño: '/DepartamentoDiseno.svg',
-    desarrollo: '/DepartamentoDesarrollo.svg',
-    recursoshumanos: '/Departamentorrhh.svg',
-};
 
 
 function DeparmentCardSmall({ departamento, datos }) {
@@ -28,7 +14,7 @@ function DeparmentCardSmall({ departamento, datos }) {
     return (
         <div
             onClick={handleClick}
-            className="grid grid-cols-3 items-center my-2 mx-2 cursor-pointer transition duration-200 ease-in-out bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-lg shadow-xl p-4"
+            className="grid grid-cols-3 items-center my-2 mx-2 cursor-pointer overflow-hidden transition-transform duration-200 hover:scale-105 bg-[#F4F9FD] hover:bg-[#d3ebff] rounded-lg shadow-xl p-4"
         >
             <div
                 className="flex flex-col items-center">

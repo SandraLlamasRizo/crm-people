@@ -14,14 +14,14 @@ function NotAccess() {
                 <div className="flex justify-center space-x-4">
                     <Link
                         to="/dashboard"
-                        className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
+                        className="buttonPrincipal buttonPrincipal:hover"
                     >
                         <i className="bi bi-house-door mr-2"></i>
                         Inicio
                     </Link>
                     <Link
                         to="/contacto"
-                        className="w-auto bg-[#457FBF] text-white rounded-full px-6 py-3 hover:bg-[#47A7BD] transition"
+                        className="buttonSecundario buttonSecundario:hover"
                     >
                         <i className="bi bi-envelope me-2"></i>
                         Contacto

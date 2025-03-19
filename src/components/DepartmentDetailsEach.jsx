@@ -1,27 +1,13 @@
-
 import { useEmployeesContext } from "../providers/EmployerProvider";
 import EmployeeCardSmall from "./EmployeeCardSmall";
+import { nombresPersonalizados, departamentosImagenes } from "./DepartmentsCardLarge";
+
 
 function DepartmentDetailsEach({ departamento }) {
     const [employees] = useEmployeesContext();
 
     const filteredEmployees = employees.filter((empl) => empl.departamento === departamento);
     const totalEmpleados = filteredEmployees.length;
-    
-    const nombresPersonalizados = {
-    direccion: 'Dirección',
-    diseño: 'Diseño',
-    desarrollo: 'Desarrollo',
-    recursoshumanos: 'Recursos Humanos',
-};
-
-// HE PUESTO ICONOS DEL MISMO ESTILO:
-const departamentosImagenes = {
-    direccion: '/DepartamentoDireccion.svg',
-    diseño: '/DepartamentoDiseno.svg',
-    desarrollo: '/DepartamentoDesarrollo.svg',
-    recursoshumanos: '/Departamentorrhh.svg',
-};
     
     const calculo = filteredEmployees.reduce((acum, { salario }) => {
     acum.totalSalario += salario;
@@ -55,19 +41,19 @@ const departamentosImagenes = {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 gap-y-10 pt-4 pb-6 px-6 justify-between">
                         <div className="text-gray-500">
                             <h3>Salario Total</h3>
-                            <p>{calculo.totalSalario } €</p>
+                            <p>{calculo.totalSalario }€</p>
                         </div>
                         <div className="text-gray-500">
                             <h3>Salario Promedio</h3>
-                            <p>{promSalario } €</p>
+                            <p>{promSalario }€</p>
                         </div>
                         <div className="text-gray-500">
                             <h3>Salario Máximo</h3>
-                            <p> {calculo.salarioMaximo} €</p>
+                            <p> {calculo.salarioMaximo}€</p>
                         </div>
                         <div className="text-gray-500">
-                            <h3>Salario Minimo</h3>
-                            <p>{calculo.salarioMinimo} €</p>
+                            <h3>Salario Mínimo</h3>
+                            <p>{calculo.salarioMinimo}€</p>
                         </div>
                     </div>
                 </div>

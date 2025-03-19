@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
+import { nombresPersonalizados } from './DepartmentsCardLarge';
 
 function EmployeeCardLarge({ empleado }) {
 
@@ -76,7 +77,8 @@ function EmployeeCardLarge({ empleado }) {
         </div>
 
         <h5 className="hidden md:block secundarionCard">{empleado.email}</h5>
-        <h5 className="secundarionCard">{empleado.departamento}</h5>
+        <h5 className="secundarionCard">{nombresPersonalizados[empleado.departamento] || empleado.departamento}
+</h5>
         <h5 className="hidden md:block secundarionCard">{empleado.salario + '€'}</h5>
 
         <div className='hover:cursor-pointer'>

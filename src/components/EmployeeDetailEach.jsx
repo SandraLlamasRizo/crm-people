@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
 import { useNavigate } from 'react-router';
+import { nombresPersonalizados } from "./DepartmentsCardLarge";
 
 function EmployeeDetailEach({ employeeId, showActions = true }) {
     const [OneEmployee, setOneEmployee] = useOneEmployeeContext();
@@ -47,7 +48,9 @@ function EmployeeDetailEach({ employeeId, showActions = true }) {
 
                 <div className="mb-4">
                     <h3 className="font-bold text-gray-700">Departamento</h3>
-                    <p className="text-gray-500">{OneEmployee?.departamento}</p>
+                    <p className="text-gray-500">
+                        {nombresPersonalizados[OneEmployee?.departamento] || OneEmployee?.departamento}
+                    </p>
                 </div>
 
                 <div className="mb-4">
