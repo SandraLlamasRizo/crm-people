@@ -6,11 +6,11 @@ import { useUserContext } from "../providers/EmployerProvider";
 
 function LoginUser() {
     const navigate = useNavigate();
-    const [, setUser] = useUserContext(); // Destructuring solo el setter
-
+    const [User, setUser] = useUserContext(); // Destructuring solo el setter
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [alerta, setAlerta] = useState(null);
-
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
+    
     const enviarFormulario = (data) => {
         loginUsuario(data);
     };
@@ -20,8 +20,11 @@ function LoginUser() {
             const { data } = await axios.post('https://crm-empleados.onrender.com/api/usuarios/login', usuario);
             localStorage.setItem('token', data.token);
             localStorage.setItem('username', data.user.username);
-            setUser(data.user); // Actualizar el contexto con el usuario
-            navigate('/dashboard');
+            setUser(data.user); 
+            setShowSuccessModal(true);
+            setTimeout(() => {
+                navigate("/dashboard"); //Llevamos al usuario registrado correctamente a la página de login!
+            }, 3000);
         } catch (error) {
             console.error("Error en el login:", error.response?.data || error.message);
             setAlerta({
@@ -33,6 +36,14 @@ function LoginUser() {
 
     return (
         <div className="flex h-screen items-center justify-center">
+            {showSuccessModal && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1>Bienvenido, {User.username} </h1>
+                        <p className="text-gray-700 mb-4">En unos segundos te redigiremos a Dashboard</p>
+                    </div>
+                </div>
+            )}
             <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
                 <h2 className="text-center text-3xl font-bold text-[#457FBF]">Inicia sesión</h2>
                 <p className="text-center text-gray-600 mt-2">
