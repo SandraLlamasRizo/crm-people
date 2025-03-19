@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
+import { nombresPersonalizados } from './DepartmentsCardLarge';
 
 function EmployeeCardLarge({ empleado, propCompact }) {
 
@@ -93,7 +94,8 @@ function EmployeeCardLarge({ empleado, propCompact }) {
         </div>
 
         {!isCompact && <h5 className="secundarionCard text-gray-600">{empleado.email}</h5>}
-        <h5 className="secundarionCard text-gray-600">{empleado.departamento}</h5>
+        <h5 className="secundarionCard text-gray-600">{nombresPersonalizados[empleado.departamento] || empleado.departamento}
+</h5>
         {!isCompact && <h5 className="secundarionCard text-gray-600">{empleado.salario + '€'}</h5>}
 
         <div className='hover:cursor-pointer'>

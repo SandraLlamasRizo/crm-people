@@ -55,7 +55,7 @@ function EditEmployee() {
             salario: employeeFound.salario || ""
         });
     }, [employeeId, employees]);
-    
+
     // Los cambios del formulario los manejamos ahora:
 
     const handleChange = (event) => {
@@ -90,7 +90,7 @@ function EditEmployee() {
                 <div className=" ">
                     <EmployeeDetailEach employeeId={employeeId} showActions={false} />
                 </div>
-                
+
                 {/* Y a continuación ya está el formulario para editar: */}
                 <p className=" mb-5 mt-6 text-sm font-extralight  text-gray-500"> INFORMACIÓN PERSONAL:</p>
 
@@ -183,8 +183,16 @@ function EditEmployee() {
                         />
                     </div>
 
-                    {/* Submit Button */}
-                    <div className="text-center">
+                    {/* Cancelar Button */}
+                    <div className="flex justify-center space-x-4">
+                        <button
+                            type="button"
+                            onClick={() => navigate(-1)}
+                            className="buttonSecundario buttonSecundario:hover">
+                            Cancelar edición
+                        </button>
+
+                        {/* Submit Button */}
                         <button
                             type="submit"
                             className="buttonPrincipal buttonPrincipal:hover">

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useOneEmployeeContext } from '../providers/EmployerProvider';
 import axios from 'axios';
+import { nombresPersonalizados } from './DepartmentsCardLarge';
 
 function EmployeeCardSmall({ empleado }) {
     const [image, setImage] = useState(null);
@@ -48,7 +49,7 @@ function EmployeeCardSmall({ empleado }) {
 
                 const data = await response.json();
 
-                // ✅ Seleccionamos una foto aleatoria
+                // Seleccionamos una foto aleatoria
                 const randomIndex = Math.floor(Math.random() * data.photos.length);
                 setImage(data.photos[randomIndex]?.src?.large);
             } catch (error) {
@@ -89,7 +90,7 @@ function EmployeeCardSmall({ empleado }) {
                         {empleado.apellidos}
                     </h4>
                     <span className="bg-[#E3F2FD] text-[#47A7BD] text-sm px-3 py-1 rounded-md">
-                        {empleado.departamento}
+                        {nombresPersonalizados[empleado.departamento] || empleado.departamento}
                     </span>
                 </div>
             </div>
