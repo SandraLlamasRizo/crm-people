@@ -6,7 +6,7 @@ export const nombresPersonalizados = {
     direccion: 'Dirección',
     diseño: 'Diseño',
     desarrollo: 'Desarrollo',
-    recursoshumanos: 'Recursos Humanos',
+    recursoshumanos: 'RR.HH.',
 };
 
 // HE PUESTO ICONOS DEL MISMO ESTILO:
