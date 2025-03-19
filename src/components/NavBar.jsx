@@ -31,7 +31,7 @@ function NavBar() {
             alt="logo CRM people"
             className="rounded-full w-24 h-24 mb-4"
           />
-          <hr className="border-gray-400 mb-4" />
+          <hr className="border-gray-300 mb-4" />
         </div>
 
         {/* Menú principal */}
@@ -136,9 +136,9 @@ function NavBar() {
             className="fixed top-0 left-0 w-screen h-screen bg-[#b0adad9b] z-40"
             onClick={toggleMenu} // Cierra el menú al hacer clic en el fondo
           ></div>
-         
 
-          <div className="lg:hidden absolute top-19 left-4 mt-10 z-50 ">
+
+          <div className="lg:hidden absolute top-19 left-4 mt-15 z-50 ">
             <div
               className="w-64 bg-white p-4 shadow-md rounded-2xl">
               <ul
@@ -175,7 +175,7 @@ function NavBar() {
                 </li>
               </ul>
 
-              <hr className="border-gray-400 my-4" />
+              <hr className="border-gray-300 my-4" />
 
               <div className="relative">
 
