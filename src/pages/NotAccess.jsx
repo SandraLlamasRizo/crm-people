@@ -13,18 +13,18 @@ function NotAccess() {
                 </p>
                 <div className="flex justify-center space-x-4">
                     <Link
-                        to="/dashboard"
+                        to="/login"
                         className="buttonPrincipal"
                     >
                         <i className="bi bi-house-door mr-2"></i>
-                        Inicio
+                        Login
                     </Link>
                     <Link
-                        to="/contacto"
+                        to="/register"
                         className="buttonSecundario"
                     >
                         <i className="bi bi-envelope me-2"></i>
-                        Contacto
+                        Registrarse
                     </Link>
                 </div>
             </div>

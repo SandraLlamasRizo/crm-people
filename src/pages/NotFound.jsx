@@ -9,7 +9,7 @@ function NotFound() {
                 </p>
                 <div className="flex justify-center space-x-4">
                     <a
-                        href="/dashboard"
+                        href="/"
                         className="buttonPrincipal"
                     >
                         <i className="bi bi-house-door mr-2"></i>
