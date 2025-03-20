@@ -33,7 +33,7 @@ function RegisterUser() {
     const aceptarTerminos = watch('accceptTerms');
 
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex h-screen items-center justify-center mx-4">
             {/* Aquí va el modal que avisa del registro exitoso: */}
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
@@ -44,7 +44,7 @@ function RegisterUser() {
                     </div>
                 </div>
             )}
-            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
+            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl ">
                 <h2 className="text-center text-3xl font-bold text-[#457FBF]">Regístrate</h2>
                 <p className="text-center text-gray-600 mt-2">
                     ¡Encantados de conocerte! Ingresa tus datos para registrarte.
@@ -85,6 +85,7 @@ function RegisterUser() {
                             })}
                             placeholder="Introduce tu correo"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+                            onInvalid={(e) => e.preventDefault()}
                         />
                         {errors.email &&
                             <div className="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert"><svg className="shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"><path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" /></svg><span className="sr-only">Atención</span><div><span className="font-medium">Asegúrese de que se cumplan los requisitos: </span>{errors.email.message}</div></div>}

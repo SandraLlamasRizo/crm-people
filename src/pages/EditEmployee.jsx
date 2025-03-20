@@ -45,7 +45,7 @@ function EditEmployee() {
             console.error("Empleado no encontrado en la base de datos");
             return;
         }
-        console.log("Empleado encontrado:", employeeFound);
+
 
         setFormData({
             nombre: employeeFound.nombre || "",
@@ -65,8 +65,12 @@ function EditEmployee() {
 
     // Como ya están los datos modificados los volvemos a mandar a la Api actualizados:
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
+        setShowSuccessModal(true);
+    }
+
+    const saveChanges = async () => {
         const config = {
             headers: {
                 'Authorization': token,
@@ -75,23 +79,25 @@ function EditEmployee() {
         try {
             await axios.put(`https://crm-empleados.onrender.com/api/empleados/${employeeId}`, formData, config);
             // Vamos a la card del empleado para ver su ficha actualizada:
-            
-            setShowSuccessModal(true);
-            setTimeout(() => {
-                navigate(`/dashboard/employees/${employeeId}`);
-            }, 3000);
+            navigate(`/dashboard/employees/${employeeId}`);
         } catch (error) {
             console.error("Error en la actualización del empleado", error);
+            
         }
     }
+
 
     return (
         <div className="container flex justify-center">
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
-                        <h1>El empleado {formData.nombre} ha sido editado correctamente</h1>
-                        <p className="text-gray-700 mb-4">En unos segundos te redigiremos a la pagina del empleado</p>
+                        <h1 className="mb-4">Estas seguro de que quieres guardar los cambios del empleado {formData.nombre} ?</h1>
+                        <div className='flex flex-col-reverse gap-4 md:flex-row content-center justify-center'>
+                            <button onClick={() => setShowSuccessModal(false)} className="buttonPrincipalRojo ">Cancelar</button>
+                            <button onClick={saveChanges} className="buttonPrincipal">Guardar</button>
+                        </div>
+                        
                     </div>
                 </div>
             )}
@@ -100,7 +106,7 @@ function EditEmployee() {
 
                 {/* Pasamos el employeeId como prop al componente EmployeeDetailEach para que aparezca la card del empleado actual que queremos modificar: */}
                 <div className=" ">
-                    <EmployeeDetailEach employeeId={employeeId} showActions={false} />
+                    <EmployeeDetailEach showActions={false} />
                 </div>
 
                 {/* Y a continuación ya está el formulario para editar: */}
@@ -144,6 +150,7 @@ function EditEmployee() {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
                             placeholder="Introducir correo electrónico"
                             required
+                            onInvalid={(e) => e.preventDefault()}
                         />
                     </div>
 

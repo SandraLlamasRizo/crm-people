@@ -35,7 +35,7 @@ function LoginUser() {
     };
 
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex h-screen items-center justify-center mx-4">
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
@@ -78,6 +78,7 @@ function LoginUser() {
                             })}
                             placeholder="name@mail.com"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+                            onInvalid={(e) => e.preventDefault()}
                         />
                         {errors.email && (
                             <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>

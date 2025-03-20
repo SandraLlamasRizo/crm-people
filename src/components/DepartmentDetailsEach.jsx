@@ -36,17 +36,17 @@ function DepartmentDetailsEach({ departamento }) {
                     </h3>
                    
                         <a href="/dashboard/departments" className=" no-underlinetext-sm abslute flex flex-col items-end pr-4 mr font-normal text-[#47A7BD] hover:underline">
-                            Volver a departamentos
+                            Volver 
                         </a>
                     </div>
                 </div>
 
-                <div className="mb-6 shadow-lg bg-white rounded-2xl p-4">
+                <div className="mb-6 shadow-lg bg-white rounded-2xl p-2 mx-6">
                     <h2 className="px-4 py-2 text-xl md:text-2xl font-bold text-gray-600">
                         Salarios
                     </h2>
 
-                    <div className="flex flex-wrap justify-around gap-8 gap-y-10 pt-4 pb-6 px-6">
+                    <div className="flex flex-wrap justify-around gap-8 gap-y-10 pt-4 pb-6 px-6 ">
                         <div className="text-sm text-[#457FBF] font-medium bg-[#E1F0FF] px-3 py-1 rounded-2xl w-[190px] h-[80px] flex flex-col items-center justify-center text-center">
                             <span className="text-xl">Salario Total:</span>
                             <span className="text-lg">{calculo.totalSalario}€</span>
@@ -72,7 +72,7 @@ function DepartmentDetailsEach({ departamento }) {
 
 
 
-                <div className="mb-6 bg-white rounded-2xl shadow-lg p-4">
+                <div className="mb-6 bg-white rounded-2xl shadow-lg p-2 mx-6">
                     <div className="flex flex-col ">
                         <h2 className="text-2xl font-bold mb-4 text-gray-800 px-6 pt-4">
                             Empleados
@@ -83,7 +83,7 @@ function DepartmentDetailsEach({ departamento }) {
                         <div className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:grid-rows-2 lg:auto-rows-fr pt-2 lg:pt-4 pb-4 lg:pb-6 px-4 lg:px-6">
 
                             {filteredEmployees
-                                .slice(0, window.innerWidth < 768 ? 2 : 40) // Muestra 2 en móvil y 28 en escritorio
+                                 // Muestra 2 en móvil y 28 en escritorio
                                 .map((empleado) => (
                                     <EmployeeCardSmall key={empleado._id} empleado={empleado} />
                                 ))}

@@ -14,9 +14,9 @@ function NotAccess() {
                 <div className="flex justify-center space-x-4">
                     <Link
                         to="/login"
-                        className="buttonPrincipal"
+                        className="buttonSecundario"
                     >
-                        <i className="bi bi-house-door mr-2"></i>
+                        <i className="bi bi-box-arrow-in-right mr-2"></i>
                         Login
                     </Link>
                     <Link

@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 
 function Calendar() {
+    const [showModalTarea, setModalTarea] = useState(false);
+
+    const handleTarea = () => {
+        setModalTarea(true)
+    }
+
+    const handleCloseTarea = () => {
+        setModalTarea(false)
+    }
+
     const [currentDate, setCurrentDate] = useState(new Date());
 
     const getCurrentDay = () => {
@@ -47,6 +57,17 @@ function Calendar() {
     const weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
     return (
+        <>
+            {showModalTarea && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-20 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1 className="text-xl font-bold mb-2">Esto es solo un prototipo</h1>
+                        <p className="text-gray-700 mb-4">No se pueden añadir tareas, pulsa para volver a Agenda</p>
+                        <button onClick={handleCloseTarea} className="buttonPrincipal w-full">PULSA AQUI</button>
+                    </div>
+                    
+                </div>
+            )}
         <div className="mx-4 md:ml-76 md:mr-10">
             <h6 className="homeH6 text-gray-600 p-4 pb-0">
                 Hoy, {new Date().getDate()} {new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}
@@ -56,11 +77,11 @@ function Calendar() {
                 <div className="h-full w-full mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                     {/* Header con navegación entre meses */}
                     <div className="flex justify-between items-center p-4 bg-[#457FBF] text-white">
-                        <button onClick={handlePrevMonth} className="text-lg">←</button>
+                        <button onClick={handlePrevMonth} className="text-lg hover:cursor-pointer">←</button>
                         <span className="text-xl font-semibold">
                             {month} {year}
                         </span>
-                        <button onClick={handleNextMonth} className="text-lg">→</button>
+                        <button onClick={handleNextMonth} className="text-lg hover:cursor-pointer">→</button>
                     </div>
 
                     {/* Días de la semana */}
@@ -113,13 +134,13 @@ function Calendar() {
                                 <li className="text-sm text-gray-600 p-2">Añadir estilos botón</li>
                                 <li className="text-sm text-gray-600 p-2">Comprobar peticiones API</li>
                             </ul>
-                            <button className="flex mt-4 buttonPrincipal mx-auto w-auto">Añadir tarea</button>
+                            <button onClick={handleTarea} className="flex mt-4 buttonPrincipal mx-auto w-auto">Añadir tarea</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    );
+   </> );
 }
 
 export default Calendar;

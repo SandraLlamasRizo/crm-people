@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { nombresPersonalizados } from "./DepartmentsCardLarge";
 
-function EmployeeDetailEach() {
+function EmployeeDetailEach({ showActions = true }) {
     const [OneEmployee, setOneEmployee] = useOneEmployeeContext();
     const navigate = useNavigate();
     const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -23,7 +23,7 @@ function EmployeeDetailEach() {
     }
 
     const handleEliminar = () => {
-        eliminarEmpleado(OneEmployee._id);
+        setShowSuccessModal(true);
     }
 
     const eliminarEmpleado = async (id) => {
@@ -36,10 +36,8 @@ function EmployeeDetailEach() {
         try {
             const { data } = await axios.delete(`https://crm-empleados.onrender.com/api/empleados/${id}`, config);
 
-            setShowSuccessModal(true);
-            setTimeout(() => {
                 navigate("/dashboard"); //Llevamos al usuario registrado correctamente a la página de login!
-            }, 3000);
+
         } catch (error) {
             console.error("Error al registrar el empleado:", error);
         }
@@ -77,12 +75,14 @@ function EmployeeDetailEach() {
     }, []);  // Solo se ejecuta una vez al montar el componente
 
     return ( <>
-        
-            {showSuccessModal && (
-                <div className="fixed inset-0 flex items-center justify-center bg-[#F4F9FD] bg-opacity-70 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg text-center m-30">
-                        <h1>El empleado: {OneEmployee.nombre} ha sido eliminado correctamente</h1>
-                        <p className="text-gray-700 mb-4">En unos segundos te redirigiremos a Dashboard</p>
+        {showSuccessModal && (
+                <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
+                    <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
+                        <h1 className="mb-4">Estas seguro de que quieres eliminar el empleado {OneEmployee.nombre} ?</h1>
+                        <div className='flex flex-col-reverse gap-4 md:flex-row content-center justify-center'>
+                            <button onClick={() => setShowSuccessModal(false)} className="buttonSecundario">Cancelar</button>
+                            <button onClick={()=>eliminarEmpleado(OneEmployee._id)} className="buttonPrincipalRojo">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             )}
@@ -132,8 +132,8 @@ function EmployeeDetailEach() {
                     </div>
                 </div>
 
-                {OneEmployee && (
-                    <div className="flex justify-end gap-4">
+                {showActions && (
+                    <div className="flex justify-center md:justify-end gap-4">
                         <button
                             onClick={handleEditClick}
                             className="buttonPrincipal my-auto"

@@ -10,6 +10,7 @@ function Dashboard() {
     const [numEmployeesSmall, setNumEmployeesSmall] = useState(2);
     const [numEmployeesLarge, setNumEmployeesLarge] = useState(2);
 
+    
     useEffect(() => {
     window.scrollTo(0, 0); 
     }, [employees]);
@@ -50,7 +51,7 @@ function Dashboard() {
     const departamentosArray = Object.entries(departamentos);
 
     return (
-        <div className="mx-auto p-4 sm:p-6">
+        <>  
             {/* Sección de Bienvenida */}
             <div className="  mx-auto p-4  mb-4 md:ml-70 ">
                 <h6 className="homeH6 text-gray-600">
@@ -121,8 +122,7 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-        </div>
-    );
+    </>);
 }
 
 export default Dashboard;
