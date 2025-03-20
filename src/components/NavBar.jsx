@@ -77,7 +77,7 @@ function NavBar() {
               ÁREA PERSONAL
             </p>
             <li>
-              <Link to="/dashboard/calendar"
+              <Link to="/dashboard/agenda"
                 className="nav-link flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-300">
                 <i
                   className="bi bi-calendar4-week mr-2">
