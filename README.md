@@ -1,12 +1,58 @@
-# React + Vite
+🚀 **CRM People**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CRM People es una plataforma web diseñada para facilitar la gestión de empleados de manera sencilla e intuitiva. Permite realizar un seguimiento completo de los 
+empleados, desde su registro hasta la actualización y eliminación de datos, todo desde una interfaz clara y responsive.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌟 **Características principales**
 
-## Expanding the ESLint configuration
+✅ Inicio de sesión y registro de usuarios.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Consulta de todos los empleados mediante una API externa.
+
+✅ Añadir nuevos empleados de forma rápida y sencilla.
+
+✅ Modificación de datos existentes de los empleados.
+
+✅ Eliminación de empleados desde la misma plataforma.
+
+✅ Diseño responsive para una experiencia perfecta en cualquier dispositivo.
+
+---
+
+🛠️ **Tecnologías utilizadas**
+
+React → Desarrollo de la interfaz de usuario.
+
+Tailwind CSS → Estilización moderna y responsive.
+
+npm → Gestión de paquetes.
+
+GitHub → Control de versiones y colaboración en equipo.
+
+---
+
+🎯 **Uso**
+
+Regístrate o inicia sesión.
+
+Consulta la lista de empleados.
+
+Añade, modifica o elimina empleados según sea necesario.
+
+---
+
+✅ ¡Todo en tiempo real y con un diseño adaptado a cualquier dispositivo!
+
+---
+
+👥 **Equipo de desarrollo**  
+
+
+- **Sandra Llamas** → [GitHub](https://github.com/SandraLlamasRizo) | [LinkedIn](https://www.linkedin.com/in/sandrallamasrizo/)
+  
+- **Leticia Berzal** → [GitHub](https://github.com/lberzal) | [LinkedIn](https://www.linkedin.com/in/leticia-berzal-sanz-0433664a/)
+  
+- **Javier Montes** → [GitHub](https://github.com/Javimontes20) | [LinkedIn](https://www.linkedin.com/in/javimontesgarcia/)
+  
