@@ -33,7 +33,7 @@ function RegisterUser() {
     const aceptarTerminos = watch('accceptTerms');
 
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex h-screen items-center justify-center mx-4">
             {/* Aquí va el modal que avisa del registro exitoso: */}
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
@@ -44,7 +44,7 @@ function RegisterUser() {
                     </div>
                 </div>
             )}
-            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl">
+            <div className="w-full sm:w-96 p-6 bg-white shadow-lg rounded-2xl ">
                 <h2 className="text-center text-3xl font-bold text-[#457FBF]">Regístrate</h2>
                 <p className="text-center text-gray-600 mt-2">
                     ¡Encantados de conocerte! Ingresa tus datos para registrarte.

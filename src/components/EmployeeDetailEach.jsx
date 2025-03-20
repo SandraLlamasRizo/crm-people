@@ -79,8 +79,10 @@ function EmployeeDetailEach({ showActions = true }) {
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
                         <h1 className="mb-4">Estas seguro de que quieres eliminar el empleado {OneEmployee.nombre} ?</h1>
-                        <button onClick={() => setShowSuccessModal(false)} className="buttonSecundario mx-4">Cancelar</button>
-                        <button onClick={()=>eliminarEmpleado(OneEmployee._id)} className="buttonPrincipalRojo mx-4">Eliminar</button>
+                        <div className='flex flex-col-reverse gap-4 md:flex-row content-center justify-center'>
+                            <button onClick={() => setShowSuccessModal(false)} className="buttonSecundario">Cancelar</button>
+                            <button onClick={()=>eliminarEmpleado(OneEmployee._id)} className="buttonPrincipalRojo">Eliminar</button>
+                        </div>
                     </div>
                 </div>
             )}

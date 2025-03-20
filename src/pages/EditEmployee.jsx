@@ -45,7 +45,7 @@ function EditEmployee() {
             console.error("Empleado no encontrado en la base de datos");
             return;
         }
-        console.log("Empleado encontrado:", employeeFound);
+
 
         setFormData({
             nombre: employeeFound.nombre || "",
@@ -93,8 +93,11 @@ function EditEmployee() {
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
                         <h1 className="mb-4">Estas seguro de que quieres guardar los cambios del empleado {formData.nombre} ?</h1>
-                        <button onClick={() => setShowSuccessModal(false)} className="buttonPrincipalRojo mx-4">Cancelar</button>
-                        <button onClick={saveChanges} className="buttonPrincipal mx-4">Guardar</button>
+                        <div className='flex flex-col-reverse gap-4 md:flex-row content-center justify-center'>
+                            <button onClick={() => setShowSuccessModal(false)} className="buttonPrincipalRojo ">Cancelar</button>
+                            <button onClick={saveChanges} className="buttonPrincipal">Guardar</button>
+                        </div>
+                        
                     </div>
                 </div>
             )}

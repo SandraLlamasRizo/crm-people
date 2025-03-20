@@ -35,7 +35,7 @@ function LoginUser() {
     };
 
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex h-screen items-center justify-center mx-4">
             {showSuccessModal && (
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-70 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
