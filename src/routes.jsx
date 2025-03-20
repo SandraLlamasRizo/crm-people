@@ -36,6 +36,7 @@ function MainRoutes() {
                 <Route index element={<LandingPage />} />
                 <Route path="register" element={<RegisterUser />} />
                 <Route path="login" element={<LoginUser />} />
+                <Route path="contacto" element={<Contacto />} />
                 <Route path="notaccess" element={<NotAccess />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
@@ -43,14 +44,14 @@ function MainRoutes() {
             <Route path="dashboard" element={<PrivateRoute element={<MainLayout />} />}>
                 <Route index element={<Dasboard />} />
                 <Route path="employees" element={<Employees />} />
-                <Route path="calendar" element={<Calendar />} />
+                <Route path="agenda" element={<Calendar />} />
                 <Route path="correo" element={<CorreosEmpleados />} />
                 <Route path="employees/:employeeId" element={<DetailEmployee />} />
                 <Route path="edit/:employeeId" element={<EditEmployee />} />
                 <Route path="newEmployee" element={<NewEmployee />} />
                 <Route path="departments" element={<Departments />} />
                 <Route path="departments/:departamento" element={<DetailDepartments />} />
-                <Route path="contacto" element={<Contacto />} />
+                
             </Route>
         </Routes>
     )

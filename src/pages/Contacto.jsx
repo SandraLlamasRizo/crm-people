@@ -44,7 +44,7 @@ function Contacto() {
                         </div>
 
                         <div className="flex gap-4 w-full justify-center">
-                            <NavLink to={'/'}>
+                            <NavLink to={'/notaccess'}>
                                 <button className="buttonSecundario buttonSecundariol:hover">Volver</button>
                             </NavLink>
                         </div>

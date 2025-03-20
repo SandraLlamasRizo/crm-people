@@ -41,7 +41,7 @@ function EmployerProvider({ children }) {
             // console.log(employees)
         } catch (error) {
             console.log("Error al cargar los empleados", error);
-        }
+        } 
     }
 
     return <EmployeesContext.Provider value={[employees, setEmployees ]}>

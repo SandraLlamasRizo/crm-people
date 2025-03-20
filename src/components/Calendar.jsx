@@ -62,7 +62,7 @@ function Calendar() {
                 <div className="fixed inset-0 flex items-center justify-center  bg-[#F4F9FD] bg-opacity-20 z-50">
                     <div className=" bg-white p-6 rounded-lg shadow-lg text-center m-30">
                         <h1 className="text-xl font-bold mb-2">Esto es solo un prototipo</h1>
-                        <p className="text-gray-700 mb-4">No se pueden añadir tareas, pulsa para volver a Calendar</p>
+                        <p className="text-gray-700 mb-4">No se pueden añadir tareas, pulsa para volver a Agenda</p>
                         <button onClick={handleCloseTarea} className="buttonPrincipal w-full">PULSA AQUI</button>
                     </div>
                     

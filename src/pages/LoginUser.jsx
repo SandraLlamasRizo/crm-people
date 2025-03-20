@@ -78,6 +78,7 @@ function LoginUser() {
                             })}
                             placeholder="name@mail.com"
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#47A7BD]"
+                            onInvalid={(e) => e.preventDefault()}
                         />
                         {errors.email && (
                             <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>
